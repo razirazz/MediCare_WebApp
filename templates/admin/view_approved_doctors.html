@@ -1,0 +1,91 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/admin_search_approved_doctors">
+    <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <table>
+                        <thead>
+                        <tr>
+                            <div class="form-group row">
+                                <label for="hospital" class="card-title col-sm-3 col-form-label">DOCTOR</label>
+                                <div class="col-sm-9">
+                                    <div class="input-group">
+                                        <input type="text" name="search_field" class="form-control border-right-0" placeholder="Search Approved Doctors"/>
+                                        <div class="input-group-append">
+                                            <input type="submit" name="s1" value="Search" class="btn btn-sm btn-outline-primary btn-fw"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </tr>
+                        </thead>
+                    </table>
+                    <p></p>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="display expandable-table" style="width:100%">
+                                    <thead>
+                                    <tr align="center">
+                                        <th rowspan="2">#</th>
+                                        <th colspan="4">Doctor</th>
+                                        <th colspan="2" style="border-bottom-right-radius: 0px">Hospital</th>
+                                        <th rowspan="2"></th>
+{#                                        <th colspan="2" rowspan="2">Action</th>#}
+                                    </tr>
+                                    <tr align="center">
+{#                                        <th>#</th>#}
+                                        <th style="border-radius: 0px">Name</th>
+                                        {#            <th>Image</th>#}
+                                        <th>Address</th>
+                                        <th>Contact</th>
+                                        <th>Fees</th>
+                                        <th>Name</th>
+                                        <th style="border-radius: 0px">Location</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for i in data %}
+                                        <tr class="font-weight-500">
+                                            <td>&nbsp;{{ loop.index }}</td>
+                                            <td align="center">&nbsp;
+                                                <img src="{{ i['doc_img'] }}" alt="" style="width: 100px;height: 100px"/><br>
+                                                {{ i['doc_name'] }}
+                                            </td>
+                                            {#            <td>&nbsp;{{ i['doc_image'] }}</td>#}
+                                            <td>&nbsp;
+                                                <address>
+                                                {{ i['address'] }}<br>
+                                                {{ i['place'] }}<br>
+                                                {{ i['post'] }}<br>
+                                                {{ i['district'] }}<br>
+                                                {{ i['pin'] }}
+                                                </address>
+                                            </td>
+                                            <td>&nbsp;
+                                                {{ i['ph_number'] }}<br>
+                                                {{ i['doc_email'] }}
+                                            </td>
+                                            <td> {{ i['fees'] }}</td>
+                                            <td>{{ i['hos_name'] }}</td>
+{#                                            <td> {{ i['place'] }}</td>#}
+                                            <td align="center"><a href="http://maps.google.com/maps?q={{ i['hos_lat'] }},{{ i['hos_long'] }}" class="btn btn-lg btn-outline-primary">Locate</a></td>
+{#                                            <td><a href="/admin_approve_doctor/{{ i['login_id'] }}" class="btn btn-lg btn-inverse-success">Approve</a></td>#}
+                                            <td><a href="/admin_rejecting_approved_doctor/{{ i['login_id'] }}" class="btn btn-lg btn-outline-danger">Reject</a></td>
+                                        </tr>
+
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+{% endblock %}

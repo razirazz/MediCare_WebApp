@@ -1,0 +1,65 @@
+{% extends 'pharmacy/pharmacy_index.html' %}
+{% block body %}
+
+<form name="form1" method="post" action="">
+
+<div class="container">
+            <div class="card card-body card-hover-effect card-hover-effect-pro">
+                <div class="row">
+                    <div class="profile-nav col-md-3">
+                        <div class="panel">
+                            <div class="user-heading round">
+                                <h1 style="font-size: 4rem"> {{ data['phar_name'] }}</h1>
+                                <p>+91 {{ data['phar_number'] }}</p>
+                                <p>{{ data['e_mail'] }}</p>
+                            </div>
+                            <br>
+                            <ul class="nav">
+                                <li class="nav nav-item"><a href="/pharmacy_view_profile"
+                                                            class="nav-link link-ppty-brands"> <i
+                                        class="fa fa-user"></i> View Profile</a></li>
+                                <br>
+                                <li class="nav nav-item"><a href="/pharmacy_edit_profile"
+                                                            class="nav-link link-ppty-brands"> <i
+                                        class="fa fa-edit"></i> Edit Profile</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="profile-info col-md-9">
+                        <div class="panel">
+                            <div class="bio-graph-heading">
+                                Aliquam ac magna metus. Nam sed arcu non tellus fringilla fringilla ut vel ispum.
+                                Aliquam ac
+                                magna metus.
+                            </div>
+                            <br><br>
+                            <div class="panel-body bio-graph-info">
+                                <h1>Bio Graph</h1>
+                                <div class="row">
+
+                                    <div class="bio-row">
+                                        <p><span>License Number </span>: {{ data['licence_number']}}</p>
+                                    </div>
+                                    <div class="bio-row">
+                                        <p><span>District </span>: {{ data['district'] }}</p>
+                                    </div>
+                                    <div class="bio-row">
+                                        <p><span>Place </span>: {{ data['place'] }}</p>
+                                    </div>
+                                    <div class="bio-row">
+                                        <p><span>Post</span>: {{ data['post'] }}</p>
+                                    </div>
+                                    <div class="bio-row">
+                                        <p><span>Pin </span>: {{ data['pin'] }}</p>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

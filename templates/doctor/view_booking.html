@@ -1,0 +1,85 @@
+{% extends 'doctor/doctor_index.html' %}
+{% block body %}
+
+    <form name="form1" method="post" action="/doctor_search_booking">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <table>
+                            <thead>
+                            <tr>
+                                <div class="form-group row">
+                                    <label for="hospital" class="card-title col-sm-3 col-form-label">BOOKING</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+                                            <input type="text" name="search"
+                                                   class="form-control border-right-0"
+                                                   placeholder="Search Booking"/>
+                                            <div class="input-group-append">
+                                                <input type="submit" name="s1" value="Search"
+                                                       class="btn btn-sm btn-outline-primary btn-fw"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                            </thead>
+                        </table>
+                        <p></p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table id="example" class="display expandable-table" style="width:100%">
+                                        <thead align="center">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Address</th>
+                                            <th>Contact</th>
+                                            <th>Date</th>
+                                            <th>Time</th>
+                                            <th>&nbsp;</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody class="font-weight-500">
+                                        {% for i in data %}
+                                            <tr>
+                                                <td>&nbsp;{{ loop.index }}</td>
+                                                <td align="center">&nbsp;
+                                                    <img src="{{ i['img'] }}" style="height: 100px; width: 100px"><br>
+                                                    {{ i['pat_name'] }}
+                                                </td>
+                                                <td>&nbsp;
+                                                    <address>
+                                                        {{ i['address'] }}<br>
+                                                        {{ i['pat_place'] }}<br>
+                                                        {{ i['post'] }}<br>
+                                                        {{ i['pin'] }}<br>
+                                                        {{ i['district'] }}
+                                                    </address>
+                                                </td>
+                                                <td>&nbsp;
+                                                    {{ i['pat_number'] }}<br>
+                                                    {{ i['pat_email'] }}
+                                                </td>
+                                                <td> {{ i['book_date'] }}</td>
+                                                <td>&nbsp;{{ i['book_time'] }}</td>
+
+                                                <td align="center"><a href="/doctor_add_prescription/{{ i['db_id'] }}"
+                                                       class="btn btn-lg btn-outline-primary">Add
+                                                    prescription</a></td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

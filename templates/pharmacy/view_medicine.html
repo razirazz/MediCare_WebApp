@@ -1,0 +1,77 @@
+{% extends 'pharmacy/pharmacy_index.html' %}
+{% block body %}
+
+    <form id="form1" name="form1" method="post" action="/pharmacy_search_medicine">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <table>
+                            <thead>
+                            <tr >
+                                <div class="form-group row">
+                                    <label for="hospital"
+                                           class="card-title col-sm-3 col-form-label">MEDICINE</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+                                            <input type="text" name="search_field"
+                                                   class="form-control border-right-0"
+                                                   placeholder="Search Medicine"/>
+                                            <div class="input-group-append">
+                                                <input type="submit" name="s1" value="Search"
+                                                       class="btn btn-sm btn-outline-primary btn-fw"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                            </thead>
+                        </table>
+                        <p></p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table id="example" class="display expandable-table" style="width:100%">
+                                        <thead align="center">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th>Description</th>
+                                            <th>Brand</th>
+                                            <th colspan="2">&nbsp;Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for i in data %}
+                                            <tr class="font-weight-500">
+                                                <td>&nbsp;{{ loop.index }}</td>
+                                                <td align="center">  <img src="{{ i['med_img'] }}" alt="" style="width: 100px; height: 100px;"><br>
+                                                    {{ i['med_name'] }}
+                                                </td>
+                                                <td>&nbsp;{{ i['price'] }}</td>
+                                                <td> {{ i['description'] }}</td>
+                                                <td>&nbsp;{{ i['med_brand'] }}</td>
+                                                <td align="center">
+                                                    <a href="/pharmacy_edit_medicine/{{ i['med_id'] }}"
+                                                       class="btn btn-lg btn-outline-primary">Edit</a>
+                                                </td>
+                                                <td align="center">
+                                                    <a href="/pharmacy_delete_medicine_post/{{ i['med_id'] }}"
+                                                       onclick="return confirm('Do you want to delete this?')"
+                                                       class="btn btn-lg btn-outline-danger">Delete</a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

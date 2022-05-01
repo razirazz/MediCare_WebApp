@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Edit Medicine</title>
+</head>
+
+<body>
+<p>&nbsp;</p>
+<form id="form1" name="form1" method="post" action="/edit_medicine_post">
+    <table width="200" border="1">
+        <tr>
+            <td>Name<input type="hidden" name="medic_id" value="{{ data['med_id'] }}"></td>
+            <td><input type="text" name="name" id="name" value="{{ data['med_name'] }}"/></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input type="number" name="price" id="price" value="{{ data['price'] }}"/></td>
+        </tr>
+        <tr>
+            <td>Description</td>
+            <td><textarea name="desc" id="desc" cols="45" rows="5" value="{{ data['description'] }}"></textarea></td>
+        </tr>
+        <tr>
+            <td>Brand</td>
+            <td><input type="text" name="brand" id="brand" value="{{ data['med_brand'] }}"/></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" name="submit" id="submit" value="EDIT"/></td>
+        </tr>
+    </table>
+</form>
+<p>&nbsp;</p>
+</body>
+</html>

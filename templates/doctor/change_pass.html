@@ -1,0 +1,38 @@
+{% extends 'doctor/doctor_index.html' %}
+{% block body %}
+
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <br>
+                <h4 class="card-title">Change Password</h4><br><br>
+
+                <form name="form1" method="post" action="/doctor_change_pass_post" class="forms-sample">
+                    <div class="form-group row">
+                        <label for="" class="col-sm-3 col-form-label">Current Password</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="c_pass" id="c_pass" class="form-control"
+                                   placeholder="Enter Current Password" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-3 col-form-label">New Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" name="new_pass" id="new_pass" class="form-control"
+                                   placeholder="Enter New Password" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-3 col-form-label">Confirm Password</label>
+                        <div class="col-sm-9">
+                            <input type="password" name="confirm_pass" id="confirm_pass" class="form-control"
+                                   placeholder="Confirm Password" required>
+                        </div>
+                    </div>
+                    <input type="submit" value="Change Password" class="btn btn-primary mr-2 btn-block">
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

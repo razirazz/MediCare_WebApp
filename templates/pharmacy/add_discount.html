@@ -1,0 +1,133 @@
+{% extends 'pharmacy/pharmacy_index.html' %}
+{% block body %}
+
+
+    <div class="col-md-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Discount</h4>
+
+                <form name="form1" method="post" action="/pharmacy_add_discount_post">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="display expandable-table-t" align="center" style="width:100%;">
+                                    <div class="row">
+                                        <tr>
+                                            <th style="border-bottom: 1px solid #000"
+                                                colspan="2" class="col-sm-3 col-form-label">Name
+                                            </th>
+                                            <div class="col-sm-9">
+                                                <td><select name="name" id="name" class="form-control" required>
+                                                    {% for i in medicine %}
+                                                        <option value="{{ i['med_id'] }}">{{ i['med_name'] }}</option>
+                                                    {% endfor %}
+                                                </select></td>
+                                            </div>
+                                        </tr>
+                                    </div>
+                                    <div class="row">
+                                        <tr>
+                                            <th colspan="2" class="col-sm-3 col-form-label"
+                                                style="border-bottom: 1px solid #000">Offer
+                                            </th>
+                                            <div class="col-sm-9">
+                                                <td><input type="text" name="offer" id="offer" class="form-control"
+                                                           required>
+                                                </td>
+                                            </div>
+                                        </tr>
+                                    </div>
+                                    <div class="row">
+                                        <tr>
+                                            <th rowspan="2" class="col-sm-3 col-form-label"
+                                                style="border-bottom: 1px solid #000">Date</th>
+                                            <th class="col-sm-3 col-form-label"
+                                                style="border-bottom: 1px solid #000">From
+                                            </th>
+                                            <div class="col-sm-9">
+                                                <td><input type="date" name="fdate" id="fdate" class="form-control"
+                                                           required>
+                                                </td>
+                                            </div>
+                                        </tr>
+                                    </div>
+                                    <div class="row">
+                                        <tr>
+                                            <th class="col-sm-3 col-form-label"
+                                                style="border-bottom: 1px solid #000">To</th>
+                                            <div class="col-sm-9">
+                                                <td><input type="date" name="tdate" id="tdate" class="form-control"
+                                                           required>
+                                                </td>
+                                            </div>
+                                        </tr>
+                                    </div>
+                                    <div class="row">
+                                        <tr>
+                                            <th rowspan="2" class="col-sm-3 col-form-label">Time</th>
+                                            <th class="col-sm-3 col-form-label"
+                                                style="border-bottom: 1px solid #000">From
+                                            </th>
+                                            <div class="col-sm-9">
+                                                <td><input type="time" name="ftime" id="ftime" class="form-control"
+                                                           required>
+                                                </td>
+                                            </div>
+                                        </tr>
+                                    </div>
+                                    <div class="row">
+                                        <tr>
+                                            <th class="col-sm-3 col-form-label">To</th>
+                                            <div class="col-sm-9">
+                                                <td><input type="time" name="ttime" id="ttime" class="form-control"
+                                                           required>
+                                                </td>
+                                            </div>
+                                        </tr>
+                                    </div>
+                                </table>
+                                <input type="submit" name="add" id="add"
+                                       value="Submit"
+                                       class="btn-primary btn btn-block">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        $(document).ready(function () {
+
+            $("#name").change(function () {
+                var dd = this.value;
+
+                $.ajax({
+                    type: "POST",
+                    url: "/brandload",
+                    data: {"ff": dd},
+                    async: false,
+                    success: function (response) {
+                        $("#brand").empty();
+                        data = response;
+
+                        $("#brand").val(data['med_brand']);
+
+                        return response;
+                    },
+                    error: function () {
+                        alert('Error occured');
+                    }
+                });
+
+
+            });
+        });
+    </script>
+
+{% endblock %}

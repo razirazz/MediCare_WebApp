@@ -1,0 +1,88 @@
+{% extends 'pharmacy/pharmacy_index.html' %}
+{% block body %}
+
+    <form name="form1" method="post" action="/pharmacy_search_other_discount">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <table>
+                            <thead>
+                            <tr>
+                                <div class="form-group row">
+                                    <label for="hospital" class="card-title col-sm-3 col-form-label">DISCOUNT</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+                                            <input type="text" name="search"
+                                                   class="form-control border-right-0"
+                                                   placeholder="Search Discount of other Pharmacies By Name"/>
+                                            <div class="input-group-append">
+                                                <input type="submit" name="s1" value="Search"
+                                                       class="btn btn-sm btn-outline-primary btn-fw"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                            </thead>
+                        </table>
+                        <p></p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="display expandable-table" style="width:100%">
+                                        <thead align="center">
+                                        <tr>
+                                            <th rowspan="2">#</th>
+                                            <th colspan="3" style="border-bottom-left-radius: 0px">Pharmacy</th>
+                                            <th colspan="2">Medicine</th>
+                                            <th rowspan="2">Offer</th>
+                                            <th colspan="2">Date</th>
+                                            <th colspan="2" style="border-bottom-right-radius: 0px">Time</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="border-radius: 0px">Name</th>
+                                            <th>Address</th>
+                                            <th>Contact</th>
+                                            <th>Name</th>
+                                            <th>Brand</th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>From</th>
+                                            <th style="border-top-right-radius: 0px">To</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for i in  data %}
+                                            <tr class="font-weight-500">
+                                                <td>&nbsp;{{ loop.index }}</td>
+                                                <td>&nbsp;{{ i['phar_name'] }}</td>
+                                                <td>&nbsp;{{ i['place'] }} <br>
+                                                    {{ i['post'] }} <br>
+                                                    {{ i['pin'] }} <br>
+                                                    {{ i['district'] }}
+                                                </td>
+                                                <td>&nbsp;{{ i['phar_number'] }} <br>
+                                                    {{ i['e_mail'] }}
+                                                </td>
+                                                <td>&nbsp;{{ i['med_name'] }}</td>
+                                                <td>&nbsp;{{ i['med_brand'] }}</td>
+                                                <td> {{ i['offer'] }}</td>
+                                                <td>&nbsp;{{ i['dis_fdate'] }}</td>
+                                                <td>&nbsp;{{ i['dis_tdate'] }}</td>
+                                                <td>&nbsp;{{ i['dis_ftime'] }}</td>
+                                                <td>&nbsp;{{ i['dis_ttime'] }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

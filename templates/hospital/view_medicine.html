@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+    <table>
+        <tr>
+            <td>Medicine</td>
+            <td><input type="text" name="search_field"/></td>
+            <td><input type="submit" name="s1" value="Search"/></td>
+        </tr>
+    </table>
+    <p></p>
+    <table width="200" border="1">
+        <tr>
+            <td>#</td>
+            <td>Name</td>
+            <td>Price</td>
+            <td>Description</td>
+            <td>Brand</td>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        {% for i in medicine %}
+        <tr>
+            <td>&nbsp;{{ loop.index }}</td>
+            <td> {{ i['med_name'] }}</td>
+            <td>&nbsp;{{ i['price'] }}</td>
+            <td> {{ i['description'] }}</td>
+            <td>&nbsp;{{ i['med_brand'] }}</td>
+            <td><a href="/edit_medicine/{{ i['med_id'] }}">edit</a></td>
+            <td><a href="/delete_medicine/{{ i['med_id'] }}" onclick="return confirm('Do You want to delete this?')">delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,48 @@
+{% extends 'hospital/hospital_index.html' %}
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-8 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+
+                    <form name="form1" method="post" action="/hospital_add_schedule_post">
+                        <div class="col-12">
+                            <div class="form-group row">
+                                <label for="name" class="col-sm-3 col-form-label">Doctor Name</label>
+                                <div class="col-sm-9">
+                                    <select name="name" id="name" class="form-control">
+                                        {% for i in doctor %}
+                                            <option value="{{ i["login_id"] }}">{{ i["doc_name"] }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">From Time</label>
+                                <div class="col-sm-9">
+                                    <input type="time" name="ftime" id="ftime" required class="form-control ">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">To Time</label>
+                                <div class="col-sm-9">
+                                    <input type="time" name="ttime" id="ttime" required class="form-control ">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">Date</label>
+                                <div class="col-sm-9">
+                                    <input type="date" name="date" id="date" required class="form-control ">
+                                </div>
+                            </div>
+                            <input type="submit" name="submit" id="submit" value="Add Schedule" class="btn btn-block btn-primary ">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

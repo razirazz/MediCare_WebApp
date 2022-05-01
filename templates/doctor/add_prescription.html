@@ -1,0 +1,61 @@
+{% extends 'doctor/doctor_index.html' %}
+{% block body %}
+
+<form name="form1" method="post" action="/doctor_add_prescription_post">
+
+    <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Prescription</h3><br>
+
+                        <table>
+                            <tr>
+                                <td><textarea name="presc" id="presc" cols="45" rows="15"
+                                              class="form-control input-group-text" required></textarea></td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <input type="submit" value="Submit"
+                                           class="btn btn-block btn-lg btn-primary"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}
+
+{#<script>#}
+{#    $(document).ready(function () {#}
+{##}
+{#        $("#db_id").change(function () {#}
+{#            var dd = this.value;#}
+{##}
+{#            $.ajax({#}
+{#                type: "POST",#}
+{#                url: "/pat_name_load_wrt_db_id",#}
+{#                data: {"ff": dd},#}
+{#                async: false,#}
+{#                success: function (response) {#}
+{#                    $("#pat_name").empty();#}
+{#                    data = response;#}
+{##}
+{#                    $("#pat_name").val(data['pat_name']);#}
+{##}
+{#                    return response;#}
+{#                },#}
+{#                error: function () {#}
+{#                    alert('Error occurred');#}
+{#                }#}
+{#            });#}
+{##}
+{##}
+{#        });#}
+{#    });#}
+</script>

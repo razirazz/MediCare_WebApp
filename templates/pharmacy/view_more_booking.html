@@ -1,0 +1,46 @@
+{% extends 'pharmacy/pharmacy_index.html' %}
+{% block body %}
+
+    <form name="form1" method="post" action="">
+        <div class="row">
+            <div class="col-md-7 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="display expandable-table-t" align="center" style="width:100%;">
+                                        <tr style="border-bottom: 1px solid #000">
+                                            <th rowspan="3">Medicine</th>
+                                            <th>Name</th>
+                                            <td class="font-weight-500"> {{ data['med_name'] }}</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #000">
+                                            <th>Brand</th>
+                                            <td> {{ data['med_brand'] }}</td>
+                                        </tr>
+                                        <tr style="border-bottom: 2px solid #000">
+                                            <th>Price</th>
+                                            <td> {{ data['price'] }}</td>
+                                        </tr>
+                                        <tr style="border-bottom: 1px solid #000">
+                                            <th rowspan="2">Booking</th>
+                                            <th>Date</th>
+                                            <td> {{ data['date'] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <th> Time</th>
+                                            <td> {{ data['time'] }}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+{% endblock %}

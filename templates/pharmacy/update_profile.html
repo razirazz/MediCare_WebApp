@@ -1,0 +1,133 @@
+{% extends 'pharmacy/pharmacy_index.html' %}
+{% block body %}
+
+    <form name="form1" method="post" action="/pharmacy_edit_profile_post">
+
+        <div class="container">
+            <div class="card card-body card-hover-effect card-hover-effect-pro">
+                <div class="row">
+                    <div class="profile-nav col-md-3">
+                        <div class="panel">
+                            <div class="user-heading round"><input type="hidden" name="lid"
+                                                                   value="{{ data['login_id'] }}">
+                                <h4>Update Profile</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-info col-md-9">
+                        <div class="panel">
+                            <div class="bio-graph-heading">
+                                Aliquam ac magna metus. Nam sed arcu non tellus fringilla fringilla ut vel ispum.
+                                Aliquam ac
+                                magna metus.
+                            </div>
+                            <br><br>
+                            <div class="panel-body bio-graph-info">
+                                <h1>Bio Graph</h1>
+                                <div class="row">
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Name</label>
+                                            <input type="text" name="name" id="name" value="{{ data['phar_name'] }}"
+                                                   required
+                                                   class="form-control col-sm-6"></p></div>
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Contact </label>
+                                            <input type="text" name="contact" id="contact"
+                                                   value=" {{ data['phar_number'] }} " minlength="10" required
+                                                   class="form-control col-sm-6"></p></div>
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Email</label>
+                                            <input type="email" name="mail" id="mail" value=" {{ data['e_mail'] }} "
+                                                   required
+                                                   class="form-control col-sm-6"></p></div>
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">License Number</label>
+                                            <input type="text" name="license" id="license"
+                                                   value="{{ data['licence_number'] }}" required
+                                                   class="form-control col-sm-6"></p></div>
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">District</label>
+                                            <select name="district" id="district" class="form-control col-sm-6"
+                                                    required>
+                                                <option>{{ data['district'] }}</option>
+                                                <option>------------------</option>
+                                                <option>Alappuzha</option>
+                                                <option>Ernakulam</option>
+                                                <option>Idukki</option>
+                                                <option>Kannur</option>
+                                                <option>Kasaragod</option>
+                                                <option>Kollam</option>
+                                                <option>Kottayam</option>
+                                                <option>Kozhikode</option>
+                                                <option>Malappuram</option>
+                                                <option>Palakkad</option>
+                                                <option>Pathanamthitta</option>
+                                                <option>Thiruvananthapuram</option>
+                                                <option>Thrissur</option>
+                                                <option>Wayanad</option>
+                                            </select>
+                                        </p>
+                                    </div>
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Place</label>
+                                            <input type="text" name="place" id="place" value="{{ data['place'] }}"
+                                                   required
+                                                   class="form-control col-sm-6"></p></div>
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Post</label>
+                                            <input type="text" name="post" id="post" value="{{ data['post'] }}"
+                                                   class="form-control col-sm-6"></p></div>
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Pin</label>
+                                            <input type="text" name="pin" id="pin" value="{{ data['pin'] }}" required
+                                                   class="form-control col-sm-6"></p></div>
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Latitude</label>
+                                            <input type="text" name="lat" id="lat" value="{{ data['phar_lat'] }}"
+                                                   required class="form-control col-sm-6"></p></div>
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Longitude</label>
+                                            <input type="text" name="long" id="long" value=" {{ data['phar_long'] }} "
+                                                   required
+                                                   class="form-control col-sm-6"></p></div>
+                                </div>
+                            </div>
+                            <input type="submit" name="update" id="update" value="Update"
+                                   class="btn btn-primary btn-lg btn-block col-sm-7">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </form>
+
+
+{% endblock %}

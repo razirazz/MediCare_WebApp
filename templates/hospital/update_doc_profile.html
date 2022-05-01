@@ -1,0 +1,224 @@
+{% extends 'hospital/hospital_index.html' %}
+{% block body %}
+
+    <form action="/hospital_edit_doctor_post" method="post" enctype="multipart/form-data" name="form1">
+        {#    <table width="200" border="1">#}
+        {#        <tr>#}
+        {#            <td colspan="2"><img src="{{ data['doc_img'] }}" width="100px" height="100px"></td>#}
+        {#        </tr>#}
+        {#        <tr>#}
+        {#            <td>Name<input type="hidden" name="doc_id" value="{{ data['doc_id'] }}"></td>#}
+        {#            <td><input type="text" name="name" id="name" value="{{ data['doc_name'] }}"></td>#}
+        {#        </tr>#}
+        {#        <tr>#}
+        {#            <td>Image</td>#}
+        {#            <td><input type="file" name="img" id="img"></td>#}
+        {#        </tr>#}
+        {#        <tr>#}
+        {#            <td>Address</td>#}
+        {#            <td><input type="text" name="adrs" id="adrs" value="{{ data['address'] }}"></td>#}
+        {#        </tr>#}
+        {#        <tr>#}
+        {#            <td>Birth Date</td>#}
+        {#            <td><input type="date" name="dob" id="dob" value="{{ data['doc_dob'] }}"></td>#}
+        {#        </tr>#}
+        {#        <tr>#}
+        {#            <td>District</td>#}
+        {#            <td><select name="district" id="district" value="{{ data['district'] }}">#}
+        {#                <option value="malappuram">Malappuram</option>#}
+        {#                <option value="calicut">Calicut</option>#}
+        {#                <option value="kollam">Kollam</option>#}
+        {#            </select></td>#}
+        {#        </tr>#}
+        {#        <tr>#}
+        {#            <td>Place</td>#}
+        {#            <td><input type="text" name="place" id="place" value="{{ data['place'] }}"></td>#}
+        {#        </tr>#}
+        {#        <tr>#}
+        {#            <td>Post</td>#}
+        {#            <td><input type="text" name="post" id="post" value="{{ data['post'] }}"></td>#}
+        {#        </tr>#}
+        {#        <tr>#}
+        {#            <td>Pin</td>#}
+        {#            <td><input type="number" name="pin" id="pin" value="{{ data['pin'] }}"></td>#}
+        {#        </tr>#}
+        {#        <tr>#}
+        {#            <td>Department</td>#}
+        {#            <td><input type="text" name="dep" id="dep" value="{{ data['doc_depart'] }}"></td>#}
+        {#        </tr>#}
+        {#        <tr>#}
+        {#            <td>Qualification</td>#}
+        {#            <td><input type="text" name="qual" id="qual" value="{{ data['doc_qualification'] }}"></td>#}
+        {#        </tr>#}
+        {#        <tr>#}
+        {#            <td>Experience</td>#}
+        {#            <td><input type="number" name="exp" id="exp" value="{{ data['doc_exp'] }}"></td>#}
+        {#        </tr>#}
+        {#        <tr>#}
+        {#            <td>Contact</td>#}
+        {#            <td><input type="number" name="contact" id="contact" value="{{ data['ph_number'] }}"></td>#}
+        {#        </tr>#}
+        {#        <tr>#}
+        {#            <td>E-mail</td>#}
+        {#            <td><input type="text" name="mail" id="mail" value="{{ data['doc_email'] }}"></td>#}
+        {#        </tr>#}
+        {#        <tr>#}
+        {#            <td>Fees</td>#}
+        {#            <td><input type="number" name="fees" value="{{ data['fees'] }}" id="fees"></td>#}
+        {#        </tr>#}
+        {#        <tr>#}
+        {#            <td colspan="2" align="center"><input type="submit" name="update" id="update" value="Update"></td>#}
+        {#        </tr>#}
+        {#    </table>#}
+        {#</form>#}
+
+
+        <div class="container">
+            <div class="card card-body card-hover-effect card-hover-effect-pro">
+                <div class="row">
+                    <div class="profile-nav col-md-3">
+                        <div class="panel">
+                            <div class="user-heading round"><input type="hidden" name="doc_id"
+                                                                   value="{{ data['doc_id'] }}">
+                                <a href="##" style="pointer-events: none">
+                                    <img src="{{ data['doc_img'] }}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-info col-md-9">
+                        <div class="panel">
+                            <div class="bio-graph-heading">
+                                Aliquam ac magna metus. Nam sed arcu non tellus fringilla fringilla ut vel ispum.
+                                Aliquam ac
+                                magna metus.
+                            </div>
+                            <br><br>
+                            <div class="panel-body bio-graph-info">
+                                <h1>Bio Graph</h1>
+                                <div class="row">
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Name</label>
+                                            <input type="text" name="name" id="name"
+                                                   value="{{ data['doc_name'] }}" required
+                                                   class="form-control col-sm-6"></p></div>
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Contact </label>
+                                            <input type="text" name="contact" id="contact" minlength="10"
+                                                   value="{{ data['ph_number'] }}" required
+                                                   class="form-control col-sm-6"></p></div>
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Email</label>
+                                            <input type="email" name="mail" id="mail" value="{{ data['doc_email'] }}"
+                                                   required
+                                                   class="form-control col-sm-6"></p></div>
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Birth Date</label>
+                                            <input type="date" name="dob" id="dob" value="{{ data['doc_dob'] }}"
+                                                   required
+                                                   class="form-control col-sm-6"></p></div>
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Address</label>
+                                            <input type="text" name="adrs" id="adrs" value="{{ data['address'] }}"
+                                                   required
+                                                   class="form-control col-sm-6"></p>
+                                    </div>
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">District</label>
+                                            <select name="district" id="district" class="form-control col-sm-6">
+                                                <option>{{ data['district'] }}</option>
+                                                <option>------------------</option>
+                                                <option>Malappuram</option>
+                                                <option>Kannur</option>
+                                                <option>Calicut</option>
+                                            </select>
+                                        </p>
+                                    </div>
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Place</label>
+                                            <input type="text" name="place" id="place" value="{{ data['place'] }}"
+                                                   required
+                                                   class="form-control col-sm-6"></p></div>
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Post</label>
+                                            <input type="text" name="post" id="post" value="{{ data['post'] }}"
+                                                   class="form-control col-sm-6"></p></div>
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Pin</label>
+                                            <input type="text" name="pin" id="pin" value="{{ data['pin'] }}" required
+                                                   class="form-control col-sm-6"></p></div>
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Department</label>
+                                            <input type="text" name="dep" id="dep" value="{{ data['doc_depart'] }}"
+                                                   required
+                                                   class="form-control col-sm-6"></p></div>
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Qualification</label>
+                                            <input type="text" name="qual" id="qual"
+                                                   value="{{ data['doc_qualification'] }}" required
+                                                   class="form-control col-sm-6"></p></div>
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Experience</label>
+                                            <input type="number" name="exp" id="exp" value="{{ data['doc_exp'] }}"
+                                                   required
+                                                   class="form-control col-sm-6"></p></div>
+
+
+                                    <div class="bio-row">
+                                        <p class="form-group row">
+                                            <label for="" class="col-sm-3 col-form-label">Fees</label>
+                                            <input type="number" name="fees" value="{{ data['fees'] }}" id="fees"
+                                                   required
+                                                   class="form-control col-sm-6"></p>
+                                    </div>
+                                </div>
+                                <input type="submit" name="update" id="update" value="Update"
+                                       class="btn btn-primary btn-lg btn-block col-sm-7">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    {#            <td>Image</td>#}
+    {#            <td><input type="file" name="img" id="img"></td>#}
+
+{% endblock %}
+
+
+{% endblock %}

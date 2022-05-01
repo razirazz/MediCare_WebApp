@@ -1,0 +1,80 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+    <form id="form1" name="form1" method="post" action="/admin_search_rejected_hospital">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <table>
+                            <thead>
+                            <tr>
+                                <div class="form-group row">
+                                    <label for="hospital" class="card-title col-sm-3 col-form-label">HOSPITAL</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+                                            <input type="text" name="search_field" class="form-control border-right-0" placeholder="Search Rejected Hospital"/>
+                                            <div class="input-group-append">
+                                                <input type="submit" name="s1" value="Search" class="btn btn-sm btn-outline-primary btn-fw"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                            </thead>
+                        </table>
+                        <p></p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table id="example" class="display expandable-table" style="width:100%">
+                                        <thead>
+                                        <tr align="center">
+                                            <th>#</th>
+                                            <th>Hospital Name</th>
+                                            <th>Contact</th>
+                                            <th>Address</th>
+                                            <th>Location</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        <tbody>
+                                        {% for i in data %}
+                                            <tr class="font-weight-500">
+                                                <td>&nbsp;{{ loop.index }}</td>
+                                                <td>&nbsp;{{ i['hos_name'] }}</td>
+                                                <td>&nbsp;
+                                                    {{ i['ph_number'] }} <br/>
+                                                    {{ i['e_mail'] }}
+                                                </td>
+                                                <td>&nbsp;
+                                                    <address>
+                                                    {{ i['place'] }} <br/>
+                                                    {{ i['district'] }} <br/>
+                                                    {{ i['pin'] }} <br/>
+                                                    {{ i['post'] }}
+                                                    </address>
+                                                </td>
+{#                                                <td>&nbsp;#}
+{#                                                    {{ i['hos_lat'] }} <br/> <br/>#}
+{#                                                    {{ i['hos_long'] }}#}
+{#                                                </td>#}
+                                                <td align="center"><a href="http://maps.google.com/maps?q={{ i['hos_lat'] }},{{ i['hos_long'] }}" class="btn btn-lg btn-outline-primary">Locate</a></td>
+
+                                                <td align="center"><a href="/admin_approving_rejected_hospital/{{ i['login_id'] }}"
+                                                   class="btn btn-lg btn-outline-success">Approve</a></td>
+{#                                                <td align="center"><a href="/view_rejected_hospital_approving/{{ i['login_id'] }}"#}
+{#                                                   class="btn btn-lg btn-inverse-danger">Reject</a></td>#}
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

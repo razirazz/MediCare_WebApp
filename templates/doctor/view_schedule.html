@@ -1,0 +1,71 @@
+{% extends 'doctor/doctor_index.html' %}
+{% block body %}
+
+    <form name="form1" method="post" action="/hospital_view_schedule">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <table>
+                            <thead>
+                            <tr>
+                                <div class="form-group row">
+                                    <label for="hospital" class="card-title col-sm-3 col-form-label">SCHEDULE</label>
+                                    <div class="col-sm-9">
+{#                                        <div class="input-group">#}
+{#                                            <input type="text" name="search_field"#}
+{#                                                   class="form-control border-primary border-right-0"#}
+{#                                                   placeholder="Search Approved Hospital"/>#}
+{#                                            <div class="input-group-append">#}
+{#                                                <input type="submit" name="s1" value="Search"#}
+{#                                                       class="btn btn-sm btn-outline-primary btn-fw"/>#}
+{#                                            </div>#}
+{#                                        </div>#}
+                                    </div>
+                                </div>
+                            </tr>
+                            </thead>
+                        </table>
+                        <p></p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table id="example" class="display expandable-table" style="width:100%">
+                                        <thead align="center">
+                                        <tr>
+                                            <th>#</th>
+{#                                            <td>Name</td>#}
+{#                                            <td>Department</td>#}
+                                            <th>Date</th>
+                                            <th>From Time</th>
+                                            <th>To Time</th>
+{#                                            <td colspan="2">&nbsp;</td>#}
+                                        </tr>
+                                        </thead>
+                                        <tbody class="font-weight-500" align="center">
+                                        {% for i in data %}
+                                            <tr>
+                                                <td>&nbsp;{{ loop.index }}</td>
+{#                                                <td>&nbsp;{{ i['doc_name'] }}</td>#}
+{#                                                <td>&nbsp;{{ i['doc_depart'] }}</td>#}
+                                                <td>&nbsp;{{ i['sch_date'] }}</td>
+                                                <td>&nbsp;{{ i['sch_ftime'] }}</td>
+                                                <td>&nbsp;{{ i['sch_ttime'] }}</td>
+{#                                                <td><a href="/hospital_edit_schedule/{{ i['sch_id'] }}">Edit</a></td>#}
+{#                                                <td><a href="/hospital_delete_schedule/{{ i['sch_id'] }}"#}
+{#                                                       onclick="return confirm('Do You want to delete this?')">Delete</a></td>#}
+
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

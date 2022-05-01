@@ -1,0 +1,84 @@
+{% extends 'pharmacy/pharmacy_index.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/pharmacy_search_patient">
+    <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <table>
+                            <thead>
+                            <tr>
+                                <div class="form-group row">
+                                    <label for="hospital"
+                                           class="card-title col-sm-3 col-form-label">PATIENT</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+                                            <input type="text" name="search_field"
+                                                   class="form-control border-right-0"
+                                                   placeholder="Search Patients"/>
+                                            <div class="input-group-append">
+                                                <input type="submit" name="s1" value="Search"
+                                                       class="btn btn-sm btn-outline-primary btn-fw"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                            </thead>
+                        </table>
+                        <p></p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table id="example" class="display expandable-table" style="width:100%">
+                                        <thead>
+                                        <tr align="center">
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Address</th>
+                                            <th>Contact</th>
+                                            <th>Location</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for i in data %}
+                                            <tr class="font-weight-500">
+                                                <td>&nbsp;{{ loop.index }}</td>
+                                                <td align="center">&nbsp;
+                                                    <img src="{{ i['img'] }}" height="100px" width="100px"
+                                                            {# alt="{{ i['pat_name'] }}'s photo" #}/><br/>
+                                                    {{ i['pat_name'] }}
+                                                </td>
+                                                <td>
+                                                    <address>
+                                                        {{ i['address'] }}<br>
+                                                        {{ i['pat_place'] }}<br>
+                                                        {{ i['post'] }}<br>
+                                                        {{ i['district'] }}<br>
+                                                        {{ i['pin'] }}
+                                                    </address>
+                                                </td>
+                                                <td>&nbsp;
+                                                    {{ i['pat_number'] }}<br>
+                                                    {{ i['pat_email'] }}
+                                                </td>
+                                                <td>&nbsp;
+                                                    {{ i['pat_place'] }}
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</form>
+
+{% endblock %}
+
+

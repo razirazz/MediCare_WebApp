@@ -1,0 +1,95 @@
+{% extends 'hospital/hospital_index.html' %}
+{% block body %}
+
+    <form id="form1" name="form1" method="post" action="/hospital_search_doctor">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <table>
+                            <thead>
+                            <tr>
+                                <div class="form-group row">
+                                    <label for="hospital"
+                                           class="card-title col-sm-3 col-form-label">DOCTOR</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+                                            <input type="text" name="search_field"
+                                                   class="form-control border-right-0"
+                                                   placeholder="Search Doctors"/>
+                                            <div class="input-group-append">
+                                                <input type="submit" name="s1" value="Search"
+                                                       class="btn btn-sm btn-outline-primary btn-fw"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                            </thead>
+                        </table>
+                        <p></p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table id="example" class="display expandable-table" style="width:100%">
+                                        <thead>
+                                        <tr align="center">
+                                            <th>#</th>
+                                            {#      <td>Hospital Name</td>#}
+                                            <th>Doctor Name</th>
+                                            {#      <td>Image</td>#}
+                                            <th>Address</th>
+                                            <th>Contact</th>
+                                            <th>Location</th>
+                                            <th>Fees</th>
+                                            <th colspan="2">&nbsp;</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for i in data %}
+                                            <tr class="font-weight-500">
+                                                <td>&nbsp;{{ loop.index }}</td>
+                                                {#      <td>&nbsp;{{ i['hos_name'] }}</td>#}
+                                                <td align="center">
+                                                    <img src="{{ i['doc_img'] }}" width="100px" height="100px"><br>
+                                                    {{ i['doc_name'] }}
+                                                </td>
+                                                {#      <td>&nbsp;{{ i['doc_image'] }}</td>#}
+                                                <td>&nbsp;
+                                                    <address>
+                                                        {{ i['address'] }}<br>
+                                                        {{ i['place'] }}<br>
+                                                        {{ i['post'] }}<br>
+                                                        {{ i['district'] }}<br>
+                                                        {{ i['pin'] }}
+                                                    </address>
+                                                </td>
+                                                <td>&nbsp;
+                                                    {{ i['ph_number'] }}<br>
+                                                    {{ i['doc_email'] }}
+                                                </td>
+                                                <td> {{ i['place'] }}</td>
+                                                <td> {{ i['fees'] }}</td>
+
+                                                <td align="center"><a href="/hospital_edit_doctor/{{ i['doc_id'] }}"
+                                                       class="btn btn-lg btn-outline-primary">Update Profile</a>
+                                                </td>
+                                                <td align="center"><a href="/hospital_delete_doctor/{{ i['doc_id'] }}"
+                                                       onclick="return confirm('Do You want to delete this?')"
+                                                       class="btn btn-lg btn-outline-danger">Delete</a>
+                                                </td>
+                                            </tr>
+
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,158 @@
+{% extends 'hospital/hospital_index.html' %}
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Wanna edit image section, select section</h3><br><br>
+                    <form action="hospital_add_doctors_post" method="post" enctype="multipart/form-data" name="form1">
+                        <div class="col-12">
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">Name</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="name" id="name" class="form-control"
+                                           placeholder="Enter Name" required>
+                                </div>
+                            </div>
+{#                            <div class="form-group row">#}
+{#                                <label class="col-sm-3 col-form-label">File upload</label>#}
+{#                                <input type="file" name="img" id="img" class="file-upload-default">#}
+{#                                <div class="input-group col-xs-12 col-sm-9">#}
+{#                                    <input type="text" class="form-control file-upload-info" disabled=""#}
+{#                                           placeholder="Upload Image">#}
+{#                                    <span class="input-group-append">#}
+{#                                                      <button class="file-upload-browse btn btn-primary" type="button">Upload</button>#}
+{#                                                    </span>#}
+{#                                </div>#}
+{#                            </div>#}
+
+{#                            <tr>#}
+{#                                <th>Image</th>#}
+{#                                <td><input type="file" name="img" id="img"></td>#}
+{#                            </tr>#}
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">Address</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="adrs" id="adrs" class="form-control"
+                                           placeholder="Enter Address" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">Birth-Date</label>
+                                <div class="col-sm-9">
+                                    <input type="date" name="dob" id="dob" class="form-control" required>
+                                </div>
+                            </div>
+
+{#                        <div class="form-group row">#}
+{#                            <label for="" class="col-sm-3 col-form-label">District</label>#}
+{#                            <div class="col-sm-9">#}
+{#                                <input type="date" name="dob" id="dob" class="form-control"#}
+{#                                       placeholder="Enter Address">#}
+{#                            </div>#}
+{#                        </div>#}
+
+{#                        <tr>#}
+{#                            <th>District</th>#}
+{#                            <td><select name="district" id="district">#}
+{#                            <option>Alappuzha</option>#}
+{#                            <option>Ernakulam</option>#}
+{#                            <option>Idukki</option>#}
+{#                            <option>Kannur</option>#}
+{#                            <option>Kasaragod</option>#}
+{#                            <option>Kollam</option>#}
+{#                            <option>Kottayam</option>#}
+{#                            <option>Kozhikode</option>#}
+{#                            <option>Malappuram</option>#}
+{#                            <option>Palakkad</option>#}
+{#                            <option>Pathanamthitta</option>#}
+{#                            <option>Thiruvananthapuram</option>#}
+{#                            <option>Thrissur</option>#}
+{#                            <option>Wayanad</option>#}
+{#                            </select></td>#}
+{#                        </tr>#}
+
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">Place</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="place" id="place" class="form-control"
+                                           placeholder="Enter Place" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">Post</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="post" id="post" class="form-control"
+                                           placeholder="Enter Post" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">Pin</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="pin" id="pin" class="form-control"
+                                           placeholder="Enter Pin" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">Department</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="dept" id="dept" class="form-control"
+                                           placeholder="Enter Department" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">Qualification</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="quali" id="quali" class="form-control"
+                                           placeholder="Enter Qualification" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">Experience</label>
+                                <div class="col-sm-9">
+                                    <input type="number" name="exp" id="exp" class="form-control"
+                                           placeholder="Enter Experience" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">Contact</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="contact" id="contact" class="form-control"
+                                           placeholder="Enter Contact" minlength="10" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">E-mail</label>
+                                <div class="col-sm-9">
+                                    <input type="email" name="mail" id="mail" class="form-control"
+                                           placeholder="Enter E-mail" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">Fees</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="fees" id="fees" class="form-control"
+                                           placeholder="Enter Fees" required>
+                                </div>
+                            </div>
+                            <input type="submit" name="update" id="update" value="Submit" class="btn btn-primary">
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

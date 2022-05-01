@@ -1,0 +1,45 @@
+{% extends 'pharmacy/pharmacy_index.html' %}
+{% block body %}
+
+    <form id="form1" name="form1" method="post" action="/pharmacy_edit_medicine_post">
+        <div class="col-md-6 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h2>Edit Medicine</h2><br>
+                    <div class="form-group row">
+                        <input type="hidden" name="medic_id" value="{{ data['med_id'] }}">
+                        <label for="" class="col-sm-3 col-form-label">Name</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="name" id="name" value="{{ data['med_name'] }}"
+                                   class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-3 col-form-label">Price</label>
+                        <div class="col-sm-9">
+                            <input type="number" name="price" id="price" value="{{ data['price'] }}"
+                                   class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-3 col-form-label">Description</label>
+                        <div class="col-sm-9">
+                                <textarea name="desc" id="desc" cols="45" rows="5" value="{{ data['description'] }}"
+                                          class="form-control" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="" class="col-sm-3 col-form-label">Brand</label>
+                        <div class="col-sm-9">
+                            <input type="text" name="brand" id="brand" value="{{ data['med_brand'] }}"
+                                   class="form-control" required>
+                        </div>
+                    </div>
+                    <input type="submit" name="submit" id="submit" value="Save" class="btn btn-primary mr-2 btn-block"/>
+
+                </div>
+            </div>
+</div>
+</form>
+
+{% endblock %}

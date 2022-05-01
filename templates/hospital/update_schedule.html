@@ -1,0 +1,40 @@
+{% extends 'hospital/hospital_index.html' %}
+{% block body %}
+
+    <div class="row">
+        <div class="col-md-8 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <form name="form1" method="post" action="/hospital_edit_schedule_post">
+                        <div class="col-12">
+                            <input type="hidden" name="sch_id" value="{{ data['sch_id'] }}">
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">From Time</label>
+                                <div class="col-sm-9">
+                                    <input type="time" name="ftime" id="ftime" required class="form-control"
+                                           value="{{ data['sch_ftime'] }}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">TO Time</label>
+                                <div class="col-sm-9">
+                                    <input type="time" name="ttime" id="ttime" required class="form-control"
+                                           value="{{ data['sch_ttime'] }}">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="" class="col-sm-3 col-form-label">Date</label>
+                                <div class="col-sm-9">
+                                    <input type="date" name="date" id="date" required class="form-control"
+                                           value="{{ data['sch_date'] }}">
+                                </div>
+                            </div>
+                            <input type="submit" name="update" id="update" value="Save Schedule"
+                                   class="btn btn-block btn-primary">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

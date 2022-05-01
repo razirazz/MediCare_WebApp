@@ -1,0 +1,77 @@
+{% extends 'pharmacy/pharmacy_index.html' %}
+{% block body %}
+
+    <form name="form1" method="post" action="/pharmacy_search_booking">
+
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <table>
+                            <thead>
+                            <tr>
+                                <div class="form-group row">
+                                    <label for="hospital"
+                                           class="card-title col-sm-3 col-form-label">BOOKING</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+                                            <input type="text" name="search_field"
+                                                   class="form-control border-right-0"
+                                                   placeholder="Search Bookings"/>
+                                            <div class="input-group-append">
+                                                <input type="submit" name="s1" value="Search"
+                                                       class="btn btn-sm btn-outline-primary btn-fw"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                            </thead>
+                        </table>
+                        <p></p>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="display expandable-table" style="width:100%">
+                                        <thead align="center">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Date</th>
+                                            <th>Patient Info</th>
+                                            <th>Total Amount</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody class="font-weight-500">
+                                        {% for i in data %}
+                                            <tr>
+                                                <td align="center">&nbsp;{{ loop.index }}</td>
+                                                <td align="center">&nbsp;{{ i['date'] }}</td>
+                                                <td>&nbsp;
+                                                    <address>
+                                                        {{ i['pat_name'] }}<br>
+                                                        {{ i['pat_email'] }}<br>
+                                                        {{ i['pat_number'] }}
+                                                    </address>
+                                                </td>
+                                                <td align="center"> {{ i['total_amount'] }}</td>
+                                                <td align="center">
+                                                    <a href="/pharmacy_view_more_booking/{{ i['medbook_id'] }}"
+                                                       class="btn btn-lg btn-outline-primary">View more</a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+{% endblock %}

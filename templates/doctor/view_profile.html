@@ -1,0 +1,79 @@
+{% extends 'doctor/doctor_index.html' %}
+{% block body %}
+
+    <form action="/doctor_update_profile_post" method="post" enctype="multipart/form-data" name="form1">
+        <div class="container">
+            <div class="card card-body card-hover-effect card-hover-effect-pro">
+                <div class="row">
+                    <div class="profile-nav col-md-3">
+                        <div class="panel">
+                            <div class="user-heading round">
+                                <a href="##" style="pointer-events: none">
+                                    <img src="{{ data['doc_img'] }}" alt=""></a>
+                                <h1 style="font-size: 4rem">{{ data['doc_name'] }}</h1>
+                                <p>+91 {{ data['ph_number'] }}</p>
+                                <p>{{ data['doc_email'] }}</p>
+                            </div>
+                            <br>
+                            <ul class="nav">
+                                <li class="nav nav-item"><a href="/doctor_view_profile"
+                                                            class="nav-link link-ppty-brands"> <i
+                                        class="fa fa-user"></i> View Profile</a></li>
+                                <br>
+                                <li class="nav nav-item"><a href="/doctor_update_profile"
+                                                            class="nav-link link-ppty-brands"> <i
+                                        class="fa fa-edit"></i> Edit Profile</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="profile-info col-md-9">
+                        <div class="panel">
+                            <div class="bio-graph-heading">
+                                Aliquam ac magna metus. Nam sed arcu non tellus fringilla fringilla ut vel ispum.
+                                Aliquam ac
+                                magna metus.
+                            </div>
+                            <br><br>
+                            <div class="panel-body bio-graph-info">
+                                <h1>Bio Graph</h1>
+                                <div class="row">
+
+                                    <div class="bio-row">
+                                        <p><span>Birth Date </span>: {{ data['doc_dob'] }}</p>
+                                    </div>
+                                    <div class="bio-row">
+                                        <p><span>Address </span>: {{ data['address'] }}</p>
+                                    </div>
+                                    <div class="bio-row">
+                                        <p><span>District </span>: {{ data['district'] }}</p>
+                                    </div>
+                                    <div class="bio-row">
+                                        <p><span>Place </span>: {{ data['place'] }}</p>
+                                    </div>
+                                    <div class="bio-row">
+                                        <p><span>Post</span>: {{ data['post'] }}</p>
+                                    </div>
+                                    <div class="bio-row">
+                                        <p><span>Pin </span>: {{ data['pin'] }}</p>
+                                    </div>
+                                    <div class="bio-row">
+                                        <p><span>Department </span>: {{ data['doc_depart'] }}</p>
+                                    </div>
+                                    <div class="bio-row">
+                                        <p><span>Qualification </span>: {{ data['doc_qualification'] }}</p>
+                                    </div>
+                                    <div class="bio-row">
+                                        <p><span>Experience </span>: {{ data['doc_exp'] }}</p>
+                                    </div>
+                                    <div class="bio-row">
+                                        <p><span>Fees </span>: {{ data['fees'] }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

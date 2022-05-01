@@ -1,0 +1,83 @@
+{% extends 'hospital/hospital_index.html' %}
+{% block body %}
+    <form name="form1" method="post" action="/hospital_search_booking">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <table>
+                            <thead>
+                            <tr>
+                                <div class="form-group row">
+                                    <label for="hospital"
+                                           class="card-title col-sm-3 col-form-label">BOOKING</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+                                            <input type="date" name="f_date" class="form-control"/>
+                                            <input type="date" name="t_date" class="form-control"/>
+                                            <div class="input-group-append">
+                                                <input type="submit" name="s1" value="Search"
+                                                       class="btn btn-outline-primary btn-fw"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                            </thead>
+                        </table>
+                        <p></p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="display expandable-table" style="width:100%">
+                                        <thead align="center">
+                                        <tr>
+                                            <th rowspan="2"> #</th>
+                                            <th colspan="3"> Patient</th>
+                                            <th colspan="3"> Doctor</th>
+                                            <th colspan="2" style="border-bottom-right-radius: 0px"> Booking</th>
+                                        </tr>
+                                        <tr>
+                                            <th style="border-radius: 0px">Name</th>
+                                            <th>Address</th>
+                                            <th>Location</th>
+                                            <th>Name</th>
+                                            <th>Fees</th>
+                                            <th>Department</th>
+                                            <th>Date</th>
+                                            <th style="border-top-right-radius: 0px">Time</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for i in data %}
+                                            <tr class="font-weight-500">
+                                                <td>&nbsp;{{ loop.index }}</td>
+                                                <td>&nbsp;{{ i['pat_name'] }}</td>
+                                                <td>&nbsp;{{ i['address'] }}</td>
+                                                <td>&nbsp;
+                                                    <address>
+                                                        {{ i['place'] }}<br>
+                                                        {{ i['post'] }}<br>
+                                                        {{ i['pin'] }}<br>
+                                                        {{ i['district'] }}
+                                                    </address>
+                                                </td>
+                                                <td>&nbsp;{{ i['doc_name'] }}</td>
+                                                <td>&nbsp;{{ i['fees'] }}</td>
+                                                <td>&nbsp;{{ i['doc_depart'] }}</td>
+                                                <td> {{ i['book_date'] }}</td>
+                                                <td>&nbsp;{{ i['book_time'] }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

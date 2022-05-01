@@ -1,0 +1,84 @@
+{% extends 'hospital/hospital_index.html' %}
+{% block body %}
+
+    <form name="form1" method="post" action="/hospital_search_schedule">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <table>
+                            <thead>
+                            <tr>
+                                <div class="form-group row">
+                                    <label for="hospital"
+                                           class="card-title col-sm-3 col-form-label">BOOKING</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+                                            <input type="date" name="f_date" class="form-control"/>
+                                            <input type="date" name="t_date" class="form-control"/>
+                                            <div class="input-group-append">
+                                                <input type="submit" name="s1" value="Search"
+                                                       class="btn btn-outline-primary btn-fw"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                            </thead>
+                        </table>
+                        <p></p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table id="example" class="display expandable-table" style="width:100%">
+                                        <thead>
+                                        <tr align="center">
+                                            <th rowspan="3">#</th>
+                                            <th colspan="2" rowspan="2">Doctor Details</th>
+                                            <th colspan="3">Schedule Details</th>
+                                            <th colspan="2" rowspan="3">Action</th>
+                                        </tr>
+                                        <tr align="center">
+                                            <th style="border-radius: 0px" rowspan="2">Date</th>
+                                            <th colspan="2" style="border-radius: 0px">Time</th>
+                                        </tr>
+                                        <tr align="center">
+                                            <th style="border-radius: 0px">Name</th>
+                                            <th>Department</th>
+                                            <th>From</th>
+                                            <th  style="border-radius: 0px">To</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for i in data %}
+                                            <tr class="font-weight-500">
+                                                <td>&nbsp;{{ loop.index }}</td>
+                                                <td>&nbsp;{{ i['doc_name'] }}</td>
+                                                <td>&nbsp;{{ i['doc_depart'] }}</td>
+                                                <td> {{ i['sch_date'] }}</td>
+{#                                                {% for j in data %}#}
+{#                                                <th> {{ j['sch_date'] }}</th>#}
+{#                                                {% endfor %}#}
+                                                <td>&nbsp;{{ i['sch_ftime'] }}</td>
+                                                <td>&nbsp;{{ i['sch_ttime'] }}</td>
+                                                <td align="center"><a href="/hospital_edit_schedule/{{ i['sch_id'] }}"
+                                                       class="btn btn-outline-primary btn-lg">Edit</a></td>
+                                                <td align="center"><a href="/hospital_delete_schedule/{{ i['sch_id'] }}"
+                                                       onclick="return confirm('Do You want to delete this?')"
+                                                       class="btn btn-lg btn-outline-danger">Delete</a>
+                                                </td>
+                                            </tr>
+{#                                                {% endfor %}#}
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

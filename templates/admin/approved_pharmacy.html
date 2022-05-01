@@ -1,0 +1,85 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+    <form id="form1" name="form1" method="post" action="/admin_search_approved_pharmacy">
+
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <table>
+                            <thead>
+                            <tr>
+                                <div class="form-group row">
+                                    <label for="hospital" class="card-title col-sm-3 col-form-label">PHARMACY</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+                                            <input type="text" name="search_field"
+                                                   class="form-control form-control-sm border-right-0"
+                                                   placeholder="Search Approved Pharmacy"/>
+                                            <div class="input-group-append">
+                                                <input type="submit" name="s1" value="Search"
+                                                       class="btn btn-sm btn-outline-primary btn-fw"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                            </thead>
+                        </table>
+                        <p></p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table id="example" class="display expandable-table" style="width:100%">
+                                        <thead>
+                                        <tr align="center">
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Contact</th>
+                                            <th>Licence Number</th>
+                                            <th>Address</th>
+                                            <th>Location</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        <tbody>
+                                        {% for i in data %}
+                                            <tr class="font-weight-500">
+                                                <td>&nbsp;{{ loop.index }}</td>
+                                                <td>&nbsp;{{ i['phar_name'] }}</td>
+                                                <td>&nbsp;
+                                                    {{ i['phar_number'] }} <br/>
+                                                    {{ i['e_mail'] }}
+                                                </td>
+                                                <td>&nbsp;{{ i['licence_number'] }}</td>
+                                                <td>&nbsp;
+                                                    <address>
+                                                        {{ i['place'] }} <br/>
+                                                        {{ i['post'] }} <br/>
+                                                        {{ i['pin'] }} <br/>
+                                                        {{ i['district'] }}
+                                                    </address>
+                                                </td>
+                                                {#                                                <td>#}
+                                                {#                                                    {{ i['phar_lat'] }} <br/> <br/>#}
+                                                {#                                                    {{ i['phar_long'] }}#}
+                                                {#                                                </td>#}
+                                                <td align="center"><a
+                                                        href="http://maps.google.com/maps?q={{ i['phar_lat'] }},{{ i['phar_long'] }}"
+                                                        class="btn btn-lg btn-outline-primary">Locate</a></td>
+                                                {#<td align="center"><a href="/view_approve_pharmacy_approving/{{ i['login_id'] }}" class="btn btn-lg btn-inverse-success">Approve</a></td>#}
+                                                <td align="center"><a
+                                                        href="/admin_rejecting_approved_pharmacy/{{ i['login_id'] }}"
+                                                        class="btn btn-lg btn-outline-danger">Reject</a></td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

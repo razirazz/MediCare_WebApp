@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="form1" method="post" action="#">
+  <table width="200" border="1">
+{#    <tr>#}
+{#      <td>Patient Name</td>#}
+{#      <td> {{ data['pat_name'] }}</td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#      <td>Address</td>#}
+{#      <td>&nbsp;{{ data['address'] }}</td>#}
+{#      </tr>#}
+{#      <tr>#}
+{#      <td>Contact</td>#}
+{#      <td>&nbsp;#}
+{#          {{ data['pat_number'] }}<br>#}
+{#          {{ data['pat_email'] }}#}
+{#      </td>#}
+{#      </tr>#}
+      <tr>
+      <td>Prescription</td>
+      <td>&nbsp;{{ data['prescription'] }}</td>
+      <tr>
+      <td>New Prescription</td>
+      <td>
+        <textarea name="presc" id="presc"></textarea></td>
+      </tr>
+{#      <tr>#}
+{#      <td>Date</td>#}
+{#      <td><input type="date" name="date" id="date"></td>#}
+{#      </tr>#}
+      <td colspan="2" align="center"><input type="submit" value="Submit"></td>
+      </tr>
+  </table>
+</form>
+</body>
+</html>

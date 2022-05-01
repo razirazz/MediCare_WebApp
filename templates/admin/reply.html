@@ -1,0 +1,31 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+
+    <form id="form1" name="form1" method="post" action="/complaint_reply_post">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Reply</h4><br>
+
+                        <table>
+                            <tr>
+                                <td><textarea name="reply" id="reply" cols="45" rows="15"
+                                              class="form-control input-group-text" required></textarea></td>
+                            </tr>
+                            <tr>
+
+                                <td>
+                                    <input type="submit" name="button" id="button" value="Submit"
+                                           class="btn btn-block btn-lg btn-primary"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

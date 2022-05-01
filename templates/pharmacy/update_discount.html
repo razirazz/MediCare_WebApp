@@ -1,0 +1,67 @@
+{% extends 'pharmacy/pharmacy_index.html' %}
+{% block body %}
+
+    <form name="form1" method="post" action="/pharmacy_update_discount_post">
+
+        <div class="row">
+            <div class="col-md-7 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="display expandable-table-t" align="center" style="width:100%;">
+                                        <tr>
+                                            <td colspan="2" style="border-bottom: 1px solid #000">Name
+                                                <input type="hidden" name="dis_id"
+                                                       value="{{ data['dis_id'] }}"></td>
+                                            <td>{{ data['med_name'] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="border-bottom: 1px solid #000">Offer</td>
+                                            <td><input type="text" name="offer" id="offer" value="{{ data['offer'] }}"
+                                                       required class="form-control">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        <tr>
+                                            <td rowspan="2" style="border-bottom: 1px solid #000">Date</td>
+                                            <td style="border-bottom: 1px solid #000">From</td>
+                                            <td><input type="date" name="fdate" id="fdate"
+                                                       value="{{ data['dis_fdate'] }}"
+                                                       required class="form-control"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="border-bottom: 1px solid #000">To</td>
+                                            <td><input type="date" name="tdate" id="tdate"
+                                                       value="{{ data['dis_tdate'] }}"
+                                                       required class="form-control"></td>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                        <td rowspan="2">Time</td>
+                                        <td style="border-bottom: 1px solid #000">From</td>
+                                        <td><input type="time" name="ftime" id="ftime" value="{{ data['dis_ftime'] }}"
+                                                   required class="form-control">
+                                        </td>
+                                        </tr>
+                                        <tr>
+                                            <td>To</td>
+                                            <td><input type="time" name="ttime" id="ttime"
+                                                       value="{{ data['dis_ttime'] }}"
+                                                       required class="form-control"></td>
+                                        </tr>
+                                    </table>
+                                    <br>
+                                    <input type="submit" name="update" id="update"
+                                           value="Save Changes" class="btn btn-outline-primary btn-block">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}
