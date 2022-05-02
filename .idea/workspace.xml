@@ -4,7 +4,13 @@
     <bookmark url="file://$PROJECT_DIR$/static/asset/css/vertical-layout-light/style.css" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f6fd234-b6c6-4d79-9444-f9ca1897c05c" name="Default" comment="" />
+    <list default="true" id="8f6fd234-b6c6-4d79-9444-f9ca1897c05c" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/patient20220429-134850.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/static/patient20220429-135003.jpg" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/medicare.py" afterPath="$PROJECT_DIR$/medicare.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/pharmacy/view_more_sales_report.html" afterPath="$PROJECT_DIR$/templates/pharmacy/view_more_sales_report.html" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,7 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/medicare$medicare.coverage" NAME="medicare Coverage Results" MODIFIED="1651424377307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/medicare$medicare.coverage" NAME="medicare Coverage Results" MODIFIED="1651503830143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/medicare$demo.coverage" NAME="demo Coverage Results" MODIFIED="1647583638171" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="DatabaseView">
@@ -34,195 +40,233 @@
       <file leaf-file-name="medicare.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/medicare.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2305">
-              <caret line="1567" column="33" lean-forward="true" selection-start-line="1567" selection-start-column="33" selection-end-line="1567" selection-end-column="33" />
+            <state relative-caret-position="66">
+              <caret line="1857" column="17" lean-forward="true" selection-start-line="1857" selection-start-column="17" selection-end-line="1857" selection-end-column="17" />
               <folding>
                 <element signature="e#0#67#0" expanded="true" />
-                <marker date="1651395357834" expanded="true" signature="815:900" ph="SELECT * FRO... login" />
-                <marker date="1651395357834" expanded="true" signature="2207:2301" ph="SELECT * FRO... login" />
-                <marker date="1651395357834" expanded="true" signature="2452:2545" ph="UPDATE login... " />
-                <marker date="1651395357834" expanded="true" signature="3026:3128" ph="SELECT hospi... hospital" />
-                <marker date="1651395357834" expanded="true" signature="3395:3544" ph="SELECT hospi... hospital" />
-                <marker date="1651395357834" expanded="true" signature="3733:3835" ph="SELECT hospi... hospital" />
-                <marker date="1651395357834" expanded="true" signature="4102:4250" ph="SELECT hospi... hospital" />
-                <marker date="1651395357834" expanded="true" signature="4431:4533" ph="SELECT hospi... hospital" />
-                <marker date="1651395357834" expanded="true" signature="4800:4948" ph="SELECT hospi... hospital" />
-                <marker date="1651395357834" expanded="true" signature="5166:5227" ph="UPDATE login... " />
-                <marker date="1651395357834" expanded="true" signature="5484:5545" ph="UPDATE login... " />
-                <marker date="1651395357834" expanded="true" signature="5804:5865" ph="UPDATE login... " />
-                <marker date="1651395357834" expanded="true" signature="6108:6169" ph="UPDATE login... " />
-                <marker date="1651395357834" expanded="true" signature="6503:6726" ph="SELECT compl... complaint" />
-                <marker date="1651395357834" expanded="true" signature="7085:7345" ph="SELECT compl... complaint" />
-                <marker date="1651395357834" expanded="true" signature="7541:7801" ph="SELECT compl... complaint" />
-                <marker date="1651395357834" expanded="true" signature="8087:8313" ph="SELECT compl... complaint" />
-                <marker date="1651395357834" expanded="true" signature="8717:8895" ph="UPDATE compl... " />
-                <marker date="1651395357834" expanded="true" signature="9374:9568" ph="SELECT docto... doctor" />
-                <marker date="1651395357834" expanded="true" signature="9808:9961" ph="SELECT docto... doctor" />
-                <marker date="1651395357834" expanded="true" signature="10142:10336" ph="SELECT docto... doctor" />
-                <marker date="1651395357834" expanded="true" signature="10558:10625" ph="UPDATE `logi... " />
-                <marker date="1651395357834" expanded="true" signature="10921:11163" ph="SELECT docto... doctor" />
-                <marker date="1651395357834" expanded="true" signature="11363:11428" ph="UPDATE `logi... " />
-                <marker date="1651395357834" expanded="true" signature="11636:11832" ph="SELECT docto... doctor" />
-                <marker date="1651395357834" expanded="true" signature="12053:12118" ph="UPDATE `logi... " />
-                <marker date="1651395357834" expanded="true" signature="12394:12638" ph="SELECT docto... doctor" />
-                <marker date="1651395357834" expanded="true" signature="12835:12902" ph="UPDATE `logi... " />
-                <marker date="1651395357834" expanded="true" signature="13094:13115" ph="SELECT * FRO... patient" />
-                <marker date="1651395357834" expanded="true" signature="13357:13419" ph="SELECT * FRO... patient" />
-                <marker date="1651395357834" expanded="true" signature="13603:13705" ph="SELECT pharm... pharmacy" />
-                <marker date="1651395357834" expanded="true" signature="13988:14137" ph="SELECT pharm... pharmacy" />
-                <marker date="1651395357834" expanded="true" signature="14363:14424" ph="UPDATE login... " />
-                <marker date="1651395357834" expanded="true" signature="14681:14742" ph="UPDATE login... " />
-                <marker date="1651395357834" expanded="true" signature="14960:15062" ph="SELECT pharm... pharmacy" />
-                <marker date="1651395357834" expanded="true" signature="15284:15345" ph="UPDATE login... " />
-                <marker date="1651395357834" expanded="true" signature="15633:15782" ph="SELECT pharm... pharmacy" />
-                <marker date="1651395357834" expanded="true" signature="15963:16065" ph="SELECT pharm... pharmacy" />
-                <marker date="1651395357834" expanded="true" signature="16287:16348" ph="UPDATE login... " />
-                <marker date="1651395357834" expanded="true" signature="16636:16785" ph="SELECT pharm... pharmacy" />
-                <marker date="1651395357834" expanded="true" signature="17227:17362" ph="INSERT INTO medicine... " />
-                <marker date="1651395357834" expanded="true" signature="17569:17591" ph="SELECT * FRO... medicine" />
-                <marker date="1651395357834" expanded="true" signature="17836:17897" ph="SELECT * FRO... medicine" />
-                <marker date="1651395357834" expanded="true" signature="18079:18126" ph="DELETE FROM " />
-                <marker date="1651395357834" expanded="true" signature="19143:19203" ph="SELECT COUNT... login" />
-                <marker date="1651395357834" expanded="true" signature="19285:19345" ph="SELECT COUNT... login" />
-                <marker date="1651395357834" expanded="true" signature="19425:19485" ph="SELECT COUNT... login" />
-                <marker date="1651395357834" expanded="true" signature="19566:19631" ph="SELECT COUNT... complaint" />
-                <marker date="1651395357834" expanded="true" signature="20692:20789" ph="INSERT INTO login... " />
-                <marker date="1651395357834" expanded="true" signature="20848:21156" ph="INSERT INTO hospital... " />
-                <marker date="1651395357834" expanded="true" signature="21956:22050" ph="SELECT * FRO... login" />
-                <marker date="1651395357834" expanded="true" signature="22194:22287" ph="UPDATE login... " />
-                <marker date="1651395357834" expanded="true" signature="22811:22878" ph="SELECT * FRO... hospital" />
-                <marker date="1651395357834" expanded="true" signature="23078:23129" ph="SELECT * FRO... hospital" />
-                <marker date="1651395357834" expanded="true" signature="23698:23976" ph="UPDATE hospi... " />
-                <marker date="1651395357834" expanded="true" signature="25026:25126" ph="INSERT INTO login... " />
-                <marker date="1651395357834" expanded="true" signature="25168:25631" ph="INSERT INTO doctor... " />
-                <marker date="1651395357834" expanded="true" signature="25868:25915" ph="SELECT * FRO... doctor" />
-                <marker date="1651395357834" expanded="true" signature="26888:27303" ph="UPDATE docto... " />
-                <marker date="1651395357834" expanded="true" signature="27492:27883" ph="UPDATE docto... " />
-                <marker date="1651395357834" expanded="true" signature="28060:28447" ph="UPDATE docto... " />
-                <marker date="1651395357834" expanded="true" signature="28677:28722" ph="DELETE FROM " />
-                <marker date="1651395357834" expanded="true" signature="29009:29183" ph="SELECT `doct... doctor" />
-                <marker date="1651395357834" expanded="true" signature="29548:29770" ph="SELECT `doct... doctor" />
-                <marker date="1651395357834" expanded="true" signature="29956:30132" ph="SELECT `pati... patient" />
-                <marker date="1651395357834" expanded="true" signature="30460:30685" ph="SELECT `pati... patient" />
-                <marker date="1651395357834" expanded="true" signature="30872:31238" ph="SELECT `doct... patient" />
-                <marker date="1651395357834" expanded="true" signature="31519:31964" ph="SELECT `doct... patient" />
-                <marker date="1651395357834" expanded="true" signature="32494:32684" ph="SELECT `doct... login" />
-                <marker date="1651395357834" expanded="true" signature="33041:33212" ph="INSERT INTO `schedule`... " />
-                <marker date="1651395357834" expanded="true" signature="33585:33781" ph="SELECT `sche... doctor" />
-                <marker date="1651395357834" expanded="true" signature="34063:34329" ph="SELECT `sche... doctor" />
-                <marker date="1651395357834" expanded="true" signature="34528:34577" ph="SELECT * FRO... schedule" />
-                <marker date="1651395357834" expanded="true" signature="34785:34834" ph="DELETE FROM " />
-                <marker date="1651395357834" expanded="true" signature="35216:35359" ph="UPDATE sched... " />
-                <marker date="1651395357834" expanded="true" signature="35673:35713" ph="SELECT COUNT... doctor" />
-                <marker date="1651395357834" expanded="true" signature="35673:35846" ph="SELECT COUNT... doctor" />
-                <marker date="1651395357834" expanded="true" signature="35673:35847" ph="SELECT COUNT... doctor" />
-                <marker date="1651395357834" expanded="true" signature="36877:36971" ph="SELECT * FRO... login" />
-                <marker date="1651395357834" expanded="true" signature="37081:37174" ph="UPDATE login... " />
-                <marker date="1651395357834" expanded="true" signature="37646:37713" ph="SELECT * FRO... pharmacy" />
-                <marker date="1651395357834" expanded="true" signature="37903:37970" ph="SELECT * FRO... pharmacy" />
-                <marker date="1651395357834" expanded="true" signature="38577:38899" ph="UPDATE pharm... " />
-                <marker date="1651395357834" expanded="true" signature="39126:39193" ph="SELECT * FRO... medicine" />
-                <marker date="1651395357834" expanded="true" signature="39447:39527" ph="SELECT * FRO... medicine" />
-                <marker date="1651395357834" expanded="true" signature="40056:40259" ph="INSERT INTO `medicine`... " />
-                <marker date="1651395357834" expanded="true" signature="40316:40454" ph="INSERT INTO `stock`... " />
-                <marker date="1651395357834" expanded="true" signature="40708:40761" ph="SELECT * FRO... medicine" />
-                <marker date="1651395357834" expanded="true" signature="41162:41332" ph="UPDATE `medi... " />
-                <marker date="1651395357834" expanded="true" signature="41592:41643" ph="DELETE FROM " />
-                <marker date="1651395357834" expanded="true" signature="41869:42114" ph="SELECT `pati... patient" />
-                <marker date="1651395357834" expanded="true" signature="42399:42679" ph="SELECT `pati... patient" />
-                <marker date="1651395357834" expanded="true" signature="42866:43126" ph="SELECT `medi... patient" />
-                <marker date="1651395357834" expanded="true" signature="43353:43662" ph="SELECT `med_... medicine_booking" />
-                <marker date="1651395357834" expanded="true" signature="43939:44236" ph="SELECT `medi... patient" />
-                <marker date="1651395357834" expanded="true" signature="43939:44252" ph="SELECT `medi... patient" />
-                <marker date="1651395357834" expanded="true" signature="45238:45441" ph="SELECT `stoc... stock" />
-                <marker date="1651395357834" expanded="true" signature="45680:45924" ph="SELECT `stoc... stock" />
-                <marker date="1651395357834" expanded="true" signature="46273:46321" ph="SELECT * FRO... stock" />
-                <marker date="1651395357834" expanded="true" signature="46611:46696" ph="UPDATE `stoc... " />
-                <marker date="1651395357834" expanded="true" signature="46934:46984" ph="DELETE FROM " />
-                <marker date="1651395357834" expanded="true" signature="47265:47444" ph="SELECT `disc... medicine" />
-                <marker date="1651395357834" expanded="true" signature="47671:47833" ph="SELECT `medi... medicine" />
-                <marker date="1651395357834" expanded="true" signature="48045:48102" ph="SELECT med_b... medicine" />
-                <marker date="1651395357834" expanded="true" signature="48507:48755" ph="INSERT INTO `discount`... " />
-                <marker date="1651395357834" expanded="true" signature="49003:49155" ph="SELECT `disc... medicine" />
-                <marker date="1651395357834" expanded="true" signature="49003:49156" ph="SELECT `disc... medicine" />
-                <marker date="1651395357834" expanded="true" signature="49590:49807" ph="UPDATE `disc... " />
-                <marker date="1651395357834" expanded="true" signature="50046:50096" ph="DELETE FROM " />
-                <marker date="1651395357834" expanded="true" signature="50336:50634" ph="SELECT `disc... pharmacy" />
-                <marker date="1651395357834" expanded="true" signature="50901:51241" ph="SELECT `disc... pharmacy" />
-                <marker date="1651395357834" expanded="true" signature="51446:51710" ph="SELECT SUM(`... med_booking_sub" />
-                <marker date="1651395357834" expanded="true" signature="52149:52447" ph="SELECT SUM(`... med_booking_sub" />
-                <marker date="1651395357834" expanded="true" signature="52149:52463" ph="SELECT SUM(`... med_booking_sub" />
-                <marker date="1651395357834" expanded="true" signature="53094:53150" ph="SELECT COUNT... schedule" />
-                <marker date="1651395357834" expanded="true" signature="53094:53178" ph="SELECT COUNT... schedule" />
-                <marker date="1651395357834" expanded="true" signature="53266:53357" ph="SELECT COUNT... doctor_booking" />
-                <marker date="1651395357834" expanded="true" signature="53898:53992" ph="SELECT * FRO... login" />
-                <marker date="1651395357834" expanded="true" signature="54102:54195" ph="UPDATE login... " />
-                <marker date="1651395357834" expanded="true" signature="54667:54736" ph="SELECT * FRO... doctor" />
-                <marker date="1651395357834" expanded="true" signature="54924:54993" ph="SELECT * FRO... doctor" />
-                <marker date="1651395357834" expanded="true" signature="55953:56368" ph="UPDATE docto... " />
-                <marker date="1651395357834" expanded="true" signature="56534:56925" ph="UPDATE docto... " />
-                <marker date="1651395357834" expanded="true" signature="57083:57470" ph="UPDATE docto... " />
-                <marker date="1651395357834" expanded="true" signature="57686:57755" ph="SELECT * FRO... schedule" />
-                <marker date="1651395357834" expanded="true" signature="57937:58172" ph="SELECT `doct... patient" />
-                <marker date="1651395357834" expanded="true" signature="58411:58735" ph="SELECT `doct... patient" />
-                <marker date="1651395357834" expanded="true" signature="58940:59097" ph="SELECT `pres... patient" />
-                <marker date="1651395357834" expanded="true" signature="58940:59125" ph="SELECT `pres... patient" />
-                <marker date="1651395357834" expanded="true" signature="59394:59517" ph="SELECT * FRO... prescription" />
-                <marker date="1651395357834" expanded="true" signature="59394:59533" ph="select * fro... prescription" />
-                <marker date="1651395357834" expanded="true" signature="60491:60675" ph="SELECT `pati... patient" />
-                <marker date="1651395357834" expanded="true" signature="60733:60975" ph="INSERT INTO `prescription`... " />
-                <marker date="1651395357834" expanded="true" signature="61036:61100" ph="UPDATE `doct... " />
-                <marker date="1651395357834" expanded="true" signature="61036:61222" ph="UPDATE `doct... " />
-                <marker date="1651395357834" expanded="true" signature="62502:62588" ph="SELECT * FRO... login" />
-                <marker date="1651395357834" expanded="true" signature="63609:63715" ph="INSERT INTO `login`... " />
-                <marker date="1651395357834" expanded="true" signature="63769:64135" ph="INSERT INTO `patient`... " />
-                <marker date="1651395357834" expanded="true" signature="64502:64586" ph="SELECT * FRO... login" />
-                <marker date="1651395357834" expanded="true" signature="64702:64775" ph="UPDATE login... " />
-                <marker date="1651395357834" expanded="true" signature="64976:65018" ph="SELECT * FRO... patient" />
-                <marker date="1651395357834" expanded="true" signature="64976:65034" ph="SELECT * FRO... patient" />
-                <marker date="1651395357834" expanded="true" signature="66467:66794" ph="UPDATE `pati... " />
-                <marker date="1651395357834" expanded="true" signature="66467:66810" ph="UPDATE `pati... " />
-                <marker date="1651395357834" expanded="true" signature="66921:67243" ph="UPDATE `pati... " />
-                <marker date="1651395357834" expanded="true" signature="67473:67592" ph="SELECT `doct... hospital" />
-                <marker date="1651395357834" expanded="true" signature="67865:68022" ph="SELECT `doct... hospital" />
-                <marker date="1651395357834" expanded="true" signature="68573:68597" ph="SELECT * FRO... medicine" />
-                <marker date="1651395357834" expanded="true" signature="68887:68950" ph="SELECT * FRO... medicine" />
-                <marker date="1651395357834" expanded="true" signature="69236:69404" ph="SELECT `medi... medicine" />
-                <marker date="1651395357834" expanded="true" signature="69725:69887" ph="SELECT `disc... medicine" />
-                <marker date="1651395357834" expanded="true" signature="70775:70997" ph="SELECT `phar... pharmacy" />
-                <marker date="1651395357834" expanded="true" signature="71771:71970" ph="SELECT `sche... doctor" />
-                <marker date="1651395357834" expanded="true" signature="71771:71998" ph="SELECT `sche... doctor" />
-                <marker date="1651395357834" expanded="true" signature="71771:72019" ph="SELECT `sche... doctor" />
-                <marker date="1651395357834" expanded="true" signature="72513:72757" ph="INSERT INTO `doctor_booking`... " />
-                <marker date="1651395357834" expanded="true" signature="73000:73051" ph="INSERT INTO `cart`... " />
-                <marker date="1651395357834" expanded="true" signature="73000:73069" ph="INSERT INTO `cart`... " />
-                <marker date="1651395357834" expanded="true" signature="73000:73084" ph="INSERT INTO `cart`... " />
-                <marker date="1651395357834" expanded="true" signature="73000:73085" ph="INSERT INTO `cart`... " />
-                <marker date="1651395357834" expanded="true" signature="73416:73508" ph="INSERT INTO `medicine_booking`... " />
-                <marker date="1651395357834" expanded="true" signature="73416:73532" ph="INSERT INTO `medicine_booking`... " />
-                <marker date="1651395357834" expanded="true" signature="73416:73550" ph="INSERT INTO `medicine_booking`... " />
-                <marker date="1651395357834" expanded="true" signature="73416:73569" ph="INSERT INTO `medicine_booking`... " />
-                <marker date="1651395357834" expanded="true" signature="73416:73586" ph="INSERT INTO `medicine_booking`... " />
-                <marker date="1651395357834" expanded="true" signature="73988:74025" ph="SELECT * FRO... bank" />
-                <marker date="1651395357834" expanded="true" signature="73988:74057" ph="SELECT * FRO... bank" />
-                <marker date="1651395357834" expanded="true" signature="73988:74072" ph="SELECT * FRO... bank" />
-                <marker date="1651395357834" expanded="true" signature="74317:74398" ph="INSERT INTO `payment`... " />
-                <marker date="1651395357834" expanded="true" signature="74317:74429" ph="INSERT INTO `payment`... " />
-                <marker date="1651395357834" expanded="true" signature="74317:74442" ph="INSERT INTO `payment`... " />
-                <marker date="1651395357834" expanded="true" signature="74317:74468" ph="INSERT INTO `payment`... " />
-                <marker date="1651395357834" expanded="true" signature="74317:74469" ph="INSERT INTO `payment`... " />
-                <marker date="1651395357834" expanded="true" signature="74546:74667" ph="UPDATE `bank... " />
-                <marker date="1651395357834" expanded="true" signature="75190:75274" ph="SELECT * FRO... bank" />
-                <marker date="1651395357834" expanded="true" signature="75519:75672" ph="INSERT INTO `payment`... " />
-                <marker date="1651395357834" expanded="true" signature="75750:75871" ph="UPDATE `bank... " />
-                <marker date="1651395357834" expanded="true" signature="76223:76387" ph="SELECT `doct... doctor" />
-                <marker date="1651395357834" expanded="true" signature="76223:76443" ph="SELECT `doct... doctor" />
-                <marker date="1651395357834" expanded="true" signature="76663:76958" ph="SELECT `med_... medicine_booking" />
-                <marker date="1651395357834" expanded="true" signature="76663:76974" ph="SELECT `med_... medicine_booking" />
-                <marker date="1651395357834" expanded="true" signature="77219:77342" ph="insert into complaint... " />
-                <marker date="1651395357834" expanded="true" signature="77530:77585" ph="select * fro... complaint" />
-                <marker date="1651395357834" expanded="true" signature="77530:77586" ph="SELECT * FRO... complaint" />
+                <marker date="1651489860932" expanded="true" signature="831:916" ph="SELECT * FRO... login" />
+                <marker date="1651489860932" expanded="true" signature="2223:2317" ph="SELECT * FRO... login" />
+                <marker date="1651489860932" expanded="true" signature="2468:2561" ph="UPDATE login... " />
+                <marker date="1651489860932" expanded="true" signature="3042:3144" ph="SELECT hospi... hospital" />
+                <marker date="1651489860932" expanded="true" signature="3411:3560" ph="SELECT hospi... hospital" />
+                <marker date="1651489860932" expanded="true" signature="3749:3851" ph="SELECT hospi... hospital" />
+                <marker date="1651489860932" expanded="true" signature="4118:4266" ph="SELECT hospi... hospital" />
+                <marker date="1651489860932" expanded="true" signature="4447:4549" ph="SELECT hospi... hospital" />
+                <marker date="1651489860932" expanded="true" signature="4816:4964" ph="SELECT hospi... hospital" />
+                <marker date="1651489860932" expanded="true" signature="5182:5243" ph="UPDATE login... " />
+                <marker date="1651489860932" expanded="true" signature="5500:5561" ph="UPDATE login... " />
+                <marker date="1651489860932" expanded="true" signature="5820:5881" ph="UPDATE login... " />
+                <marker date="1651489860932" expanded="true" signature="6124:6185" ph="UPDATE login... " />
+                <marker date="1651489860932" expanded="true" signature="6519:6742" ph="SELECT compl... complaint" />
+                <marker date="1651489860932" expanded="true" signature="7101:7361" ph="SELECT compl... complaint" />
+                <marker date="1651489860932" expanded="true" signature="7557:7817" ph="SELECT compl... complaint" />
+                <marker date="1651489860932" expanded="true" signature="8103:8329" ph="SELECT compl... complaint" />
+                <marker date="1651489860932" expanded="true" signature="8733:8911" ph="UPDATE compl... " />
+                <marker date="1651489860932" expanded="true" signature="9390:9584" ph="SELECT docto... doctor" />
+                <marker date="1651489860932" expanded="true" signature="9824:9977" ph="SELECT docto... doctor" />
+                <marker date="1651489860932" expanded="true" signature="10158:10352" ph="SELECT docto... doctor" />
+                <marker date="1651489860932" expanded="true" signature="10574:10641" ph="UPDATE `logi... " />
+                <marker date="1651489860932" expanded="true" signature="10937:11179" ph="SELECT docto... doctor" />
+                <marker date="1651489860932" expanded="true" signature="11379:11444" ph="UPDATE `logi... " />
+                <marker date="1651489860932" expanded="true" signature="11652:11848" ph="SELECT docto... doctor" />
+                <marker date="1651489860932" expanded="true" signature="12069:12134" ph="UPDATE `logi... " />
+                <marker date="1651489860932" expanded="true" signature="12410:12654" ph="SELECT docto... doctor" />
+                <marker date="1651489860932" expanded="true" signature="12851:12918" ph="UPDATE `logi... " />
+                <marker date="1651489860932" expanded="true" signature="13110:13131" ph="SELECT * FRO... patient" />
+                <marker date="1651489860932" expanded="true" signature="13373:13435" ph="SELECT * FRO... patient" />
+                <marker date="1651489860932" expanded="true" signature="13619:13721" ph="SELECT pharm... pharmacy" />
+                <marker date="1651489860932" expanded="true" signature="14004:14153" ph="SELECT pharm... pharmacy" />
+                <marker date="1651489860932" expanded="true" signature="14379:14440" ph="UPDATE login... " />
+                <marker date="1651489860932" expanded="true" signature="14697:14758" ph="UPDATE login... " />
+                <marker date="1651489860932" expanded="true" signature="14976:15078" ph="SELECT pharm... pharmacy" />
+                <marker date="1651489860932" expanded="true" signature="15300:15361" ph="UPDATE login... " />
+                <marker date="1651489860932" expanded="true" signature="15649:15798" ph="SELECT pharm... pharmacy" />
+                <marker date="1651489860932" expanded="true" signature="15979:16081" ph="SELECT pharm... pharmacy" />
+                <marker date="1651489860932" expanded="true" signature="16303:16364" ph="UPDATE login... " />
+                <marker date="1651489860932" expanded="true" signature="16652:16801" ph="SELECT pharm... pharmacy" />
+                <marker date="1651489860932" expanded="true" signature="17243:17378" ph="INSERT INTO medicine... " />
+                <marker date="1651489860932" expanded="true" signature="17585:17607" ph="SELECT * FRO... medicine" />
+                <marker date="1651489860932" expanded="true" signature="17852:17913" ph="SELECT * FRO... medicine" />
+                <marker date="1651489860932" expanded="true" signature="18095:18142" ph="DELETE FROM " />
+                <marker date="1651489860932" expanded="true" signature="19159:19219" ph="SELECT COUNT... login" />
+                <marker date="1651489860932" expanded="true" signature="19301:19361" ph="SELECT COUNT... login" />
+                <marker date="1651489860932" expanded="true" signature="19441:19501" ph="SELECT COUNT... login" />
+                <marker date="1651489860932" expanded="true" signature="19582:19647" ph="SELECT COUNT... complaint" />
+                <marker date="1651489860932" expanded="true" signature="20708:20805" ph="INSERT INTO login... " />
+                <marker date="1651489860932" expanded="true" signature="20864:21172" ph="INSERT INTO hospital... " />
+                <marker date="1651489860932" expanded="true" signature="21972:22066" ph="SELECT * FRO... login" />
+                <marker date="1651489860932" expanded="true" signature="22210:22303" ph="UPDATE login... " />
+                <marker date="1651489860932" expanded="true" signature="22827:22894" ph="SELECT * FRO... hospital" />
+                <marker date="1651489860932" expanded="true" signature="23094:23145" ph="SELECT * FRO... hospital" />
+                <marker date="1651489860932" expanded="true" signature="23714:23992" ph="UPDATE hospi... " />
+                <marker date="1651489860932" expanded="true" signature="25042:25142" ph="INSERT INTO login... " />
+                <marker date="1651489860932" expanded="true" signature="25184:25647" ph="INSERT INTO doctor... " />
+                <marker date="1651489860932" expanded="true" signature="25884:25931" ph="SELECT * FRO... doctor" />
+                <marker date="1651489860932" expanded="true" signature="26904:27319" ph="UPDATE docto... " />
+                <marker date="1651489860932" expanded="true" signature="27508:27899" ph="UPDATE docto... " />
+                <marker date="1651489860932" expanded="true" signature="28076:28463" ph="UPDATE docto... " />
+                <marker date="1651489860932" expanded="true" signature="28693:28738" ph="DELETE FROM " />
+                <marker date="1651489860932" expanded="true" signature="29025:29199" ph="SELECT `doct... doctor" />
+                <marker date="1651489860932" expanded="true" signature="29564:29786" ph="SELECT `doct... doctor" />
+                <marker date="1651489860932" expanded="true" signature="29972:30148" ph="SELECT `pati... patient" />
+                <marker date="1651489860932" expanded="true" signature="30476:30701" ph="SELECT `pati... patient" />
+                <marker date="1651489860932" expanded="true" signature="30888:31254" ph="SELECT `doct... patient" />
+                <marker date="1651489860932" expanded="true" signature="31535:31980" ph="SELECT `doct... patient" />
+                <marker date="1651489860932" expanded="true" signature="32510:32700" ph="SELECT `doct... login" />
+                <marker date="1651489860932" expanded="true" signature="33057:33228" ph="INSERT INTO `schedule`... " />
+                <marker date="1651489860932" expanded="true" signature="33601:33797" ph="SELECT `sche... doctor" />
+                <marker date="1651489860932" expanded="true" signature="34079:34345" ph="SELECT `sche... doctor" />
+                <marker date="1651489860932" expanded="true" signature="34544:34593" ph="SELECT * FRO... schedule" />
+                <marker date="1651489860932" expanded="true" signature="34801:34850" ph="DELETE FROM " />
+                <marker date="1651489860932" expanded="true" signature="35232:35375" ph="UPDATE sched... " />
+                <marker date="1651489860932" expanded="true" signature="35689:35729" ph="SELECT COUNT... doctor" />
+                <marker date="1651489860932" expanded="true" signature="35689:35862" ph="SELECT COUNT... doctor" />
+                <marker date="1651489860932" expanded="true" signature="35689:35863" ph="SELECT COUNT... doctor" />
+                <marker date="1651489860932" expanded="true" signature="36893:36987" ph="SELECT * FRO... login" />
+                <marker date="1651489860932" expanded="true" signature="37097:37190" ph="UPDATE login... " />
+                <marker date="1651489860932" expanded="true" signature="37662:37729" ph="SELECT * FRO... pharmacy" />
+                <marker date="1651489860932" expanded="true" signature="37919:37986" ph="SELECT * FRO... pharmacy" />
+                <marker date="1651489860932" expanded="true" signature="38593:38915" ph="UPDATE pharm... " />
+                <marker date="1651489860932" expanded="true" signature="39142:39209" ph="SELECT * FRO... medicine" />
+                <marker date="1651489860932" expanded="true" signature="39463:39543" ph="SELECT * FRO... medicine" />
+                <marker date="1651489860932" expanded="true" signature="40072:40275" ph="INSERT INTO `medicine`... " />
+                <marker date="1651489860932" expanded="true" signature="40332:40470" ph="INSERT INTO `stock`... " />
+                <marker date="1651489860932" expanded="true" signature="40724:40777" ph="SELECT * FRO... medicine" />
+                <marker date="1651489860932" expanded="true" signature="41178:41348" ph="UPDATE `medi... " />
+                <marker date="1651489860932" expanded="true" signature="41608:41659" ph="DELETE FROM " />
+                <marker date="1651489860932" expanded="true" signature="41885:42130" ph="SELECT `pati... patient" />
+                <marker date="1651489860932" expanded="true" signature="42415:42695" ph="SELECT `pati... patient" />
+                <marker date="1651489860932" expanded="true" signature="42882:43142" ph="SELECT `medi... patient" />
+                <marker date="1651489860932" expanded="true" signature="43369:43678" ph="SELECT `med_... medicine_booking" />
+                <marker date="1651489860932" expanded="true" signature="43955:44252" ph="SELECT `medi... patient" />
+                <marker date="1651489860932" expanded="true" signature="43955:44268" ph="SELECT `medi... patient" />
+                <marker date="1651489860932" expanded="true" signature="45254:45457" ph="SELECT `stoc... stock" />
+                <marker date="1651489860932" expanded="true" signature="45696:45940" ph="SELECT `stoc... stock" />
+                <marker date="1651489860932" expanded="true" signature="46289:46337" ph="SELECT * FRO... stock" />
+                <marker date="1651489860932" expanded="true" signature="46627:46712" ph="UPDATE `stoc... " />
+                <marker date="1651489860932" expanded="true" signature="46950:47000" ph="DELETE FROM " />
+                <marker date="1651489860932" expanded="true" signature="47281:47460" ph="SELECT `disc... medicine" />
+                <marker date="1651489860932" expanded="true" signature="47687:47849" ph="SELECT `medi... medicine" />
+                <marker date="1651489860932" expanded="true" signature="48061:48118" ph="SELECT med_b... medicine" />
+                <marker date="1651489860932" expanded="true" signature="48523:48771" ph="INSERT INTO `discount`... " />
+                <marker date="1651489860932" expanded="true" signature="49019:49171" ph="SELECT `disc... medicine" />
+                <marker date="1651489860932" expanded="true" signature="49019:49172" ph="SELECT `disc... medicine" />
+                <marker date="1651489860932" expanded="true" signature="49606:49823" ph="UPDATE `disc... " />
+                <marker date="1651489860932" expanded="true" signature="50062:50112" ph="DELETE FROM " />
+                <marker date="1651489860932" expanded="true" signature="50352:50650" ph="SELECT `disc... pharmacy" />
+                <marker date="1651489860932" expanded="true" signature="50917:51257" ph="SELECT `disc... pharmacy" />
+                <marker date="1651489860932" expanded="true" signature="51462:51726" ph="SELECT SUM(`... med_booking_sub" />
+                <marker date="1651489860932" expanded="true" signature="51947:52327" ph="SELECT SUM(`... med_booking_sub" />
+                <marker date="1651489860932" expanded="true" signature="51947:52374" ph="SELECT SUM(`... med_booking_sub" />
+                <marker date="1651489860932" expanded="true" signature="52663:52961" ph="SELECT SUM(`... med_booking_sub" />
+                <marker date="1651489860932" expanded="true" signature="52663:52977" ph="SELECT SUM(`... med_booking_sub" />
+                <marker date="1651489860932" expanded="true" signature="53608:53664" ph="SELECT COUNT... schedule" />
+                <marker date="1651489860932" expanded="true" signature="53608:53692" ph="SELECT COUNT... schedule" />
+                <marker date="1651489860932" expanded="true" signature="53780:53871" ph="SELECT COUNT... doctor_booking" />
+                <marker date="1651489860932" expanded="true" signature="54412:54506" ph="SELECT * FRO... login" />
+                <marker date="1651489860932" expanded="true" signature="54616:54709" ph="UPDATE login... " />
+                <marker date="1651489860932" expanded="true" signature="55181:55250" ph="SELECT * FRO... doctor" />
+                <marker date="1651489860932" expanded="true" signature="55438:55507" ph="SELECT * FRO... doctor" />
+                <marker date="1651489860932" expanded="true" signature="56467:56882" ph="UPDATE docto... " />
+                <marker date="1651489860932" expanded="true" signature="57048:57439" ph="UPDATE docto... " />
+                <marker date="1651489860932" expanded="true" signature="57597:57984" ph="UPDATE docto... " />
+                <marker date="1651489860932" expanded="true" signature="58200:58269" ph="SELECT * FRO... schedule" />
+                <marker date="1651489860932" expanded="true" signature="58451:58686" ph="SELECT `doct... patient" />
+                <marker date="1651489860932" expanded="true" signature="58925:59249" ph="SELECT `doct... patient" />
+                <marker date="1651489860932" expanded="true" signature="59454:59611" ph="SELECT `pres... patient" />
+                <marker date="1651489860932" expanded="true" signature="59454:59639" ph="SELECT `pres... patient" />
+                <marker date="1651489860932" expanded="true" signature="59908:60031" ph="SELECT * FRO... prescription" />
+                <marker date="1651489860932" expanded="true" signature="59908:60047" ph="select * fro... prescription" />
+                <marker date="1651489860932" expanded="true" signature="61005:61189" ph="SELECT `pati... patient" />
+                <marker date="1651489860932" expanded="true" signature="61247:61489" ph="INSERT INTO `prescription`... " />
+                <marker date="1651489860932" expanded="true" signature="61550:61614" ph="UPDATE `doct... " />
+                <marker date="1651489860932" expanded="true" signature="61550:61736" ph="UPDATE `doct... " />
+                <marker date="1651489860932" expanded="true" signature="63016:63102" ph="SELECT * FRO... login" />
+                <marker date="1651489860932" expanded="true" signature="64140:64246" ph="INSERT INTO `login`... " />
+                <marker date="1651489860932" expanded="true" signature="64300:64665" ph="INSERT INTO `patient`... " />
+                <marker date="1651489860932" expanded="true" signature="65032:65116" ph="SELECT * FRO... login" />
+                <marker date="1651489860932" expanded="true" signature="65232:65305" ph="UPDATE login... " />
+                <marker date="1651489860932" expanded="true" signature="65506:65548" ph="SELECT * FRO... patient" />
+                <marker date="1651489860932" expanded="true" signature="65506:65565" ph="SELECT * FRO... patient" />
+                <marker date="1651489860932" expanded="true" signature="66876:67203" ph="UPDATE `pati... " />
+                <marker date="1651489860932" expanded="true" signature="66876:67219" ph="UPDATE `pati... " />
+                <marker date="1651489860932" expanded="true" signature="67366:67688" ph="UPDATE `pati... " />
+                <marker date="1651489860932" expanded="true" signature="67918:68037" ph="SELECT `doct... hospital" />
+                <marker date="1651489860932" expanded="true" signature="68285:68438" ph="SELECT `doct... hospital" />
+                <marker date="1651489860932" expanded="true" signature="68285:68454" ph="SELECT `doct... hospital" />
+                <marker date="1651489860932" expanded="true" signature="68727:68884" ph="SELECT `doct... hospital" />
+                <marker date="1651489860932" expanded="true" signature="69438:69462" ph="SELECT * FRO... medicine" />
+                <marker date="1651489860932" expanded="true" signature="69752:69815" ph="SELECT * FRO... medicine" />
+                <marker date="1651489860932" expanded="true" signature="70101:70269" ph="SELECT `medi... medicine" />
+                <marker date="1651489860932" expanded="true" signature="70594:70756" ph="SELECT `disc... medicine" />
+                <marker date="1651489860932" expanded="true" signature="71919:72141" ph="SELECT `phar... pharmacy" />
+                <marker date="1651489860932" expanded="true" signature="72915:73114" ph="SELECT `sche... doctor" />
+                <marker date="1651489860932" expanded="true" signature="72915:73142" ph="SELECT `sche... doctor" />
+                <marker date="1651489860932" expanded="true" signature="72915:73163" ph="SELECT `sche... doctor" />
+                <marker date="1651489860932" expanded="true" signature="73657:73901" ph="INSERT INTO `doctor_booking`... " />
+                <marker date="1651489860932" expanded="true" signature="74144:74195" ph="INSERT INTO `cart`... " />
+                <marker date="1651489860932" expanded="true" signature="74144:74213" ph="INSERT INTO `cart`... " />
+                <marker date="1651489860932" expanded="true" signature="74144:74228" ph="INSERT INTO `cart`... " />
+                <marker date="1651489860932" expanded="true" signature="74144:74229" ph="INSERT INTO `cart`... " />
+                <marker date="1651489860932" expanded="true" signature="74560:74652" ph="INSERT INTO `medicine_booking`... " />
+                <marker date="1651489860932" expanded="true" signature="74560:74676" ph="INSERT INTO `medicine_booking`... " />
+                <marker date="1651489860932" expanded="true" signature="74560:74694" ph="INSERT INTO `medicine_booking`... " />
+                <marker date="1651489860932" expanded="true" signature="74560:74713" ph="INSERT INTO `medicine_booking`... " />
+                <marker date="1651489860932" expanded="true" signature="74560:74730" ph="INSERT INTO `medicine_booking`... " />
+                <marker date="1651489860932" expanded="true" signature="75132:75169" ph="SELECT * FRO... bank" />
+                <marker date="1651489860932" expanded="true" signature="75132:75201" ph="SELECT * FRO... bank" />
+                <marker date="1651489860932" expanded="true" signature="75132:75216" ph="SELECT * FRO... bank" />
+                <marker date="1651489860932" expanded="true" signature="75461:75542" ph="INSERT INTO `payment`... " />
+                <marker date="1651489860932" expanded="true" signature="75461:75573" ph="INSERT INTO `payment`... " />
+                <marker date="1651489860932" expanded="true" signature="75461:75586" ph="INSERT INTO `payment`... " />
+                <marker date="1651489860932" expanded="true" signature="75461:75612" ph="INSERT INTO `payment`... " />
+                <marker date="1651489860932" expanded="true" signature="75461:75613" ph="INSERT INTO `payment`... " />
+                <marker date="1651489860932" expanded="true" signature="75690:75811" ph="UPDATE `bank... " />
+                <marker date="1651489860932" expanded="true" signature="76334:76418" ph="SELECT * FRO... bank" />
+                <marker date="1651489860932" expanded="true" signature="76663:76816" ph="INSERT INTO `payment`... " />
+                <marker date="1651489860932" expanded="true" signature="76894:77015" ph="UPDATE `bank... " />
+                <marker date="1651489860932" expanded="true" signature="77367:77531" ph="SELECT `doct... doctor" />
+                <marker date="1651489860932" expanded="true" signature="77367:77587" ph="SELECT `doct... doctor" />
+                <marker date="1651489860932" expanded="true" signature="77807:78102" ph="SELECT `med_... medicine_booking" />
+                <marker date="1651489860932" expanded="true" signature="77807:78118" ph="SELECT `med_... medicine_booking" />
+                <marker date="1651489860932" expanded="true" signature="78363:78456" ph="INSERT INTO `complaint`... " />
+                <marker date="1651489860932" expanded="true" signature="78363:78471" ph="INSERT INTO `complaint`... " />
+                <marker date="1651489860932" expanded="true" signature="78363:78523" ph="INSERT INTO `complaint`... " />
+                <marker date="1651489860932" expanded="true" signature="78711:78766" ph="select * fro... complaint" />
+                <marker date="1651489860932" expanded="true" signature="78711:78767" ph="SELECT * FRO... complaint" />
+                <marker date="1651489860932" expanded="true" signature="79027:79170" ph="INSERT INTO `chat`... " />
+                <marker date="1651489860932" expanded="true" signature="79731:79943" ph="SELECT `from... chat" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view_schedule.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/hospital/view_schedule.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1474">
+              <caret line="67" column="86" lean-forward="false" selection-start-line="67" selection-start-column="86" selection-end-line="67" selection-end-column="86" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view_sales_report.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/pharmacy/view_sales_report.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="28" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view_more_sales_report.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/pharmacy/view_more_sales_report.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" column="54" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -242,9 +286,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pharmacy_index</find>
-      <find>pharmacy--</find>
-      <find>home</find>
       <find>pharmacy_view_profile</find>
       <find>pharmacy_edit_profile</find>
       <find>pharmacy_view_stock</find>
@@ -269,13 +310,20 @@
       <find>pharmacy_view_more_booking</find>
       <find>pharmacy_add_discount</find>
       <find>pharmacy_view_sales_report</find>
-      <find>pharmacy_search_sales_report</find>
-      <find>pharmacy_view_sales_report_more</find>
       <find>admin_dashboard</find>
+      <find>patient_view_profile</find>
+      <find>pharmacy_view_sales_report_more</find>
+      <find>pharmacy_search_sales_report</find>
+      <find>hospital_view_schedule</find>
+      <find>patient_signup</find>
     </findStrings>
     <dirStrings>
       <dir>D:\project\medicare\medicare\static</dir>
+      <dir>D:\project\medicare\medicare</dir>
     </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -326,10 +374,10 @@
         <option value="$PROJECT_DIR$/templates/pharmacy/view_discount.html" />
         <option value="$PROJECT_DIR$/templates/pharmacy/update_discount.html" />
         <option value="$PROJECT_DIR$/templates/pharmacy/add_discount.html" />
-        <option value="$PROJECT_DIR$/templates/pharmacy/view_more_sales_report.html" />
-        <option value="$PROJECT_DIR$/templates/pharmacy/view_sales_report.html" />
         <option value="$PROJECT_DIR$/templates/register.html" />
         <option value="$PROJECT_DIR$/templates/login_index.html" />
+        <option value="$PROJECT_DIR$/templates/pharmacy/view_sales_report.html" />
+        <option value="$PROJECT_DIR$/templates/pharmacy/view_more_sales_report.html" />
         <option value="$PROJECT_DIR$/medicare.py" />
       </list>
     </option>
@@ -346,6 +394,7 @@
     <option name="width" value="1938" />
     <option name="height" value="1048" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
       <flattenPackages />
@@ -361,34 +410,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="medicare">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT USER_OBJECT="Root">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="medicare">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT USER_OBJECT="templates">
-              <option name="myItemId" value="" />
-              <option name="myItemType" value="" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -534,6 +555,48 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="medicare">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="medicare">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="templates">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="medicare">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="static">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -805,15 +868,15 @@
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24006444" sideWeight="0.7689243" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2508056" sideWeight="0.7689243" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17343578" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2446206" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37372592" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32821077" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3272933" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18645833" sideWeight="0.2310757" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.398641" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -830,6 +893,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -840,20 +929,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/admin/approved_pharmacy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="68" column="50" lean-forward="false" selection-start-line="68" selection-start-column="50" selection-end-line="68" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/admin/rejected_pharmacy.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="61" column="147" lean-forward="false" selection-start-line="61" selection-start-column="147" selection-end-line="61" selection-end-column="147" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/hospital/hospital_dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
@@ -950,13 +1025,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="145" column="66" lean-forward="false" selection-start-line="145" selection-start-column="66" selection-end-line="145" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/hospital/view_schedule.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="67" column="85" lean-forward="false" selection-start-line="67" selection-start-column="85" selection-end-line="67" selection-end-column="85" />
         </state>
       </provider>
     </entry>
@@ -1135,20 +1203,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pharmacy/view_more_sales_report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="11" lean-forward="false" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pharmacy/view_sales_report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="3" column="74" lean-forward="false" selection-start-line="3" selection-start-column="74" selection-end-line="3" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python36/Lib/site-packages/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1161,7 +1215,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="7" column="9" lean-forward="false" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1176,7 +1229,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="170" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1184,200 +1236,237 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="54" column="44" lean-forward="false" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/patient20220429-135003.jpg" />
+    <entry file="file://$PROJECT_DIR$/static/patient/20220429-135003.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pharmacy/view_sales_report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="28" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/pharmacy/view_more_sales_report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="54" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/hospital/view_schedule.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1474">
+          <caret line="67" column="86" lean-forward="false" selection-start-line="67" selection-start-column="86" selection-end-line="67" selection-end-column="86" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/medicare.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2305">
-          <caret line="1567" column="33" lean-forward="true" selection-start-line="1567" selection-start-column="33" selection-end-line="1567" selection-end-column="33" />
+        <state relative-caret-position="66">
+          <caret line="1857" column="17" lean-forward="true" selection-start-line="1857" selection-start-column="17" selection-end-line="1857" selection-end-column="17" />
           <folding>
             <element signature="e#0#67#0" expanded="true" />
-            <marker date="1651395357834" expanded="true" signature="815:900" ph="SELECT * FRO... login" />
-            <marker date="1651395357834" expanded="true" signature="2207:2301" ph="SELECT * FRO... login" />
-            <marker date="1651395357834" expanded="true" signature="2452:2545" ph="UPDATE login... " />
-            <marker date="1651395357834" expanded="true" signature="3026:3128" ph="SELECT hospi... hospital" />
-            <marker date="1651395357834" expanded="true" signature="3395:3544" ph="SELECT hospi... hospital" />
-            <marker date="1651395357834" expanded="true" signature="3733:3835" ph="SELECT hospi... hospital" />
-            <marker date="1651395357834" expanded="true" signature="4102:4250" ph="SELECT hospi... hospital" />
-            <marker date="1651395357834" expanded="true" signature="4431:4533" ph="SELECT hospi... hospital" />
-            <marker date="1651395357834" expanded="true" signature="4800:4948" ph="SELECT hospi... hospital" />
-            <marker date="1651395357834" expanded="true" signature="5166:5227" ph="UPDATE login... " />
-            <marker date="1651395357834" expanded="true" signature="5484:5545" ph="UPDATE login... " />
-            <marker date="1651395357834" expanded="true" signature="5804:5865" ph="UPDATE login... " />
-            <marker date="1651395357834" expanded="true" signature="6108:6169" ph="UPDATE login... " />
-            <marker date="1651395357834" expanded="true" signature="6503:6726" ph="SELECT compl... complaint" />
-            <marker date="1651395357834" expanded="true" signature="7085:7345" ph="SELECT compl... complaint" />
-            <marker date="1651395357834" expanded="true" signature="7541:7801" ph="SELECT compl... complaint" />
-            <marker date="1651395357834" expanded="true" signature="8087:8313" ph="SELECT compl... complaint" />
-            <marker date="1651395357834" expanded="true" signature="8717:8895" ph="UPDATE compl... " />
-            <marker date="1651395357834" expanded="true" signature="9374:9568" ph="SELECT docto... doctor" />
-            <marker date="1651395357834" expanded="true" signature="9808:9961" ph="SELECT docto... doctor" />
-            <marker date="1651395357834" expanded="true" signature="10142:10336" ph="SELECT docto... doctor" />
-            <marker date="1651395357834" expanded="true" signature="10558:10625" ph="UPDATE `logi... " />
-            <marker date="1651395357834" expanded="true" signature="10921:11163" ph="SELECT docto... doctor" />
-            <marker date="1651395357834" expanded="true" signature="11363:11428" ph="UPDATE `logi... " />
-            <marker date="1651395357834" expanded="true" signature="11636:11832" ph="SELECT docto... doctor" />
-            <marker date="1651395357834" expanded="true" signature="12053:12118" ph="UPDATE `logi... " />
-            <marker date="1651395357834" expanded="true" signature="12394:12638" ph="SELECT docto... doctor" />
-            <marker date="1651395357834" expanded="true" signature="12835:12902" ph="UPDATE `logi... " />
-            <marker date="1651395357834" expanded="true" signature="13094:13115" ph="SELECT * FRO... patient" />
-            <marker date="1651395357834" expanded="true" signature="13357:13419" ph="SELECT * FRO... patient" />
-            <marker date="1651395357834" expanded="true" signature="13603:13705" ph="SELECT pharm... pharmacy" />
-            <marker date="1651395357834" expanded="true" signature="13988:14137" ph="SELECT pharm... pharmacy" />
-            <marker date="1651395357834" expanded="true" signature="14363:14424" ph="UPDATE login... " />
-            <marker date="1651395357834" expanded="true" signature="14681:14742" ph="UPDATE login... " />
-            <marker date="1651395357834" expanded="true" signature="14960:15062" ph="SELECT pharm... pharmacy" />
-            <marker date="1651395357834" expanded="true" signature="15284:15345" ph="UPDATE login... " />
-            <marker date="1651395357834" expanded="true" signature="15633:15782" ph="SELECT pharm... pharmacy" />
-            <marker date="1651395357834" expanded="true" signature="15963:16065" ph="SELECT pharm... pharmacy" />
-            <marker date="1651395357834" expanded="true" signature="16287:16348" ph="UPDATE login... " />
-            <marker date="1651395357834" expanded="true" signature="16636:16785" ph="SELECT pharm... pharmacy" />
-            <marker date="1651395357834" expanded="true" signature="17227:17362" ph="INSERT INTO medicine... " />
-            <marker date="1651395357834" expanded="true" signature="17569:17591" ph="SELECT * FRO... medicine" />
-            <marker date="1651395357834" expanded="true" signature="17836:17897" ph="SELECT * FRO... medicine" />
-            <marker date="1651395357834" expanded="true" signature="18079:18126" ph="DELETE FROM " />
-            <marker date="1651395357834" expanded="true" signature="19143:19203" ph="SELECT COUNT... login" />
-            <marker date="1651395357834" expanded="true" signature="19285:19345" ph="SELECT COUNT... login" />
-            <marker date="1651395357834" expanded="true" signature="19425:19485" ph="SELECT COUNT... login" />
-            <marker date="1651395357834" expanded="true" signature="19566:19631" ph="SELECT COUNT... complaint" />
-            <marker date="1651395357834" expanded="true" signature="20692:20789" ph="INSERT INTO login... " />
-            <marker date="1651395357834" expanded="true" signature="20848:21156" ph="INSERT INTO hospital... " />
-            <marker date="1651395357834" expanded="true" signature="21956:22050" ph="SELECT * FRO... login" />
-            <marker date="1651395357834" expanded="true" signature="22194:22287" ph="UPDATE login... " />
-            <marker date="1651395357834" expanded="true" signature="22811:22878" ph="SELECT * FRO... hospital" />
-            <marker date="1651395357834" expanded="true" signature="23078:23129" ph="SELECT * FRO... hospital" />
-            <marker date="1651395357834" expanded="true" signature="23698:23976" ph="UPDATE hospi... " />
-            <marker date="1651395357834" expanded="true" signature="25026:25126" ph="INSERT INTO login... " />
-            <marker date="1651395357834" expanded="true" signature="25168:25631" ph="INSERT INTO doctor... " />
-            <marker date="1651395357834" expanded="true" signature="25868:25915" ph="SELECT * FRO... doctor" />
-            <marker date="1651395357834" expanded="true" signature="26888:27303" ph="UPDATE docto... " />
-            <marker date="1651395357834" expanded="true" signature="27492:27883" ph="UPDATE docto... " />
-            <marker date="1651395357834" expanded="true" signature="28060:28447" ph="UPDATE docto... " />
-            <marker date="1651395357834" expanded="true" signature="28677:28722" ph="DELETE FROM " />
-            <marker date="1651395357834" expanded="true" signature="29009:29183" ph="SELECT `doct... doctor" />
-            <marker date="1651395357834" expanded="true" signature="29548:29770" ph="SELECT `doct... doctor" />
-            <marker date="1651395357834" expanded="true" signature="29956:30132" ph="SELECT `pati... patient" />
-            <marker date="1651395357834" expanded="true" signature="30460:30685" ph="SELECT `pati... patient" />
-            <marker date="1651395357834" expanded="true" signature="30872:31238" ph="SELECT `doct... patient" />
-            <marker date="1651395357834" expanded="true" signature="31519:31964" ph="SELECT `doct... patient" />
-            <marker date="1651395357834" expanded="true" signature="32494:32684" ph="SELECT `doct... login" />
-            <marker date="1651395357834" expanded="true" signature="33041:33212" ph="INSERT INTO `schedule`... " />
-            <marker date="1651395357834" expanded="true" signature="33585:33781" ph="SELECT `sche... doctor" />
-            <marker date="1651395357834" expanded="true" signature="34063:34329" ph="SELECT `sche... doctor" />
-            <marker date="1651395357834" expanded="true" signature="34528:34577" ph="SELECT * FRO... schedule" />
-            <marker date="1651395357834" expanded="true" signature="34785:34834" ph="DELETE FROM " />
-            <marker date="1651395357834" expanded="true" signature="35216:35359" ph="UPDATE sched... " />
-            <marker date="1651395357834" expanded="true" signature="35673:35713" ph="SELECT COUNT... doctor" />
-            <marker date="1651395357834" expanded="true" signature="35673:35846" ph="SELECT COUNT... doctor" />
-            <marker date="1651395357834" expanded="true" signature="35673:35847" ph="SELECT COUNT... doctor" />
-            <marker date="1651395357834" expanded="true" signature="36877:36971" ph="SELECT * FRO... login" />
-            <marker date="1651395357834" expanded="true" signature="37081:37174" ph="UPDATE login... " />
-            <marker date="1651395357834" expanded="true" signature="37646:37713" ph="SELECT * FRO... pharmacy" />
-            <marker date="1651395357834" expanded="true" signature="37903:37970" ph="SELECT * FRO... pharmacy" />
-            <marker date="1651395357834" expanded="true" signature="38577:38899" ph="UPDATE pharm... " />
-            <marker date="1651395357834" expanded="true" signature="39126:39193" ph="SELECT * FRO... medicine" />
-            <marker date="1651395357834" expanded="true" signature="39447:39527" ph="SELECT * FRO... medicine" />
-            <marker date="1651395357834" expanded="true" signature="40056:40259" ph="INSERT INTO `medicine`... " />
-            <marker date="1651395357834" expanded="true" signature="40316:40454" ph="INSERT INTO `stock`... " />
-            <marker date="1651395357834" expanded="true" signature="40708:40761" ph="SELECT * FRO... medicine" />
-            <marker date="1651395357834" expanded="true" signature="41162:41332" ph="UPDATE `medi... " />
-            <marker date="1651395357834" expanded="true" signature="41592:41643" ph="DELETE FROM " />
-            <marker date="1651395357834" expanded="true" signature="41869:42114" ph="SELECT `pati... patient" />
-            <marker date="1651395357834" expanded="true" signature="42399:42679" ph="SELECT `pati... patient" />
-            <marker date="1651395357834" expanded="true" signature="42866:43126" ph="SELECT `medi... patient" />
-            <marker date="1651395357834" expanded="true" signature="43353:43662" ph="SELECT `med_... medicine_booking" />
-            <marker date="1651395357834" expanded="true" signature="43939:44236" ph="SELECT `medi... patient" />
-            <marker date="1651395357834" expanded="true" signature="43939:44252" ph="SELECT `medi... patient" />
-            <marker date="1651395357834" expanded="true" signature="45238:45441" ph="SELECT `stoc... stock" />
-            <marker date="1651395357834" expanded="true" signature="45680:45924" ph="SELECT `stoc... stock" />
-            <marker date="1651395357834" expanded="true" signature="46273:46321" ph="SELECT * FRO... stock" />
-            <marker date="1651395357834" expanded="true" signature="46611:46696" ph="UPDATE `stoc... " />
-            <marker date="1651395357834" expanded="true" signature="46934:46984" ph="DELETE FROM " />
-            <marker date="1651395357834" expanded="true" signature="47265:47444" ph="SELECT `disc... medicine" />
-            <marker date="1651395357834" expanded="true" signature="47671:47833" ph="SELECT `medi... medicine" />
-            <marker date="1651395357834" expanded="true" signature="48045:48102" ph="SELECT med_b... medicine" />
-            <marker date="1651395357834" expanded="true" signature="48507:48755" ph="INSERT INTO `discount`... " />
-            <marker date="1651395357834" expanded="true" signature="49003:49155" ph="SELECT `disc... medicine" />
-            <marker date="1651395357834" expanded="true" signature="49003:49156" ph="SELECT `disc... medicine" />
-            <marker date="1651395357834" expanded="true" signature="49590:49807" ph="UPDATE `disc... " />
-            <marker date="1651395357834" expanded="true" signature="50046:50096" ph="DELETE FROM " />
-            <marker date="1651395357834" expanded="true" signature="50336:50634" ph="SELECT `disc... pharmacy" />
-            <marker date="1651395357834" expanded="true" signature="50901:51241" ph="SELECT `disc... pharmacy" />
-            <marker date="1651395357834" expanded="true" signature="51446:51710" ph="SELECT SUM(`... med_booking_sub" />
-            <marker date="1651395357834" expanded="true" signature="52149:52447" ph="SELECT SUM(`... med_booking_sub" />
-            <marker date="1651395357834" expanded="true" signature="52149:52463" ph="SELECT SUM(`... med_booking_sub" />
-            <marker date="1651395357834" expanded="true" signature="53094:53150" ph="SELECT COUNT... schedule" />
-            <marker date="1651395357834" expanded="true" signature="53094:53178" ph="SELECT COUNT... schedule" />
-            <marker date="1651395357834" expanded="true" signature="53266:53357" ph="SELECT COUNT... doctor_booking" />
-            <marker date="1651395357834" expanded="true" signature="53898:53992" ph="SELECT * FRO... login" />
-            <marker date="1651395357834" expanded="true" signature="54102:54195" ph="UPDATE login... " />
-            <marker date="1651395357834" expanded="true" signature="54667:54736" ph="SELECT * FRO... doctor" />
-            <marker date="1651395357834" expanded="true" signature="54924:54993" ph="SELECT * FRO... doctor" />
-            <marker date="1651395357834" expanded="true" signature="55953:56368" ph="UPDATE docto... " />
-            <marker date="1651395357834" expanded="true" signature="56534:56925" ph="UPDATE docto... " />
-            <marker date="1651395357834" expanded="true" signature="57083:57470" ph="UPDATE docto... " />
-            <marker date="1651395357834" expanded="true" signature="57686:57755" ph="SELECT * FRO... schedule" />
-            <marker date="1651395357834" expanded="true" signature="57937:58172" ph="SELECT `doct... patient" />
-            <marker date="1651395357834" expanded="true" signature="58411:58735" ph="SELECT `doct... patient" />
-            <marker date="1651395357834" expanded="true" signature="58940:59097" ph="SELECT `pres... patient" />
-            <marker date="1651395357834" expanded="true" signature="58940:59125" ph="SELECT `pres... patient" />
-            <marker date="1651395357834" expanded="true" signature="59394:59517" ph="SELECT * FRO... prescription" />
-            <marker date="1651395357834" expanded="true" signature="59394:59533" ph="select * fro... prescription" />
-            <marker date="1651395357834" expanded="true" signature="60491:60675" ph="SELECT `pati... patient" />
-            <marker date="1651395357834" expanded="true" signature="60733:60975" ph="INSERT INTO `prescription`... " />
-            <marker date="1651395357834" expanded="true" signature="61036:61100" ph="UPDATE `doct... " />
-            <marker date="1651395357834" expanded="true" signature="61036:61222" ph="UPDATE `doct... " />
-            <marker date="1651395357834" expanded="true" signature="62502:62588" ph="SELECT * FRO... login" />
-            <marker date="1651395357834" expanded="true" signature="63609:63715" ph="INSERT INTO `login`... " />
-            <marker date="1651395357834" expanded="true" signature="63769:64135" ph="INSERT INTO `patient`... " />
-            <marker date="1651395357834" expanded="true" signature="64502:64586" ph="SELECT * FRO... login" />
-            <marker date="1651395357834" expanded="true" signature="64702:64775" ph="UPDATE login... " />
-            <marker date="1651395357834" expanded="true" signature="64976:65018" ph="SELECT * FRO... patient" />
-            <marker date="1651395357834" expanded="true" signature="64976:65034" ph="SELECT * FRO... patient" />
-            <marker date="1651395357834" expanded="true" signature="66467:66794" ph="UPDATE `pati... " />
-            <marker date="1651395357834" expanded="true" signature="66467:66810" ph="UPDATE `pati... " />
-            <marker date="1651395357834" expanded="true" signature="66921:67243" ph="UPDATE `pati... " />
-            <marker date="1651395357834" expanded="true" signature="67473:67592" ph="SELECT `doct... hospital" />
-            <marker date="1651395357834" expanded="true" signature="67865:68022" ph="SELECT `doct... hospital" />
-            <marker date="1651395357834" expanded="true" signature="68573:68597" ph="SELECT * FRO... medicine" />
-            <marker date="1651395357834" expanded="true" signature="68887:68950" ph="SELECT * FRO... medicine" />
-            <marker date="1651395357834" expanded="true" signature="69236:69404" ph="SELECT `medi... medicine" />
-            <marker date="1651395357834" expanded="true" signature="69725:69887" ph="SELECT `disc... medicine" />
-            <marker date="1651395357834" expanded="true" signature="70775:70997" ph="SELECT `phar... pharmacy" />
-            <marker date="1651395357834" expanded="true" signature="71771:71970" ph="SELECT `sche... doctor" />
-            <marker date="1651395357834" expanded="true" signature="71771:71998" ph="SELECT `sche... doctor" />
-            <marker date="1651395357834" expanded="true" signature="71771:72019" ph="SELECT `sche... doctor" />
-            <marker date="1651395357834" expanded="true" signature="72513:72757" ph="INSERT INTO `doctor_booking`... " />
-            <marker date="1651395357834" expanded="true" signature="73000:73051" ph="INSERT INTO `cart`... " />
-            <marker date="1651395357834" expanded="true" signature="73000:73069" ph="INSERT INTO `cart`... " />
-            <marker date="1651395357834" expanded="true" signature="73000:73084" ph="INSERT INTO `cart`... " />
-            <marker date="1651395357834" expanded="true" signature="73000:73085" ph="INSERT INTO `cart`... " />
-            <marker date="1651395357834" expanded="true" signature="73416:73508" ph="INSERT INTO `medicine_booking`... " />
-            <marker date="1651395357834" expanded="true" signature="73416:73532" ph="INSERT INTO `medicine_booking`... " />
-            <marker date="1651395357834" expanded="true" signature="73416:73550" ph="INSERT INTO `medicine_booking`... " />
-            <marker date="1651395357834" expanded="true" signature="73416:73569" ph="INSERT INTO `medicine_booking`... " />
-            <marker date="1651395357834" expanded="true" signature="73416:73586" ph="INSERT INTO `medicine_booking`... " />
-            <marker date="1651395357834" expanded="true" signature="73988:74025" ph="SELECT * FRO... bank" />
-            <marker date="1651395357834" expanded="true" signature="73988:74057" ph="SELECT * FRO... bank" />
-            <marker date="1651395357834" expanded="true" signature="73988:74072" ph="SELECT * FRO... bank" />
-            <marker date="1651395357834" expanded="true" signature="74317:74398" ph="INSERT INTO `payment`... " />
-            <marker date="1651395357834" expanded="true" signature="74317:74429" ph="INSERT INTO `payment`... " />
-            <marker date="1651395357834" expanded="true" signature="74317:74442" ph="INSERT INTO `payment`... " />
-            <marker date="1651395357834" expanded="true" signature="74317:74468" ph="INSERT INTO `payment`... " />
-            <marker date="1651395357834" expanded="true" signature="74317:74469" ph="INSERT INTO `payment`... " />
-            <marker date="1651395357834" expanded="true" signature="74546:74667" ph="UPDATE `bank... " />
-            <marker date="1651395357834" expanded="true" signature="75190:75274" ph="SELECT * FRO... bank" />
-            <marker date="1651395357834" expanded="true" signature="75519:75672" ph="INSERT INTO `payment`... " />
-            <marker date="1651395357834" expanded="true" signature="75750:75871" ph="UPDATE `bank... " />
-            <marker date="1651395357834" expanded="true" signature="76223:76387" ph="SELECT `doct... doctor" />
-            <marker date="1651395357834" expanded="true" signature="76223:76443" ph="SELECT `doct... doctor" />
-            <marker date="1651395357834" expanded="true" signature="76663:76958" ph="SELECT `med_... medicine_booking" />
-            <marker date="1651395357834" expanded="true" signature="76663:76974" ph="SELECT `med_... medicine_booking" />
-            <marker date="1651395357834" expanded="true" signature="77219:77342" ph="insert into complaint... " />
-            <marker date="1651395357834" expanded="true" signature="77530:77585" ph="select * fro... complaint" />
-            <marker date="1651395357834" expanded="true" signature="77530:77586" ph="SELECT * FRO... complaint" />
+            <marker date="1651489860932" expanded="true" signature="831:916" ph="SELECT * FRO... login" />
+            <marker date="1651489860932" expanded="true" signature="2223:2317" ph="SELECT * FRO... login" />
+            <marker date="1651489860932" expanded="true" signature="2468:2561" ph="UPDATE login... " />
+            <marker date="1651489860932" expanded="true" signature="3042:3144" ph="SELECT hospi... hospital" />
+            <marker date="1651489860932" expanded="true" signature="3411:3560" ph="SELECT hospi... hospital" />
+            <marker date="1651489860932" expanded="true" signature="3749:3851" ph="SELECT hospi... hospital" />
+            <marker date="1651489860932" expanded="true" signature="4118:4266" ph="SELECT hospi... hospital" />
+            <marker date="1651489860932" expanded="true" signature="4447:4549" ph="SELECT hospi... hospital" />
+            <marker date="1651489860932" expanded="true" signature="4816:4964" ph="SELECT hospi... hospital" />
+            <marker date="1651489860932" expanded="true" signature="5182:5243" ph="UPDATE login... " />
+            <marker date="1651489860932" expanded="true" signature="5500:5561" ph="UPDATE login... " />
+            <marker date="1651489860932" expanded="true" signature="5820:5881" ph="UPDATE login... " />
+            <marker date="1651489860932" expanded="true" signature="6124:6185" ph="UPDATE login... " />
+            <marker date="1651489860932" expanded="true" signature="6519:6742" ph="SELECT compl... complaint" />
+            <marker date="1651489860932" expanded="true" signature="7101:7361" ph="SELECT compl... complaint" />
+            <marker date="1651489860932" expanded="true" signature="7557:7817" ph="SELECT compl... complaint" />
+            <marker date="1651489860932" expanded="true" signature="8103:8329" ph="SELECT compl... complaint" />
+            <marker date="1651489860932" expanded="true" signature="8733:8911" ph="UPDATE compl... " />
+            <marker date="1651489860932" expanded="true" signature="9390:9584" ph="SELECT docto... doctor" />
+            <marker date="1651489860932" expanded="true" signature="9824:9977" ph="SELECT docto... doctor" />
+            <marker date="1651489860932" expanded="true" signature="10158:10352" ph="SELECT docto... doctor" />
+            <marker date="1651489860932" expanded="true" signature="10574:10641" ph="UPDATE `logi... " />
+            <marker date="1651489860932" expanded="true" signature="10937:11179" ph="SELECT docto... doctor" />
+            <marker date="1651489860932" expanded="true" signature="11379:11444" ph="UPDATE `logi... " />
+            <marker date="1651489860932" expanded="true" signature="11652:11848" ph="SELECT docto... doctor" />
+            <marker date="1651489860932" expanded="true" signature="12069:12134" ph="UPDATE `logi... " />
+            <marker date="1651489860932" expanded="true" signature="12410:12654" ph="SELECT docto... doctor" />
+            <marker date="1651489860932" expanded="true" signature="12851:12918" ph="UPDATE `logi... " />
+            <marker date="1651489860932" expanded="true" signature="13110:13131" ph="SELECT * FRO... patient" />
+            <marker date="1651489860932" expanded="true" signature="13373:13435" ph="SELECT * FRO... patient" />
+            <marker date="1651489860932" expanded="true" signature="13619:13721" ph="SELECT pharm... pharmacy" />
+            <marker date="1651489860932" expanded="true" signature="14004:14153" ph="SELECT pharm... pharmacy" />
+            <marker date="1651489860932" expanded="true" signature="14379:14440" ph="UPDATE login... " />
+            <marker date="1651489860932" expanded="true" signature="14697:14758" ph="UPDATE login... " />
+            <marker date="1651489860932" expanded="true" signature="14976:15078" ph="SELECT pharm... pharmacy" />
+            <marker date="1651489860932" expanded="true" signature="15300:15361" ph="UPDATE login... " />
+            <marker date="1651489860932" expanded="true" signature="15649:15798" ph="SELECT pharm... pharmacy" />
+            <marker date="1651489860932" expanded="true" signature="15979:16081" ph="SELECT pharm... pharmacy" />
+            <marker date="1651489860932" expanded="true" signature="16303:16364" ph="UPDATE login... " />
+            <marker date="1651489860932" expanded="true" signature="16652:16801" ph="SELECT pharm... pharmacy" />
+            <marker date="1651489860932" expanded="true" signature="17243:17378" ph="INSERT INTO medicine... " />
+            <marker date="1651489860932" expanded="true" signature="17585:17607" ph="SELECT * FRO... medicine" />
+            <marker date="1651489860932" expanded="true" signature="17852:17913" ph="SELECT * FRO... medicine" />
+            <marker date="1651489860932" expanded="true" signature="18095:18142" ph="DELETE FROM " />
+            <marker date="1651489860932" expanded="true" signature="19159:19219" ph="SELECT COUNT... login" />
+            <marker date="1651489860932" expanded="true" signature="19301:19361" ph="SELECT COUNT... login" />
+            <marker date="1651489860932" expanded="true" signature="19441:19501" ph="SELECT COUNT... login" />
+            <marker date="1651489860932" expanded="true" signature="19582:19647" ph="SELECT COUNT... complaint" />
+            <marker date="1651489860932" expanded="true" signature="20708:20805" ph="INSERT INTO login... " />
+            <marker date="1651489860932" expanded="true" signature="20864:21172" ph="INSERT INTO hospital... " />
+            <marker date="1651489860932" expanded="true" signature="21972:22066" ph="SELECT * FRO... login" />
+            <marker date="1651489860932" expanded="true" signature="22210:22303" ph="UPDATE login... " />
+            <marker date="1651489860932" expanded="true" signature="22827:22894" ph="SELECT * FRO... hospital" />
+            <marker date="1651489860932" expanded="true" signature="23094:23145" ph="SELECT * FRO... hospital" />
+            <marker date="1651489860932" expanded="true" signature="23714:23992" ph="UPDATE hospi... " />
+            <marker date="1651489860932" expanded="true" signature="25042:25142" ph="INSERT INTO login... " />
+            <marker date="1651489860932" expanded="true" signature="25184:25647" ph="INSERT INTO doctor... " />
+            <marker date="1651489860932" expanded="true" signature="25884:25931" ph="SELECT * FRO... doctor" />
+            <marker date="1651489860932" expanded="true" signature="26904:27319" ph="UPDATE docto... " />
+            <marker date="1651489860932" expanded="true" signature="27508:27899" ph="UPDATE docto... " />
+            <marker date="1651489860932" expanded="true" signature="28076:28463" ph="UPDATE docto... " />
+            <marker date="1651489860932" expanded="true" signature="28693:28738" ph="DELETE FROM " />
+            <marker date="1651489860932" expanded="true" signature="29025:29199" ph="SELECT `doct... doctor" />
+            <marker date="1651489860932" expanded="true" signature="29564:29786" ph="SELECT `doct... doctor" />
+            <marker date="1651489860932" expanded="true" signature="29972:30148" ph="SELECT `pati... patient" />
+            <marker date="1651489860932" expanded="true" signature="30476:30701" ph="SELECT `pati... patient" />
+            <marker date="1651489860932" expanded="true" signature="30888:31254" ph="SELECT `doct... patient" />
+            <marker date="1651489860932" expanded="true" signature="31535:31980" ph="SELECT `doct... patient" />
+            <marker date="1651489860932" expanded="true" signature="32510:32700" ph="SELECT `doct... login" />
+            <marker date="1651489860932" expanded="true" signature="33057:33228" ph="INSERT INTO `schedule`... " />
+            <marker date="1651489860932" expanded="true" signature="33601:33797" ph="SELECT `sche... doctor" />
+            <marker date="1651489860932" expanded="true" signature="34079:34345" ph="SELECT `sche... doctor" />
+            <marker date="1651489860932" expanded="true" signature="34544:34593" ph="SELECT * FRO... schedule" />
+            <marker date="1651489860932" expanded="true" signature="34801:34850" ph="DELETE FROM " />
+            <marker date="1651489860932" expanded="true" signature="35232:35375" ph="UPDATE sched... " />
+            <marker date="1651489860932" expanded="true" signature="35689:35729" ph="SELECT COUNT... doctor" />
+            <marker date="1651489860932" expanded="true" signature="35689:35862" ph="SELECT COUNT... doctor" />
+            <marker date="1651489860932" expanded="true" signature="35689:35863" ph="SELECT COUNT... doctor" />
+            <marker date="1651489860932" expanded="true" signature="36893:36987" ph="SELECT * FRO... login" />
+            <marker date="1651489860932" expanded="true" signature="37097:37190" ph="UPDATE login... " />
+            <marker date="1651489860932" expanded="true" signature="37662:37729" ph="SELECT * FRO... pharmacy" />
+            <marker date="1651489860932" expanded="true" signature="37919:37986" ph="SELECT * FRO... pharmacy" />
+            <marker date="1651489860932" expanded="true" signature="38593:38915" ph="UPDATE pharm... " />
+            <marker date="1651489860932" expanded="true" signature="39142:39209" ph="SELECT * FRO... medicine" />
+            <marker date="1651489860932" expanded="true" signature="39463:39543" ph="SELECT * FRO... medicine" />
+            <marker date="1651489860932" expanded="true" signature="40072:40275" ph="INSERT INTO `medicine`... " />
+            <marker date="1651489860932" expanded="true" signature="40332:40470" ph="INSERT INTO `stock`... " />
+            <marker date="1651489860932" expanded="true" signature="40724:40777" ph="SELECT * FRO... medicine" />
+            <marker date="1651489860932" expanded="true" signature="41178:41348" ph="UPDATE `medi... " />
+            <marker date="1651489860932" expanded="true" signature="41608:41659" ph="DELETE FROM " />
+            <marker date="1651489860932" expanded="true" signature="41885:42130" ph="SELECT `pati... patient" />
+            <marker date="1651489860932" expanded="true" signature="42415:42695" ph="SELECT `pati... patient" />
+            <marker date="1651489860932" expanded="true" signature="42882:43142" ph="SELECT `medi... patient" />
+            <marker date="1651489860932" expanded="true" signature="43369:43678" ph="SELECT `med_... medicine_booking" />
+            <marker date="1651489860932" expanded="true" signature="43955:44252" ph="SELECT `medi... patient" />
+            <marker date="1651489860932" expanded="true" signature="43955:44268" ph="SELECT `medi... patient" />
+            <marker date="1651489860932" expanded="true" signature="45254:45457" ph="SELECT `stoc... stock" />
+            <marker date="1651489860932" expanded="true" signature="45696:45940" ph="SELECT `stoc... stock" />
+            <marker date="1651489860932" expanded="true" signature="46289:46337" ph="SELECT * FRO... stock" />
+            <marker date="1651489860932" expanded="true" signature="46627:46712" ph="UPDATE `stoc... " />
+            <marker date="1651489860932" expanded="true" signature="46950:47000" ph="DELETE FROM " />
+            <marker date="1651489860932" expanded="true" signature="47281:47460" ph="SELECT `disc... medicine" />
+            <marker date="1651489860932" expanded="true" signature="47687:47849" ph="SELECT `medi... medicine" />
+            <marker date="1651489860932" expanded="true" signature="48061:48118" ph="SELECT med_b... medicine" />
+            <marker date="1651489860932" expanded="true" signature="48523:48771" ph="INSERT INTO `discount`... " />
+            <marker date="1651489860932" expanded="true" signature="49019:49171" ph="SELECT `disc... medicine" />
+            <marker date="1651489860932" expanded="true" signature="49019:49172" ph="SELECT `disc... medicine" />
+            <marker date="1651489860932" expanded="true" signature="49606:49823" ph="UPDATE `disc... " />
+            <marker date="1651489860932" expanded="true" signature="50062:50112" ph="DELETE FROM " />
+            <marker date="1651489860932" expanded="true" signature="50352:50650" ph="SELECT `disc... pharmacy" />
+            <marker date="1651489860932" expanded="true" signature="50917:51257" ph="SELECT `disc... pharmacy" />
+            <marker date="1651489860932" expanded="true" signature="51462:51726" ph="SELECT SUM(`... med_booking_sub" />
+            <marker date="1651489860932" expanded="true" signature="51947:52327" ph="SELECT SUM(`... med_booking_sub" />
+            <marker date="1651489860932" expanded="true" signature="51947:52374" ph="SELECT SUM(`... med_booking_sub" />
+            <marker date="1651489860932" expanded="true" signature="52663:52961" ph="SELECT SUM(`... med_booking_sub" />
+            <marker date="1651489860932" expanded="true" signature="52663:52977" ph="SELECT SUM(`... med_booking_sub" />
+            <marker date="1651489860932" expanded="true" signature="53608:53664" ph="SELECT COUNT... schedule" />
+            <marker date="1651489860932" expanded="true" signature="53608:53692" ph="SELECT COUNT... schedule" />
+            <marker date="1651489860932" expanded="true" signature="53780:53871" ph="SELECT COUNT... doctor_booking" />
+            <marker date="1651489860932" expanded="true" signature="54412:54506" ph="SELECT * FRO... login" />
+            <marker date="1651489860932" expanded="true" signature="54616:54709" ph="UPDATE login... " />
+            <marker date="1651489860932" expanded="true" signature="55181:55250" ph="SELECT * FRO... doctor" />
+            <marker date="1651489860932" expanded="true" signature="55438:55507" ph="SELECT * FRO... doctor" />
+            <marker date="1651489860932" expanded="true" signature="56467:56882" ph="UPDATE docto... " />
+            <marker date="1651489860932" expanded="true" signature="57048:57439" ph="UPDATE docto... " />
+            <marker date="1651489860932" expanded="true" signature="57597:57984" ph="UPDATE docto... " />
+            <marker date="1651489860932" expanded="true" signature="58200:58269" ph="SELECT * FRO... schedule" />
+            <marker date="1651489860932" expanded="true" signature="58451:58686" ph="SELECT `doct... patient" />
+            <marker date="1651489860932" expanded="true" signature="58925:59249" ph="SELECT `doct... patient" />
+            <marker date="1651489860932" expanded="true" signature="59454:59611" ph="SELECT `pres... patient" />
+            <marker date="1651489860932" expanded="true" signature="59454:59639" ph="SELECT `pres... patient" />
+            <marker date="1651489860932" expanded="true" signature="59908:60031" ph="SELECT * FRO... prescription" />
+            <marker date="1651489860932" expanded="true" signature="59908:60047" ph="select * fro... prescription" />
+            <marker date="1651489860932" expanded="true" signature="61005:61189" ph="SELECT `pati... patient" />
+            <marker date="1651489860932" expanded="true" signature="61247:61489" ph="INSERT INTO `prescription`... " />
+            <marker date="1651489860932" expanded="true" signature="61550:61614" ph="UPDATE `doct... " />
+            <marker date="1651489860932" expanded="true" signature="61550:61736" ph="UPDATE `doct... " />
+            <marker date="1651489860932" expanded="true" signature="63016:63102" ph="SELECT * FRO... login" />
+            <marker date="1651489860932" expanded="true" signature="64140:64246" ph="INSERT INTO `login`... " />
+            <marker date="1651489860932" expanded="true" signature="64300:64665" ph="INSERT INTO `patient`... " />
+            <marker date="1651489860932" expanded="true" signature="65032:65116" ph="SELECT * FRO... login" />
+            <marker date="1651489860932" expanded="true" signature="65232:65305" ph="UPDATE login... " />
+            <marker date="1651489860932" expanded="true" signature="65506:65548" ph="SELECT * FRO... patient" />
+            <marker date="1651489860932" expanded="true" signature="65506:65565" ph="SELECT * FRO... patient" />
+            <marker date="1651489860932" expanded="true" signature="66876:67203" ph="UPDATE `pati... " />
+            <marker date="1651489860932" expanded="true" signature="66876:67219" ph="UPDATE `pati... " />
+            <marker date="1651489860932" expanded="true" signature="67366:67688" ph="UPDATE `pati... " />
+            <marker date="1651489860932" expanded="true" signature="67918:68037" ph="SELECT `doct... hospital" />
+            <marker date="1651489860932" expanded="true" signature="68285:68438" ph="SELECT `doct... hospital" />
+            <marker date="1651489860932" expanded="true" signature="68285:68454" ph="SELECT `doct... hospital" />
+            <marker date="1651489860932" expanded="true" signature="68727:68884" ph="SELECT `doct... hospital" />
+            <marker date="1651489860932" expanded="true" signature="69438:69462" ph="SELECT * FRO... medicine" />
+            <marker date="1651489860932" expanded="true" signature="69752:69815" ph="SELECT * FRO... medicine" />
+            <marker date="1651489860932" expanded="true" signature="70101:70269" ph="SELECT `medi... medicine" />
+            <marker date="1651489860932" expanded="true" signature="70594:70756" ph="SELECT `disc... medicine" />
+            <marker date="1651489860932" expanded="true" signature="71919:72141" ph="SELECT `phar... pharmacy" />
+            <marker date="1651489860932" expanded="true" signature="72915:73114" ph="SELECT `sche... doctor" />
+            <marker date="1651489860932" expanded="true" signature="72915:73142" ph="SELECT `sche... doctor" />
+            <marker date="1651489860932" expanded="true" signature="72915:73163" ph="SELECT `sche... doctor" />
+            <marker date="1651489860932" expanded="true" signature="73657:73901" ph="INSERT INTO `doctor_booking`... " />
+            <marker date="1651489860932" expanded="true" signature="74144:74195" ph="INSERT INTO `cart`... " />
+            <marker date="1651489860932" expanded="true" signature="74144:74213" ph="INSERT INTO `cart`... " />
+            <marker date="1651489860932" expanded="true" signature="74144:74228" ph="INSERT INTO `cart`... " />
+            <marker date="1651489860932" expanded="true" signature="74144:74229" ph="INSERT INTO `cart`... " />
+            <marker date="1651489860932" expanded="true" signature="74560:74652" ph="INSERT INTO `medicine_booking`... " />
+            <marker date="1651489860932" expanded="true" signature="74560:74676" ph="INSERT INTO `medicine_booking`... " />
+            <marker date="1651489860932" expanded="true" signature="74560:74694" ph="INSERT INTO `medicine_booking`... " />
+            <marker date="1651489860932" expanded="true" signature="74560:74713" ph="INSERT INTO `medicine_booking`... " />
+            <marker date="1651489860932" expanded="true" signature="74560:74730" ph="INSERT INTO `medicine_booking`... " />
+            <marker date="1651489860932" expanded="true" signature="75132:75169" ph="SELECT * FRO... bank" />
+            <marker date="1651489860932" expanded="true" signature="75132:75201" ph="SELECT * FRO... bank" />
+            <marker date="1651489860932" expanded="true" signature="75132:75216" ph="SELECT * FRO... bank" />
+            <marker date="1651489860932" expanded="true" signature="75461:75542" ph="INSERT INTO `payment`... " />
+            <marker date="1651489860932" expanded="true" signature="75461:75573" ph="INSERT INTO `payment`... " />
+            <marker date="1651489860932" expanded="true" signature="75461:75586" ph="INSERT INTO `payment`... " />
+            <marker date="1651489860932" expanded="true" signature="75461:75612" ph="INSERT INTO `payment`... " />
+            <marker date="1651489860932" expanded="true" signature="75461:75613" ph="INSERT INTO `payment`... " />
+            <marker date="1651489860932" expanded="true" signature="75690:75811" ph="UPDATE `bank... " />
+            <marker date="1651489860932" expanded="true" signature="76334:76418" ph="SELECT * FRO... bank" />
+            <marker date="1651489860932" expanded="true" signature="76663:76816" ph="INSERT INTO `payment`... " />
+            <marker date="1651489860932" expanded="true" signature="76894:77015" ph="UPDATE `bank... " />
+            <marker date="1651489860932" expanded="true" signature="77367:77531" ph="SELECT `doct... doctor" />
+            <marker date="1651489860932" expanded="true" signature="77367:77587" ph="SELECT `doct... doctor" />
+            <marker date="1651489860932" expanded="true" signature="77807:78102" ph="SELECT `med_... medicine_booking" />
+            <marker date="1651489860932" expanded="true" signature="77807:78118" ph="SELECT `med_... medicine_booking" />
+            <marker date="1651489860932" expanded="true" signature="78363:78456" ph="INSERT INTO `complaint`... " />
+            <marker date="1651489860932" expanded="true" signature="78363:78471" ph="INSERT INTO `complaint`... " />
+            <marker date="1651489860932" expanded="true" signature="78363:78523" ph="INSERT INTO `complaint`... " />
+            <marker date="1651489860932" expanded="true" signature="78711:78766" ph="select * fro... complaint" />
+            <marker date="1651489860932" expanded="true" signature="78711:78767" ph="SELECT * FRO... complaint" />
+            <marker date="1651489860932" expanded="true" signature="79027:79170" ph="INSERT INTO `chat`... " />
+            <marker date="1651489860932" expanded="true" signature="79731:79943" ph="SELECT `from... chat" />
           </folding>
         </state>
       </provider>

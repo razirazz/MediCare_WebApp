@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, session, jsonify
 import random
 import datetime, time
+import dateutil
 from encodings.base64_codec import base64_decode
 import base64
 from templates.DBConnection import Db
@@ -1220,9 +1221,12 @@ def pharmacy_view_sales_report():
     return render_template('pharmacy/view_sales_report.html', data=res)
 
 
-@app.route('/pharmacy_view_sales_report_more')
-def pharmacy_view_sales_report_more():
-    return render_template('pharmacy/view_more_sales_report.html')
+@app.route('/pharmacy_view_sales_report_more/<val>')
+def pharmacy_view_sales_report_more(val):
+    db = Db()
+    qry = "SELECT SUM(`med_booking_sub`.`quantity`) AS med_quantity, SUM(`med_booking_sub`.`cost`) AS total_amount, `medicine`.*, `med_booking_sub`.*, `medicine_booking`.* FROM `med_booking_sub` INNER JOIN `medicine` ON `medicine`.`med_id`=`med_booking_sub`.`med_id` INNER JOIN `medicine_booking` ON `medicine_booking`.`medbook_id`=`med_booking_sub`.`med_book_id` WHERE `medicine`.`med_id`='" + val + "' GROUP BY `medicine_booking`.`date`"
+    res = db.select(qry)
+    return render_template('pharmacy/view_more_sales_report.html', data=res)
 
 
 @app.route('/pharmacy_search_sales_report', methods=['post'])
@@ -1483,15 +1487,13 @@ def patient_login():
 @app.route('/patient_signup', methods=['post'])
 def patient_signup():
     name = request.form['name']
-
-    image = request.files['img']
+    image = request.form['photo']
     timestr = time.strftime("%Y%m%d-%H%M%S")
     a = base64.b64decode(image)
-    fh = open("static/Reg_photos/" + timestr + ".jpg", "wb")
-    path = "/static/Reg_photos/" + timestr + ".jpg"
+    fh = open("D:\\project\\medicare\\medicare\\static\\patient\\" + timestr + ".jpg", "wb")
+    pic = "/static/patient/" + timestr + ".jpg"
     fh.write(a)
     fh.close()
-
     contact = request.form['contact']
     mail = request.form['e_mail']
     gender = request.form['gender']
@@ -1502,13 +1504,13 @@ def patient_signup():
     pin = request.form['pin']
     district = request.form['district']
     password = request.form['password']
-    confirm_pass = request.form['confirm_pass']
+    confirm_pass = request.form['gf']
 
     if password == confirm_pass:
         db = Db()
         qry_lid = "INSERT INTO `login`(`username`, `password`, `type`) VALUES ('" + mail + "', '" + password + "', 'patient')"
         res_lid = db.insert(qry_lid)
-        qry = "INSERT INTO `patient`(`pat_name`, `pat_place`, `pat_number`, `gender`, `dob`, `pin`, `post`, `district`, `img`, `pat_email`, `login_id`, `address`) VALUES ('" + name + "', '" + place + "', '" + contact + "', '" + gender + "', '" + dob + "', '" + pin + "', '" + post + "', '" + district + "', '" + path + "', '" + mail + "', '" + str(res_lid) + "', '" + address + "')"
+        qry = "INSERT INTO `patient`(`pat_name`, `pat_place`, `pat_number`, `gender`, `dob`, `pin`, `post`, `district`, `img`, `pat_email`, `login_id`, `address`) VALUES ('" + name + "', '" + place + "', '" + contact + "', '" + gender + "', '" + dob + "', '" + pin + "', '" + post + "', '" + district + "', '" + pic + "', '" + mail + "', '" + str(res_lid) + "', '" + address + "')"
         res = db.insert(qry)
         return jsonify(status='ok')
     else:
@@ -1535,26 +1537,19 @@ def patient_change_password():
 def patient_view_profile():
     db = Db()
     lid = request.form['lid']
-    qry = "SELECT * FROM `patient` WHERE `login_id`='" + str(lid) +"'"
-    # print(qry)
+    qry = "SELECT * FROM `patient` WHERE `login_id`='" + str(lid) + "'"
     res = db.selectOne(qry)
-    print(res)
     birth_date = res['dob']
-    print(birth_date)
     ff = str(birth_date)
-    print("ff--",ff)
     dd = ff.split("-")
-    print("dd---0",dd)
     dvd = dd[2]+"-"+dd[1]+"-"+dd[0]
-    print(dvd)
-    # print(birth_date)
     return jsonify(status='ok', name=res['pat_name'], place=res['pat_place'], contact=res['pat_number'], gender=res['gender'], birth_date=dvd, pin=res['pin'], post=res['post'], district=res['district'], email=res['pat_email'], address=res['address'], photo=res['img'])
 
 
 @app.route('/patient_update_profile', methods=['post'])
 def patient_update_profile():
     name = request.form['name']
-    print(name)
+    # print(name)
     image = request.form['photo']
     contact = request.form['contact']
     mail = request.form['email']
@@ -1566,20 +1561,22 @@ def patient_update_profile():
     pin = request.form['pin']
     district = request.form['district']
     pat_lid = request.form['lid']
-    print("dob--------------------",dob)
     db = Db()
+    print(image)
     if image != "aa":
+        print("yes...pics....!!!")
         timestr = time.strftime("%Y%m%d-%H%M%S")
         a = base64.b64decode(image)
-        fh = open("D:\\project\\medicare\\medicare\\static\\patient" + timestr + ".jpg", "wb")
+        fh = open("D:\\project\\medicare\\medicare\\static\\patient\\" + timestr + ".jpg", "wb")
         pic = "/static/patient/" + timestr + ".jpg"
         fh.write(a)
         fh.close()
         qry = "UPDATE `patient` SET `pat_name`='" + name + "', `pat_place`='" + place + "', `pat_number`='" + contact + "', `gender`='" + gender + "', `dob`='" + dob + "', `pin`='" + pin + "', `post`='" + post + "', `district`='" + district + "', `img`='" + pic + "', `pat_email`='" + mail + "', `address`='" + address + "' WHERE `login_id`='" + pat_lid + "'"
         res = db.update(qry)
-        print(qry)
+        # print(qry)
         return jsonify(status='ok')
     else:
+        print("no...pics....!!!")
         qry = "UPDATE `patient` SET `pat_name`='" + name + "', `pat_place`='" + place + "', `pat_number`='" + contact + "', `gender`='" + gender + "', `dob`='" + dob + "', `pin`='" + pin + "', `post`='" + post + "', `district`='" + district + "', `pat_email`='" + mail + "', `address`='" + address + "' WHERE `login_id`='" + pat_lid + "'"
         res = db.update(qry)
         print(res)
@@ -1597,6 +1594,17 @@ def patient_view_doctor():
     return jsonify(status='ok', data=res)
 
 
+@app.route('/patient_v_search_doctor', methods=['post'])
+def patient_v_search_doctor():
+    search = request.form['name']
+    db = Db()
+    qry = "SELECT `doctor`.*, `hospital`.`hos_name` FROM `hospital` INNER JOIN `doctor` ON `doctor`.`hos_id`=`hospital`.`login_id` WHERE `doctor`.`doc_name` LIKE '%" + search + "%'"
+    print(qry)
+    res = db.select(qry)
+    print(res)
+    return jsonify(status='ok', data=res)
+
+
 @app.route('/patient_view_doctor_profile', methods=['post'])
 def patient_view_doctor_profile():
     doc_id = request.form['lid']
@@ -1604,11 +1612,11 @@ def patient_view_doctor_profile():
     db = Db()
     qry = "SELECT `doctor`.*,`hospital`.* FROM `hospital` INNER JOIN `doctor` ON `doctor`.`hos_id`=`hospital`.`login_id` WHERE `doctor`.`login_id`='" + str(doc_id) + "'"
     print(qry)
-    res = db.select(qry)
+    res = db.selectOne(qry)
     print(res)
     if res is not None:
-        # return jsonify(status='ok', doc_name=res['doc_name'], hos_name=res['hos_name'], department=res['doc_depart'], quali=res['doc_qualification'], experience=res['doc_exp'], fees=res['fees'], contact=res['ph_number'], email=res['doc_email'], img=res['doc_img'])
-        return jsonify(status='ok', data=res)
+        return jsonify(status='ok', doc_name=res['doc_name'], hos_name=res['hos_name'], department=res['doc_depart'], quali=res['doc_qualification'], experience=res['doc_exp'], fees=res['fees'], contact=res['ph_number'], email=res['doc_email'], img=res['doc_img'])
+        # return jsonify(status='ok', data=res)
     else:
         return jsonify(status="no")
 
@@ -1637,28 +1645,36 @@ def patient_view_discount():
     db = Db()
     qry = "SELECT `medicine`.*, `discount`.`offer`, `discount`.`offer_price`, `discount`.`dis_id` FROM `medicine` INNER  JOIN `discount` ON `discount`.`med_id`=`medicine`.`med_id` "
     res = db.select(qry)
-    print(res)
+    # print(res)
     return jsonify(status='ok', data=res)
 
 
 @app.route('/patient_view_discount_profile', methods=['post'])
 def patient_view_discount_profile():
     dis_id = request.form['lid']
-    print("---------patient_view_discount_profile----dus_id-------"+dis_id)
+    # print("---------patient_view_discount_profile----dus_id-------"+dis_id)
     db = Db()
     qry = "SELECT `discount`.*, `medicine`.* FROM `medicine` INNER JOIN `discount` ON `discount`.`med_id`=`medicine`.`med_id` WHERE `discount`.`med_id`='" + str(dis_id) + "'"
-    res = db.select(qry)
-    print("---------patient_view_discount_profile----res-------",qry)
+    res = db.selectOne(qry)
+    # print("---------patient_view_discount_profile----res-------",qry)
     # print(res['dis_fdate'])
     f_date = res['dis_fdate']
     t_date = res['dis_tdate']
-    print(f_date)
     f_time = res['dis_ftime']
     t_time = res['dis_ttime']
+
+
+    print("from time====",f_time)
+    print("to time====",t_time)
+
+
     date = t_date - f_date
-    print(date)
-    time = t_time - f_time
-    return jsonify(status='ok', name=res['med_name'], brand=res['med_brand'], description=res['description'], price=res['price'], offer_price=res['offer_price'], offer_details=res['offer'], offer_date=str(date), offer_time=str(time))
+    print("++++++++++++++++++++",date)
+    form_ftime = datetime.datetime.strptime(f_time, '%H:%M')
+    form_ttime = datetime.datetime.strptime(t_time, '%H:%M')
+    print(datetime.datetime.strptime(f_time, '%H:%M'))
+    print(datetime.datetime.strptime(t_time, '%H:%M'))
+    return jsonify(status='ok', name=res['med_name'], brand=res['med_brand'], description=res['description'], price=res['price'], offer_price=res['offer_price'], offer_details=res['offer'], offer_date=date, offer_time=time)
 
 
 @app.route('/patient_add_complaint', methods=['post'])
@@ -1708,7 +1724,7 @@ def patient_book_doctors():
     hos_id = request.form['hos_id']
     lid=request.form['lid']
     current_date = datetime.datetime.now().strftime('%Y-%m-%d')
-    current_time = datetime.datetime.now().strftime('%H-%M-%S')
+    current_time = datetime.datetime.now().strftime('%H:%M:%S')
     db = Db()
     qry = "INSERT INTO `doctor_booking` (`sch_id`, `book_date`, `book_time`, `pat_lid`, `status`, `doc_lid`, `hos_lid`) VALUES ('" + sch_id + "', '" + current_date + "', '" + current_time + "', '" + lid + "', 'pending', '" + doc_id + "', '" + hos_id + "')"
     res = db.insert(qry)
@@ -1818,7 +1834,7 @@ def and_send_complaint():
     lid = request.form['lid']
     complaint = request.form['complaint']
     db = Db()
-    qry = "insert into complaint (date,user_id,complaint,reply,status)values(curdate(),'"+lid+"','"+complaint+"' ,'pending','pending')"
+    qry = "INSERT INTO `complaint` (`pat_lid`,`complaint`, `comp_date`, `comp_time`, `status`) VALUES ('" + lid + "', '" + complaint + "', CURDATE(), CURTIME(), 'pending')"
     db.insert(qry)
     return jsonify(status="ok")
 
@@ -1830,6 +1846,40 @@ def and_view_complaint():
     qry = "SELECT * FROM `complaint` WHERE `pat_lid`='" + lid + "'"
     res = db.select(qry)
     return jsonify(status="ok", data=res)
+
+
+@app.route('/in_message2', methods=['POST'])
+def message():
+    fr_id = request.form["fid"]
+    to_id = request.form["toid"]
+    message = request.form["msg"]
+    print(fr_id)
+    query7 = "INSERT INTO `chat`(`from_lid`, `to_lid`, `msg`, `date`, `time`) VALUES ('" + fr_id + "' ,'" + to_id + "','" + message + "',CURDATE(),CURTIME())"
+    print(query7)
+    db = Db()
+    res = db.insert(query7)
+    if res == 1:
+        return jsonify(status='send')
+    else:
+        return jsonify(status='failed')
+
+
+@app.route('/view_message2', methods=['POST'])
+def msg():
+    fid = request.form["fid"]
+    toid = request.form["toid"]
+    # name = request.form["name"]
+    lmid = request.form['lastmsgid'];
+
+    #  query = "select *  from 01111111111111111111111111where (sender_id='" + fr_id + "' and receiver_id='" + to_id + "') or (sender_id='" + to_id + "'  and receiver_id='" + fr_id + "')"
+    query="SELECT `from_lid`, `msg`, `date`, `chat_id` FROM `chat` WHERE `chat_id`>'"+lmid+"' AND ((`to_lid`='"+toid+"' AND  `from_lid`='"+fid+"') OR (`to_lid`='"+fid+"' AND `from_lid`='"+toid+"')  )  ORDER BY `chat_id` ASC"
+    # con, cu = connection()
+    # m = cu.execute(query)
+    # con.commit();
+    # sen = cu.fetchall()
+    db =Db()
+    sen = db.select(query)
+    return jsonify(status='not found',res1 = sen)
 
 
 if __name__ == '__main__':

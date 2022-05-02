@@ -1,5 +1,42 @@
 {% extends 'pharmacy/pharmacy_index.html' %}
 {% block body %}
 
+     <div class="col-md-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="table-responsive">
+                            <h4>{{ data['med_name'] }}</h4>
+                                <table id="example" class="display expandable-table" style="width:100%">
+                                    <thead>
+                                    <tr align="center">
+                                        <th>#</th>
+{#                                        <th>Medicine Name</th>#}
+{#                                        <th>Medicine Brand</th>#}
+                                        <th>Date</th>
+                                        <th>Quantity</th>
+                                        <th>Total Price</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody align="center">
+                                    {% for i in data %}
+                                        <tr>
+                                            <td> {{ loop.index }}</td>
+{#                                            <td>&nbsp;{{ i['med_name'] }}</td>#}
+{#                                            <td>&nbsp;{{ i['med_brand'] }}</td>#}
+                                            <td> {{ i['date'] }}</td>
+                                            <td>&nbsp;{{ i['med_quantity'] }}</td>
+                                            <td>&nbsp;{{ i['total_amount'] }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 {% endblock %}
