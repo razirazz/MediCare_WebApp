@@ -1,10 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'doctor/doctor_index.html' %}
+{% block body %}
 
-</body>
-</html>
+    <form id="form1" name="form1" method="post" action="/doctor_search_chat">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <table>
+                            <thead>
+                            <tr>
+                                <div class="form-group row">
+                                    <label for="hospital"
+                                           class="card-title col-sm-3 col-form-label">CHAT</label>
+                                    <div class="col-sm-9">
+                                        <div class="input-group">
+                                            <input type="text" name="search"
+                                                   class="form-control border-right-0"
+                                                   placeholder="Search Prescription"/>
+                                            <div class="input-group-append">
+                                                <input type="submit" name="s1" value="Search"
+                                                       class="btn btn-sm btn-outline-primary btn-fw"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                            </thead>
+                        </table>
+                        <p></p>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="display expandable-table" style="width:100%">
+                                        <thead align="center">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>Place</th>
+                                            <th>Contact</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody class="font-weight-500">
+                                        {% for i in data %}
+                                            <tr>
+                                                <td>&nbsp;{{ loop.index }}</td>
+                                                <td align="center">&nbsp;
+                                                    {{ i['pat_name'] }}
+                                                </td>
+                                                <td>
+                                                    <address>
+                                                        {{ i['pat_place'] }}<br>
+                                                        {{ i['district'] }}
+                                                    </address>
+                                                </td>
+                                                <td>&nbsp;
+                                                    {{ i['pat_number'] }}<br>
+                                                    {{ i['pat_email'] }}
+                                                </td>
+                                                <td align="center"><a
+                                                        href="/doctor_text_chat_view_more/{{ i['from_lid'] }}"
+                                                        class="btn btn-lg btn-outline-primary">View more</a></td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

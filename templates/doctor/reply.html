@@ -1,0 +1,24 @@
+{% extends 'doctor/doctor_index.html' %}
+{% block body %}
+
+    <form id="form1" name="form1" method="post" action="/doctor_chat_reply_post">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Reply</h4><br>
+
+                        <textarea name="reply" id="reply" cols="200" rows="5"
+                                  class="form-control input-group-text"
+                                  required></textarea><br>
+                        <input type="submit" name="button" id="button" value="Send"
+                               class="btn btn-block btn-primary"/>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

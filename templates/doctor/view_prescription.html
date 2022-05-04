@@ -3,7 +3,7 @@
 
     <form name="form1" method="post" action="/doctor_search_prescription_post">
 
-            <div class="row">
+        <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                     <div class="card-body">
@@ -11,7 +11,8 @@
                             <thead>
                             <tr>
                                 <div class="form-group row">
-                                    <label for="hospital" class="card-title col-sm-3 col-form-label">PRESCRIPTION</label>
+                                    <label for="hospital"
+                                           class="card-title col-sm-3 col-form-label">PRESCRIPTION</label>
                                     <div class="col-sm-9">
                                         <div class="input-group">
                                             <input type="text" name="search"
@@ -63,9 +64,6 @@
                                                 <td> {{ i['prescription'] }}</td>
                                                 <td>&nbsp;{{ i['date'] }}</td>
                                                 <td> {{ i['time'] }}</td>
-{#                                                <td align="center"><a href="/doctor_update_prescription/{{ i['db_id'] }}"#}
-{#                                                       class="btn btn-lg btn-outline-primary">Add#}
-{#                                                    prescription</a></td>#}
                                             </tr>
                                         {% endfor %}
                                         </tbody>
@@ -78,6 +76,6 @@
             </div>
         </div>
     </form>
-</div>
+    </div>
 
 {% endblock %}

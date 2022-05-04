@@ -1,0 +1,50 @@
+{% extends 'doctor/doctor_index.html' %}
+{% block body %}
+
+    <form name="form1" method="post" action="/doctor_text_chat_send" class="forms-sample">
+        <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Message</h4><br><br>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                    <table class="display expandable-table" style="width:100%">
+                                        <thead align="center">
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Date</th>
+                                            <th>time</th>
+                                            <th>Message</th>
+                                            <th></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody class="font-weight-500">
+                                        {% for i in data %}
+                                            <input type="hidden" value={{ i['from_lid'] }} name="pat_lid" id="pat_lid">
+                                            <tr>
+                                                <td>&nbsp;{{ loop.index }}</td>
+                                                <td align="center">&nbsp;
+                                                    {{ i['date'] }}
+                                                </td>
+                                                <td> {{ i['time'] }}</td>
+                                                <td> {{ i['msg'] }}</td>
+                                                <td>
+                                                    <a href="/doctor_chat_reply/{{ i['from_lid'] }}"
+                                                       class="btn btn-block btn-outline-primary">Reply</a></td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+{% endblock %}

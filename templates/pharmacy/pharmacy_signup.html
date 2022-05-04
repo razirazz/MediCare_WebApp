@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>LOGIN - Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/static/asset/vendors/feather/feather.css">
+    <link rel="stylesheet" href="/static/asset/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="/static/asset/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/static/asset/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="/static/asset/images/favicon.png"/>
+</head>
+
+<body>
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <form name="form1" method="post" action="/hospital_signup_post">
+            <table width="200" border="1">
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="name" id="name"></td>
+                </tr>
+                <tr>
+                    <td>E-mail</td>
+                    <td><input type="text" name="email" id="email"></td>
+                </tr>
+                <tr>
+                    <td>Contact</td>
+                    <td><input type="text" name="contact" id="contact"></td>
+                </tr>
+                <tr>
+                    <td>Place</td>
+                    <td><input type="text" name="place" id="place"></td>
+                </tr>
+                <tr>
+                    <td>Post</td>
+                    <td><input type="text" name="post" id="post"></td>
+                </tr>
+                <tr>
+                    <td>District</td>
+                    <td><select name="district" id="district">
+                        <option>Alappuzha</option>
+                        <option>Ernakulam</option>
+                        <option>Idukki</option>
+                        <option>Kannur</option>
+                        <option>Kasaragod</option>
+                        <option>Kollam</option>
+                        <option>Kottayam</option>
+                        <option>Kozhikode</option>
+                        <option>Malappuram</option>
+                        <option>Palakkad</option>
+                        <option>Pathanamthitta</option>
+                        <option>Thiruvananthapuram</option>
+                        <option>Thrissur</option>
+                        <option>Wayanad</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td>Pin code</td>
+                    <td><input type="number" name="pin" id="pin"></td>
+                </tr>
+                <tr>
+                    <td>License number</td>
+                    <td><input type="text" name="license" id="license"></td>
+                </tr>
+                <tr>
+                    <td>Create your password</td>
+                    <td><input type="text" name="p1"></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password</td>
+                    <td><input type="text" name="p2"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="submit" name="sign" id="sign" value="SignUp"></td>
+                </tr>
+            </table>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
