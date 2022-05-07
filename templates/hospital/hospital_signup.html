@@ -17,78 +17,109 @@
     <link rel="stylesheet" href="/static/asset/css/vertical-layout-light/style.css">
     <!-- endinject -->
     <link rel="shortcut icon" href="/static/asset/images/favicon.png"/>
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 
 <body>
 <div class="container-scroller">
     <div class="container-fluid page-body-wrapper full-page-wrapper">
-        <form name="form1" method="post" action="/hospital_signup_post">
-            <table width="200" border="1">
-                <tr>
-                    <td>Name</td>
-                    <td><input type="text" name="name" id="name"></td>
-                </tr>
-                <tr>
-                    <td>E-mail</td>
-                    <td><input type="text" name="email" id="email"></td>
-                </tr>
-                <tr>
-                    <td>Contact</td>
-                    <td><input type="text" name="contact" id="contact"></td>
-                </tr>
-                <tr>
-                    <td>Place</td>
-                    <td><input type="text" name="place" id="place"></td>
-                </tr>
-                <tr>
-                    <td>Post</td>
-                    <td><input type="text" name="post" id="post"></td>
-                </tr>
-                <tr>
-                    <td>District</td>
-                    <td><select name="district" id="district">
-                        <option>Alappuzha</option>
-                        <option>Ernakulam</option>
-                        <option>Idukki</option>
-                        <option>Kannur</option>
-                        <option>Kasaragod</option>
-                        <option>Kollam</option>
-                        <option>Kottayam</option>
-                        <option>Kozhikode</option>
-                        <option>Malappuram</option>
-                        <option>Palakkad</option>
-                        <option>Pathanamthitta</option>
-                        <option>Thiruvananthapuram</option>
-                        <option>Thrissur</option>
-                        <option>Wayanad</option>
-                    </select></td>
-                </tr>
-                <tr>
-                    <td>Pin code</td>
-                    <td><input type="number" name="pin" id="pin"></td>
-                </tr>
-                <tr>
-                    <td>Latitude</td>
-                    <td><input type="text" name="lat" id="lat"></td>
-                </tr>
-                <tr>
-                    <td>Longitude</td>
-                    <td><input type="text" name="long" id="long"></td>
-                </tr>
-                <tr>
-                    <td>Create your password</td>
-                    <td><input type="text" name="p1"></td>
-                </tr>
-                <tr>
-                    <td>Confirm Password</td>
-                    <td><input type="text" name="p2"></td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center"><input type="submit" name="sign" id="sign" value="SignUp"></td>
-                </tr>
-            </table>
+        <div class="content-wrapper d-flex align-items-center auth px-0">
+            <div class="row min-vw-100 mx-0">
+                <div style="position: fixed;">
+                    <div class="text-left px-sm-5">
+                        <div class="align-items-center">
+                            <p>
+                                <lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_k6C8Go.json"
+                                               background="transparent" speed="1" style="width: 700px; height: 700px;"
+                                               loop autoplay></lottie-player>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mx-auto" style="padding-left: 300px">
+                    <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+                        <form name="form1" method="post" action="/hospital_signup_post">
+                            <div class="card-body">
+                                <h3>Hospital SignUp Page</h3><br><br>
 
-        </form>
+                                <div class="form-group">
+                                    <input type="text" name="name" id="name" class="form-control form-control-lg"
+                                           placeholder="Hospital Name">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" name="email" id="email" class="form-control form-control-lg"
+                                           placeholder="Email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="contact" id="contact" class="form-control form-control-lg"
+                                           placeholder="Contact">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" name="place" id="place" class="form-control form-control-lg"
+                                           placeholder="Place">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" name="post" id="post" class="form-control form-control-lg"
+                                           placeholder="Post">
+                                </div>
+
+                                <div class="form-group">
+                                    <select name="district" id="district" class="form-control">
+                                        <option selected>Select</option>
+                                        <option>Alappuzha</option>
+                                        <option>Ernakulam</option>
+                                        <option>Idukki</option>
+                                        <option>Kannur</option>
+                                        <option>Kasaragod</option>
+                                        <option>Kollam</option>
+                                        <option>Kottayam</option>
+                                        <option>Kozhikode</option>
+                                        <option>Malappuram</option>
+                                        <option>Palakkad</option>
+                                        <option>Pathanamthitta</option>
+                                        <option>Thiruvananthapuram</option>
+                                        <option>Thrissur</option>
+                                        <option>Wayanad</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="number" name="pin" id="pin" class="form-control form-control-lg"
+                                           placeholder="Pin">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" name="lat" id="lat" class="form-control form-control-lg"
+                                           placeholder="Latitude">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" name="long" id="long" class="form-control form-control-lg"
+                                           placeholder="Longitude">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" name="p1" class="form-control form-control-lg"
+                                           placeholder="Password">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" name="p2" class="form-control form-control-lg"
+                                           placeholder="Confirm Password">
+                                </div>
+                                <input type="submit" name="sign" id="sign"
+                                       value="SignUp" class="btn-block btn btn-outline-primary">
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 </body>

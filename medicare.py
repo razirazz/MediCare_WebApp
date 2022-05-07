@@ -70,7 +70,7 @@ def change_pass_post():
             qry = "UPDATE login SET password='" + confirm_pass + "' WHERE login_id='" + str(session['lid']) + "'"
             # print(res)
             res = db.update(qry)
-            return '''<script>alert('Password created');window.location='/login_d'</script>'''
+            return '''<script>alert('Password created');window.location='/'</script>'''
         else:
             return '''<script>alert('Password mismatch');window.location='/change_pass'</script>'''
     else:
@@ -482,7 +482,7 @@ def hospital_signup_post():
         hos_qry = "INSERT INTO hospital(hos_name, ph_number, place, district, e_mail, hos_lat, hos_long, login_id, pin, post) VALUES('" + name + "', '" + contact + "', '" + place + "', '" + district + "', '" + mail + "', '" + latitude + "', '" + longitude + "', '" + str(
             log_id) + "', '" + pin + "', '" + post + "')"
         hos_data = db.insert(hos_qry)
-        return '''<script>alert("Inserted Successfully");window.location='/login_d'</script>'''
+        return '''<script>alert("Inserted Successfully");window.location='/'</script>'''
     else:
         return '''<script>alert("Invalid password or mismatch");window.location='/hospital_signup'</script>'''
 
@@ -516,7 +516,7 @@ def hospital_change_pass_post():
             # print(qry)
             res = db.update(qry)
             # print(res)
-            return '''<script>alert('Password created');window.location='/login_d'</script>'''
+            return '''<script>alert('Password created');window.location='/'</script>'''
         else:
             return '''<script>alert('Password mismatch');window.location='/hospital_change_pass'</script>'''
     else:
@@ -570,7 +570,7 @@ def hospital_add_doctors_post():
     image = request.files['img']
     dt = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
     image.save(static_path + "hospital\\" + dt + ".jpg")
-    path = "/static/hospital" + dt + ".jpg"
+    path = "/static/hospital/" + dt + ".jpg"
     adrs = request.form['adrs']
     dob = request.form['dob']
     dist = request.form['district']
@@ -680,7 +680,7 @@ def hospital_search_doctor():
 def hospital_view_patient():
     db = Db()
     qry = "SELECT `patient`.* FROM `patient` INNER JOIN  `doctor_booking` ON `patient`.`login_id`=`doctor_booking`.`pat_lid` WHERE `doctor_booking`.`hos_lid`='" + str(
-        session['lid']) + "'"
+        session['lid']) + "' GROUP BY `patient`.`pat_name`"
     res = db.select(qry)
     return render_template('hospital/view_patient.html', data=res)
 
@@ -812,12 +812,49 @@ def hospital_dashboard():
 
 @app.route('/pharmacy_dashboard')
 def pharmacy_dashboard():
-    return render_template('pharmacy/pharmacy_dashboard.html')
+    lid = str(session['lid'])
+    db = Db()
+    book = "SELECT COUNT(*) AS booking FROM `medicine_booking` INNER JOIN `pharmacy` ON `pharmacy`.`login_id`=`medicine_booking`.`phar_lid` WHERE `pharmacy`.`login_id`='" + lid + "'"
+    book_res = str(db.select(book))
+    book_count = book_res[12:-2]
+    medicine = "SELECT COUNT(*) AS medicine FROM `medicine` INNER JOIN `pharmacy` ON `pharmacy`.`login_id`=`medicine`.`phar_lid` WHERE `pharmacy`.`login_id`='" + lid + "'"
+    med_res = str(db.select(medicine))
+    print(med_res)
+    med_count = med_res[14:-2]
+    return render_template('pharmacy/pharmacy_dashboard.html', book=book_count, med=med_count)
 
 
 @app.route('/pharmacy_signup')
 def pharmacy_signup():
     return render_template('pharmacy/pharmacy_signup.html')
+
+
+@app.route('/pharmacy_signup_post', methods=['post'])
+def pharmacy_signup_post():
+    # hos_lid = request.form['id']
+    name = request.form['name']
+    mail = request.form['email']
+    contact = request.form['contact']
+    place = request.form['place']
+    post = request.form['post']
+    district = request.form['district']
+    pin = request.form['pin']
+    license_no = request.form['license']
+    latitude = request.form['lat']
+    longitude = request.form['lon']
+    pass1 = request.form['p1']
+    pass2 = request.form['p2']
+
+    db = Db()
+    if pass1 == pass2:
+        login_qry = "INSERT INTO login(username, `password`, `type`) VALUES('" + mail + "','" + pass1 + "','ppending')"
+        log_id = db.insert(login_qry)
+        hos_qry = "INSERT INTO `pharmacy` (`phar_name`, `phar_number`, `pin`, `e_mail`, `district`, `phar_lat`, `phar_long`, `licence_number`, `login_id`, `post`, `place`) VALUES ('" + name + "', '" + contact + "', '" + pin + "', '" + mail + "', '" + district + "', '" + latitude + "', '" + longitude + "', '" + license_no + "', '" + str(
+            log_id) + "', '" + post + "', '" + place + "');"
+        hos_data = db.insert(hos_qry)
+        return '''<script>alert("Inserted Successfully");window.location='/'</script>'''
+    else:
+        return '''<script>alert("Invalid password or mismatch");window.location='/pharmacy_signup'</script>'''
 
 
 @app.route('/pharmacy_home')
@@ -842,7 +879,7 @@ def pharmacy_change_pass_post():
         if new_pass == confirm_pass:
             qry = "UPDATE login SET password='" + confirm_pass + "' WHERE login_id='" + str(session['lid']) + "'"
             res = db.update(qry)
-            return '''<script>alert('Password changed');window.location='/login_d'</script>'''
+            return '''<script>alert('Password changed');window.location='/'</script>'''
         else:
             return '''<script>alert('Password mismatch');window.location='/pharmacy_change_pass'</script>'''
     else:
@@ -912,13 +949,13 @@ def pharmacy_add_medicine_post():
     image = request.files['img']
     dt = datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')
     image.save(static_path + "medicine\\" + dt + ".jpg")
-    path = "/static/medicine" + dt + ".jpg"
+    path = "/static/medicine/" + dt + ".jpg"
     price = request.form['price']
     description = request.form['desc']
     brand = request.form['brand']
     quantity = request.form['quantity']
     db = Db()
-    qry_medicine = "INSERT INTO `medicine`(`med_name`, `med_img`, `price`, `description`, `med_brand`, `phar_lid`) VALUES ('" + name + "', '" + path + "', ""'" + price + "', '" + description + "', '" + brand + "', '" + str(
+    qry_medicine = "INSERT INTO `medicine`(`med_name`, `med_img`, `price`, `description`, `med_brand`, `phar_lid`) VALUES ('" + name + "', '" + path + "', '" + price + "', '" + description + "', '" + brand + "', '" + str(
         session['lid']) + "')"
     res_med = db.insert(qry_medicine)
     qry_stock = "INSERT INTO `stock` (`quantity`, `med_lid`, `phar_lid`) VALUES ('" + quantity + "', '" + str(
@@ -1255,7 +1292,7 @@ def doctor_change_pass_post():
         if new_pass == confirm_pass:
             qry = "UPDATE login SET password='" + confirm_pass + "' WHERE login_id='" + str(session['lid']) + "'"
             res = db.update(qry)
-            return '''<script>alert('Password Changed');window.location='/login_d'</script>'''
+            return '''<script>alert('Password Changed');window.location='/'</script>'''
         else:
             return '''<script>alert('Password mismatch');window.location='/doctor_change_password'</script>'''
     else:
@@ -1516,7 +1553,7 @@ def patient_signup():
     pin = request.form['pin']
     district = request.form['district']
     password = request.form['password']
-    confirm_pass = request.form['gf']
+    confirm_pass = request.form['confirm_pass']
 
     if password == confirm_pass:
         db = Db()
@@ -1539,11 +1576,11 @@ def patient_change_password():
     qry = "SELECT * FROM login WHERE PASSWORD='" + current_pass + "' AND login_id='" + lid + "'"
     res = db.selectOne(qry)
     if res is not None:
-        return jsonify(status="no")
-    else:
         qry2 = "UPDATE login SET PASSWORD='" + new_pass + "' WHERE login_id='" + lid + "'"
         db.update(qry2)
         return jsonify(status="ok")
+    else:
+        return jsonify(status="no")
 
 
 @app.route('/patient_view_profile', methods=['post'])
@@ -1551,11 +1588,18 @@ def patient_view_profile():
     db = Db()
     lid = request.form['lid']
     qry = "SELECT * FROM `patient` WHERE `login_id`='" + str(lid) + "'"
+    print(qry)
     res = db.selectOne(qry)
     birth_date = res['dob']
     ff = str(birth_date)
-    dd = ff.split("-")
-    dvd = dd[2] + "-" + dd[1] + "-" + dd[0]
+    try:
+        dd = ff.split("/")
+        print(dd)
+        dvd = dd[2] + "-" + dd[1] + "-" + dd[0]
+    except:
+        dd = ff.split("-")
+        print(dd)
+        dvd = dd[2] + "-" + dd[1] + "-" + dd[0]
     return jsonify(status='ok', name=res['pat_name'], place=res['pat_place'], contact=res['pat_number'],
                    gender=res['gender'], birth_date=dvd, pin=res['pin'], post=res['post'], district=res['district'],
                    email=res['pat_email'], address=res['address'], photo=res['img'])
@@ -1622,14 +1666,14 @@ def patient_v_search_doctor():
 
 @app.route('/patient_view_doctor_profile', methods=['post'])
 def patient_view_doctor_profile():
-    doc_id = request.form['lid']
-    print(doc_id)
+    doc_id = request.form['doctorlid']
+    # print("doc_id------------------------------0",doc_id)
     db = Db()
     qry = "SELECT `doctor`.*,`hospital`.* FROM `hospital` INNER JOIN `doctor` ON `doctor`.`hos_id`=`hospital`.`login_id` WHERE `doctor`.`login_id`='" + str(
         doc_id) + "'"
-    print(qry)
+    # print(qry)
     res = db.selectOne(qry)
-    print(res)
+    # print(res)
     if res is not None:
         return jsonify(status='ok', doc_name=res['doc_name'], hos_name=res['hos_name'], department=res['doc_depart'],
                        quali=res['doc_qualification'], experience=res['doc_exp'], fees=res['fees'],
@@ -1647,15 +1691,23 @@ def patient_view_medicine():
     return jsonify(status='ok', data=res)
 
 
+@app.route('/patient_v_medicine_search', methods=['post'])
+def patient_v_medicine_search():
+    name = request.form['name']
+    db = Db()
+    qry = "SELECT * FROM `medicine` WHERE `med_name` LIKE '%" + name + "%'"
+    res = db.select(qry)
+    return jsonify(status='ok', data=res)
+
+
 @app.route('/patient_view_medicine_profile', methods=['post'])
 def patient_view_medicine_profile():
     login_id = request.form['lid']
-    print("-----------------------------------", login_id)
     db = Db()
     qry = "SELECT * FROM `medicine` WHERE `med_id`='" + str(login_id) + "'"
     res = db.selectOne(qry)
     print(res)
-    return jsonify(status='ok', name=res['med_name'], price=res['price'], description=res['description'],
+    return jsonify(status='ok', name=res['med_name'], med_img=res['med_img'], price=res['price'], description=res['description'],
                    brand=res['med_brand'])
 
 
@@ -1713,13 +1765,36 @@ def patient_view_near_by_pharmacy():
     return jsonify(status='ok', data=res)
 
 
+@app.route('/patient_v_pharmacy_search', methods=['post'])
+def patient_v_pharmacy_search():
+    latitude = request.form['lati']
+    longitude = request.form['longi']
+    search = request.form['search']
+    db = Db()
+    qry = "SELECT `pharmacy`.*, SQRT(POW(69.1 * (`phar_lat` - '" + latitude + "'), 2) + POW(69.1 * ('" + longitude + "' - `phar_long`) * COS(`phar_lat` / 57.3), 2)) AS distance FROM `pharmacy` HAVING distance < 2500 AND `phar_name` LIKE '%" + search + "%' ORDER BY distance;"
+    print(qry)
+    res = db.select(qry)
+    return jsonify(status='ok', data=res)
+
+
 @app.route('/patient_view_near_by_hospital', methods=['post'])
 def patient_view_near_by_hospital():
     latitude = request.form['lati']
     longitude = request.form['longi']
     db = Db()
     qry = "SELECT `hospital`.*, SQRT(POW(69.1 * (`hos_lat` - '" + latitude + "'), 2) +POW(69.1 * ('" + longitude + "' - `hos_long`) * COS(`hos_lat` / 57.3), 2)) AS distance FROM `hospital` HAVING distance < 2500 ORDER BY distance;"
-    print(qry)
+    res = db.select(qry)
+    print(res)
+    return jsonify(status='ok', data=res)
+
+
+@app.route('/patient_v_hospital_search', methods=['post'])
+def patient_v_hospital_search():
+    latitude = request.form['lati']
+    longitude = request.form['longi']
+    search = request.form['search']
+    db = Db()
+    qry = "SELECT `hospital`.*, SQRT(POW(69.1 * (`hos_lat` - '" + latitude + "'), 2) +POW(69.1 * ('" + longitude + "' - `hos_long`) * COS(`hos_lat` / 57.3), 2)) AS distance FROM `hospital` HAVING distance < 2500 AND `hos_name` LIKE '%" + search + "%' ORDER BY distance;"
     res = db.select(qry)
     print(res)
     return jsonify(status='ok', data=res)
@@ -1728,19 +1803,43 @@ def patient_view_near_by_hospital():
 @app.route('/patient_view_schedule', methods=['post'])
 def patient_view_schedule():
     doc_lid = request.form['doctorlid']
-    print(doc_lid)
+    print("-------------------------------------doc_lid---", doc_lid)
     db = Db()
-    qry = "SELECT `schedule`.*, `doctor`.*, `hospital`.* FROM `doctor` INNER JOIN `schedule` ON `schedule`.`doc_id`=`doctor`.`login_id` INNER JOIN `hospital` ON `hospital`.`login_id`=`schedule`.`hospital_logid` WHERE `doctor`.`login_id`='" + str(
-        doc_lid) + "'"
-    print(qry)
+    qry = "SELECT `schedule`.*, `hospital`.*, `doctor`.* FROM `hospital` INNER JOIN `schedule` ON `hospital`.`login_id`=`schedule`.`hospital_logid` INNER JOIN `doctor` ON `doctor`.`login_id`=`schedule`.`doc_id` WHERE `doctor`.`login_id`='" + str(doc_lid) + "'"
+    res = db.select(qry)
+
+    if len(res) > 0:
+        ls = []
+        for i in res:
+            q = "SELECT COUNT(`sch_id`) as cnt FROM `doctor_booking` WHERE `sch_id`='" + str(i["sch_id"]) + "'"
+            d = Db()
+            r = d.selectOne(q)
+            if r is not None:
+                if r["cnt"] >= 2:
+                    pass
+                else:
+                    a = {'login_id':i['login_id'], 'sch_id':i['sch_id'], 'hos_id':i['hos_id'], 'doc_name':i['doc_name'], 'hos_name':i['hos_name'], 'doc_depart':i['doc_depart'], 'sch_date':i['sch_date'], 'sch_ftime':i['sch_ftime'], 'sch_ttime':i['sch_ttime']}
+                    ls.append(a)
+            else:
+                    a = {'login_id':i['login_id'], 'sch_id':i['sch_id'], 'hos_id':i['hos_id'], 'doc_name':i['doc_name'], 'hos_name':i['hos_name'], 'doc_depart':i['doc_depart'], 'sch_date':i['sch_date'], 'sch_ftime':i['sch_ftime'], 'sch_ttime':i['sch_ttime']}
+                    ls.append(a)
+    return jsonify(status='ok', data=ls)
+
+
+@app.route('/patient_v_schedule_search', methods=['post'])
+def patient_v_schedule_search():
+    doc_lid = request.form['doctorlid']
+    search = request.form['search']
+    db = Db()
+    qry = "SELECT `schedule`.*, `doctor`.*, `hospital`.* FROM `doctor` INNER JOIN `schedule` ON `schedule`.`doc_id`=`doctor`.`login_id` INNER JOIN `hospital` ON `hospital`.`login_id`=`schedule`.`hospital_logid` WHERE `doctor`.`login_id`='" + str(doc_lid) + "' AND `doctor`.`doc_name` LIKE '%" + search + "%'"
     res = db.select(qry)
     return jsonify(status='ok', data=res)
 
 
 @app.route('/patient_book_doctors', methods=['post'])
 def patient_book_doctors():
-    # date = request.form['date']
     doc_id = request.form['doctorlid']
+    print("-----------------------------------------------------------------------------------doctorlid", doc_id)
     sch_id = request.form['sch_id']
     hos_id = request.form['hos_id']
     lid = request.form['lid']
@@ -1748,7 +1847,9 @@ def patient_book_doctors():
     current_time = datetime.datetime.now().strftime('%H:%M:%S')
     db = Db()
     qry = "INSERT INTO `doctor_booking` (`sch_id`, `book_date`, `book_time`, `pat_lid`, `status`, `doc_lid`, `hos_lid`) VALUES ('" + sch_id + "', '" + current_date + "', '" + current_time + "', '" + lid + "', 'pending', '" + doc_id + "', '" + hos_id + "')"
+    print(qry)
     res = db.insert(qry)
+    print('-------------res---', res)
     return jsonify(status='ok')
 
 
@@ -1767,11 +1868,26 @@ def patient_med_buy():
     phar_id = request.form['pharm_lid']
     pat_lid = request.form['lid']
     amount = request.form['price']
+    med_id = request.form['med_id']
+    quantity = request.form['quantity']
+    cost = int(quantity) * int(amount)
     current_date = datetime.datetime.now().strftime('%Y-%m-%d')
     db = Db()
-    qry = "INSERT INTO `medicine_booking` (`date`, `total_amount`, `phar_lid`, `patient_lid`) VALUES ('" + current_date + "', '" + amount + "', '" + phar_id + "', '" + pat_lid + "')"
-    res = db.insert(qry)
-    return jsonify(status='ok')
+    qc = "SELECT `quantity` FROM `stock` WHERE `med_lid`='" + med_id + "'"
+    r = db.selectOne(qc)
+    print(qc)
+    if r is not None:
+        if int(r["quantity"]) >= int(quantity):
+            qry = "INSERT INTO `medicine_booking` (`date`, `total_amount`, `phar_lid`, `patient_lid`, `status`) VALUES ('" + current_date + "', '" + amount + "', '" + phar_id + "', '" + pat_lid + "', 'pending')"
+            res = db.insert(qry)
+            qry_sub = "INSERT INTO `med_booking_sub` (`med_id`, `time`, `quantity`, `cost`, `med_book_id`) VALUES ('" + med_id + "', curtime(), '" + quantity + "', '" + str(cost) + "', '" + str(res) + "')"
+            res_sub = db.insert(qry_sub)
+            q = "UPDATE `stock` SET `quantity`=`quantity`-'"+quantity+"' WHERE `med_lid`='" + med_id + "'"
+            db.update(q)
+            return jsonify(status='ok')
+        else:
+            return jsonify(status='low')
+    return jsonify(status='no')
 
 
 @app.route('/patient_doc_payment', methods=['post'])
@@ -1780,15 +1896,12 @@ def patient_doc_payement():
     pin_no = request.form['pin_no']
     book_id = request.form['med_book_id']
     amount = request.form['amount']
-    print(acc_no)
-    print(pin_no)
-    print("--------------amount", amount)
     db = Db()
     check_bank = "SELECT * FROM `bank` WHERE `acc_no`='" + acc_no + "' AND `bank_pin`='" + pin_no + "'"
     res_bank = db.selectOne(check_bank)
     # print(res_bank['bank_balance'])
     if res_bank is not None:
-        if res_bank['bank_balance'] < amount:
+        if res_bank['bank_balance'] > int(amount):
             qry = "INSERT INTO `payment` (`med_book_id`, `date`, `time`, `amount`, `type`) VALUES ('" + str(
                 book_id) + "', curdate(), curtime(), '" + amount + "', 'doctor')"
             print(qry)
@@ -1796,6 +1909,8 @@ def patient_doc_payement():
             qry333 = "UPDATE `bank` SET `bank_balance`=`bank_balance`-'" + str(
                 amount) + "' WHERE `acc_no`='" + acc_no + "' AND `bank_pin`='" + pin_no + "'"
             res333 = db.update(qry333)
+            qry_status = "UPDATE `doctor_booking` SET `status`='paid' WHERE `db_id`='" + str(book_id) + "'"
+            res_status = db.update(qry_status)
             return jsonify(status='ok')
         else:
             return jsonify(status='less')
@@ -1809,6 +1924,8 @@ def patient_med_payment():
     pin_no = request.form['pin_no']
     book_id = request.form['med_book_id']
     amount = request.form['amount']
+
+    print(book_id,"=====================")
     # print(acc_no)
     # print(pin_no)
     # print("--------------amount", amount)
@@ -1817,7 +1934,7 @@ def patient_med_payment():
     res_bank = db.selectOne(check_bank)
     print(res_bank['bank_balance'])
     if res_bank is not None:
-        if res_bank['bank_balance'] < amount:
+        if res_bank['bank_balance'] > int(amount):
             qry = "INSERT INTO `payment` (`med_book_id`, `date`, `time`, `amount`, `type`) VALUES ('" + str(
                 book_id) + "', curdate(), curtime(), '" + amount + "', 'medicine')"
             print(qry)
@@ -1825,6 +1942,8 @@ def patient_med_payment():
             qry333 = "UPDATE `bank` SET `bank_balance`=`bank_balance`-'" + str(
                 amount) + "' WHERE `acc_no`='" + acc_no + "' AND `bank_pin`='" + pin_no + "'"
             res333 = db.update(qry333)
+            med_status_qry = "UPDATE `medicine_booking` SET `status`='paid' WHERE  `medbook_id`='" + str(book_id) + "'"
+            med_status_res = db.update(med_status_qry)
             return jsonify(status='ok')
         else:
             return jsonify(status='less')
@@ -1839,6 +1958,17 @@ def patient_view_doc_booking():
     db = Db()
     qry = "SELECT `doctor_booking`.*, `doctor`.* FROM `doctor` INNER JOIN `doctor_booking` ON `doctor_booking`.`doc_lid`=`doctor`.`login_id` WHERE `doctor_booking`.`pat_lid`='" + pat_lid + "' AND `doctor_booking`.`status`='pending'"
     res = db.select(qry)
+    print(res)
+    return jsonify(status='ok', data=res)
+
+
+@app.route('/patient_v_doc_booking_search', methods=['post'])
+def patient_v_doc_booking_search():
+    pat_lid = request.form['lid']
+    search = request.form['search']
+    db = Db()
+    qry = "SELECT `doctor_booking`.*, `doctor`.* FROM `doctor` INNER JOIN `doctor_booking` ON `doctor_booking`.`doc_lid`=`doctor`.`login_id` WHERE `doctor_booking`.`pat_lid`='" + pat_lid + "' AND `doctor_booking`.`status`='pending' AND `doctor`.`doc_name` LIKE '%" + search + "%'"
+    res = db.select(qry)
     return jsonify(status='ok', data=res)
 
 
@@ -1846,7 +1976,7 @@ def patient_view_doc_booking():
 def patient_view_med_booking():
     pat_lid = request.form['lid']
     db = Db()
-    qry = "SELECT `med_booking_sub`.*, `medicine_booking`.*, `medicine`.* FROM `medicine_booking` INNER JOIN `med_booking_sub` ON `med_booking_sub`.`med_book_id`=`medicine_booking`.`medbook_id` INNER JOIN `medicine` ON `medicine`.`med_id`=`med_booking_sub`.`med_id` WHERE `medicine_booking`.`patient_lid`='" + pat_lid + "'"
+    qry = "SELECT `med_booking_sub`.*, `medicine_booking`.*, `medicine`.* FROM `medicine_booking` INNER JOIN `med_booking_sub` ON `med_booking_sub`.`med_book_id`=`medicine_booking`.`medbook_id` INNER JOIN `medicine` ON `medicine`.`med_id`=`med_booking_sub`.`med_id` WHERE `medicine_booking`.`patient_lid`='" + pat_lid + "' AND `medicine_booking`.`status`='pending'"
     res = db.select(qry)
     return jsonify(status='ok', data=res)
 
