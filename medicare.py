@@ -1034,6 +1034,7 @@ def pharmacy_view_booking():
     db = Db()
     qry = "SELECT `medicine_booking`.*, `patient`.`pat_name`, `patient`.`pat_email`, `patient`.`pat_number` FROM `patient` INNER JOIN `medicine_booking` ON `medicine_booking`.`patient_lid`=`patient`.`login_id` WHERE `medicine_booking`.`phar_lid`='" + str(
         session['lid']) + "'"
+    # qry = "SELECT `medicine_booking`.*, `patient`.`pat_name`, `patient`.`pat_email`, `patient`.`pat_number` FROM `patient` INNER JOIN `medicine_booking` ON `medicine_booking`.`patient_lid`=`patient`.`login_id` WHERE `medicine_booking`.`phar_lid`='" + str(session['lid']) + "' GROUP BY `patient`.`login_id`=''"
     res = db.select(qry)
     # print(res)
     return render_template('pharmacy/view_med_booking.html', data=res)
@@ -1121,13 +1122,13 @@ def pharmacy_delete_stock(val):
     return '''<script>alert("Deleted Successfully");window.location='/pharmacy_view_stock'</script>'''
 
 
-@app.route('/pharmacy_view_discount')
-def pharmacy_view_discount():
-    db = Db()
-    qry = "SELECT `discount`.*, `medicine`.* FROM `medicine` INNER JOIN `discount` ON `discount`.`med_id`=`medicine`.`med_id` AND `discount`.`phar_lid`='" + str(
-        session['lid']) + "'"
-    res = db.select(qry)
-    return render_template('pharmacy/view_discount.html', data=res)
+# @app.route('/pharmacy_view_discount')
+# def pharmacy_view_discount():
+#     db = Db()
+#     qry = "SELECT `discount`.*, `medicine`.* FROM `medicine` INNER JOIN `discount` ON `discount`.`med_id`=`medicine`.`med_id` AND `discount`.`phar_lid`='" + str(
+#         session['lid']) + "'"
+#     res = db.select(qry)
+#     return render_template('pharmacy/view_discount.html', data=res)
 
 
 @app.route('/pharmacy_add_discount')
@@ -1646,10 +1647,9 @@ def patient_update_profile():
 def patient_view_doctor():
     db = Db()
     # qry = "SELECT * FROM `doctor`"
-    qry = "SELECT `doctor`.*, `hospital`.`hos_name` FROM `hospital` INNER JOIN `doctor` ON `doctor`.`hos_id`=`hospital`.`login_id`"
-    print(qry)
+    # qry = "SELECT `doctor`.*, `hospital`.`hos_name` FROM `hospital` INNER JOIN `doctor` ON `doctor`.`hos_id`=`hospital`.`login_id`"
+    qry = "SELECT `doctor`.*, `hospital`.`hos_name` FROM `hospital` INNER JOIN `doctor` ON `doctor`.`hos_id`=`hospital`.`login_id` INNER JOIN `login` ON `login`.`login_id`=`doctor`.`login_id` WHERE `login`.`type`='doctor'"
     res = db.select(qry)
-    print(res)
     return jsonify(status='ok', data=res)
 
 
@@ -1807,7 +1807,6 @@ def patient_view_schedule():
     db = Db()
     qry = "SELECT `schedule`.*, `hospital`.*, `doctor`.* FROM `hospital` INNER JOIN `schedule` ON `hospital`.`login_id`=`schedule`.`hospital_logid` INNER JOIN `doctor` ON `doctor`.`login_id`=`schedule`.`doc_id` WHERE `doctor`.`login_id`='" + str(doc_lid) + "'"
     res = db.select(qry)
-
     if len(res) > 0:
         ls = []
         for i in res:
@@ -1823,7 +1822,9 @@ def patient_view_schedule():
             else:
                     a = {'login_id':i['login_id'], 'sch_id':i['sch_id'], 'hos_id':i['hos_id'], 'doc_name':i['doc_name'], 'hos_name':i['hos_name'], 'doc_depart':i['doc_depart'], 'sch_date':i['sch_date'], 'sch_ftime':i['sch_ftime'], 'sch_ttime':i['sch_ttime']}
                     ls.append(a)
-    return jsonify(status='ok', data=ls)
+        return jsonify(status='ok', data=ls)
+    else:
+        return jsonify(status='no')
 
 
 @app.route('/patient_v_schedule_search', methods=['post'])
@@ -1957,9 +1958,13 @@ def patient_view_doc_booking():
     print(pat_lid)
     db = Db()
     qry = "SELECT `doctor_booking`.*, `doctor`.* FROM `doctor` INNER JOIN `doctor_booking` ON `doctor_booking`.`doc_lid`=`doctor`.`login_id` WHERE `doctor_booking`.`pat_lid`='" + pat_lid + "' AND `doctor_booking`.`status`='pending'"
+    print(qry)
     res = db.select(qry)
     print(res)
-    return jsonify(status='ok', data=res)
+    if res is not None:
+        return jsonify(status='ok', data=res)
+    else:
+        return jsonify(status='none')
 
 
 @app.route('/patient_v_doc_booking_search', methods=['post'])
@@ -1978,7 +1983,10 @@ def patient_view_med_booking():
     db = Db()
     qry = "SELECT `med_booking_sub`.*, `medicine_booking`.*, `medicine`.* FROM `medicine_booking` INNER JOIN `med_booking_sub` ON `med_booking_sub`.`med_book_id`=`medicine_booking`.`medbook_id` INNER JOIN `medicine` ON `medicine`.`med_id`=`med_booking_sub`.`med_id` WHERE `medicine_booking`.`patient_lid`='" + pat_lid + "' AND `medicine_booking`.`status`='pending'"
     res = db.select(qry)
-    return jsonify(status='ok', data=res)
+    if res is not None:
+        return jsonify(status='ok', data=res)
+    else:
+        return jsonify(status='no')
 
 
 @app.route("/and_send_complaint", methods=['post'])
